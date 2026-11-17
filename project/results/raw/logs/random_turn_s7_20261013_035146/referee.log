@@ -1,0 +1,21 @@
+[INFO] [1791852722.493879511] [judge]: referee started for 'random_turn_s7'
+[INFO] [1791852722.495417759] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791852725.140209921] [judge]: robot started moving - the clock is running
+[INFO] [1791852725.140757388] [judge]:   0.0 s  true position (0.03, 0.00)  closest gap 0.71 m
+[INFO] [1791852730.160784979] [judge]:   5.0 s  true position (0.40, -0.01)  closest gap 0.36 m
+[INFO] [1791852735.160818019] [judge]:  10.0 s  true position (1.16, 0.39)  closest gap 0.15 m
+[INFO] [1791852740.180439340] [judge]:  15.0 s  true position (1.22, 0.38)  closest gap 0.16 m
+[INFO] [1791852745.181617087] [judge]:  20.0 s  true position (1.56, 0.00)  closest gap 0.29 m
+[INFO] [1791852750.181656727] [judge]:  25.0 s  true position (2.56, -0.02)  closest gap 0.33 m
+[INFO] [1791852751.661643266] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791852751.662039923] [judge]:  label            : random_turn_s7
+[INFO] [1791852751.662318981] [judge]:  outcome          : SUCCESS
+[INFO] [1791852751.662683338] [judge]:  time             : 26.5 s
+[INFO] [1791852751.662989206] [judge]:  distance driven  : 3.40 m   (straight line would be 3.00 m)
+[INFO] [1791852751.663257645] [judge]:  path efficiency  : 0.84
+[INFO] [1791852751.663516937] [judge]:  collisions       : 0
+[INFO] [1791852751.663784023] [judge]:  closest approach : 0.044 m   (box_1 at 18.6 s, robot at (1.32, 0.15))
+[INFO] [1791852751.664064554] [judge]:  final goal dist  : 0.15 m
+[INFO] [1791852751.664327002] [judge]: ============================================
+[INFO] [1791852751.665274402] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/random_turn_s7_20261013_035231.csv
+[INFO] [1791852751.665623230] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.

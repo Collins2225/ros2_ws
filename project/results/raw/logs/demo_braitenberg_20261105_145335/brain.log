@@ -1,0 +1,39 @@
+[INFO] [1793879641.139503723] [avoidance_node]: running algorithm 'braitenberg', goal (4.7, 0.0), pose source 'gyro'
+[INFO] [1793879641.255704847] [avoidance_node]:   0.0 s   position (0.00, -0.00)   heading -0 deg (wheels alone say -0)   goal 4.70 m away
+[INFO] [1793879643.256663010] [avoidance_node]:   2.0 s   position (0.20, -0.07)   heading -38 deg (wheels alone say -37)   goal 4.50 m away
+[INFO] [1793879645.257085444] [avoidance_node]:   4.0 s   position (0.40, -0.32)   heading -59 deg (wheels alone say -59)   goal 4.31 m away
+[INFO] [1793879647.306696562] [avoidance_node]:   6.1 s   position (0.57, -0.69)   heading -60 deg (wheels alone say -63)   goal 4.19 m away
+[INFO] [1793879649.308981653] [avoidance_node]:   8.1 s   position (0.92, -0.85)   heading -21 deg (wheels alone say -19)   goal 3.88 m away
+[INFO] [1793879651.309177220] [avoidance_node]:  10.1 s   position (1.29, -1.01)   heading -10 deg (wheels alone say -9)   goal 3.56 m away
+[INFO] [1793879653.359077232] [avoidance_node]:  12.1 s   position (1.64, -0.98)   heading 8 deg (wheels alone say 7)   goal 3.21 m away
+[INFO] [1793879655.359087359] [avoidance_node]:  14.1 s   position (1.82, -0.92)   heading 37 deg (wheels alone say 36)   goal 3.02 m away
+[INFO] [1793879657.408980358] [avoidance_node]:  16.1 s   position (1.90, -0.83)   heading 54 deg (wheels alone say 54)   goal 2.92 m away
+[INFO] [1793879659.409062071] [avoidance_node]:  18.2 s   position (2.10, -0.48)   heading 56 deg (wheels alone say 57)   goal 2.65 m away
+[INFO] [1793879661.409184329] [avoidance_node]:  20.2 s   position (2.35, -0.29)   heading 34 deg (wheels alone say 33)   goal 2.37 m away
+[INFO] [1793879663.459110821] [avoidance_node]:  22.2 s   position (2.56, 0.00)   heading 43 deg (wheels alone say 44)   goal 2.14 m away
+[INFO] [1793879665.459139083] [avoidance_node]:  24.2 s   position (2.90, 0.12)   heading 10 deg (wheels alone say 8)   goal 1.80 m away
+[INFO] [1793879667.459700989] [avoidance_node]:  26.2 s   position (3.30, 0.14)   heading -6 deg (wheels alone say -5)   goal 1.41 m away
+[INFO] [1793879669.509237457] [avoidance_node]:  28.2 s   position (3.70, 0.19)   heading 10 deg (wheels alone say 9)   goal 1.02 m away
+[INFO] [1793879671.559216046] [avoidance_node]:  30.3 s   position (4.11, 0.19)   heading -13 deg (wheels alone say -12)   goal 0.62 m away
+[INFO] [1793879673.609483170] [avoidance_node]:  32.4 s   position (4.49, 0.06)   heading -24 deg (wheels alone say -22)   goal 0.21 m away
+[INFO] [1793879674.209113674] [avoidance_node]: GOAL REACHED in 33.0 s (the brain believes: x=4.60 y=0.01 heading=-25 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

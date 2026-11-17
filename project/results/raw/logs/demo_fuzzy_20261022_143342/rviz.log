@@ -1,0 +1,49 @@
+[INFO] [1792668839.802235324] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792668839.802351373] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1792668839.827606535] [rviz2]: Stereo is NOT SUPPORTED
+[WARN] [1792669031.216020504] []: TF_OLD_DATA ignoring data from the past for frame servo_link at time 200.417000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218411842] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_left_link at time 200.417000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218425067] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_right_link at time 200.417000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218436559] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_left_link at time 200.417000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218446998] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_right_link at time 200.417000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218507753] []: TF_OLD_DATA ignoring data from the past for frame servo_link at time 200.467000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218522561] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_left_link at time 200.467000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218533371] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_right_link at time 200.467000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218539873] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_left_link at time 200.467000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.218546275] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_right_link at time 200.467000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.220451829] []: TF_OLD_DATA ignoring data from the past for frame servo_link at time 200.517000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.220475113] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_left_link at time 200.517000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.220486505] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_right_link at time 200.517000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.220497565] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_left_link at time 200.517000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.220508276] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_right_link at time 200.517000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[INFO] [1792669031.235707283] [rviz]: Message Filter dropping message: frame 'base_link' at time 176.602 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[WARN] [1792669031.248237471] []: TF_OLD_DATA ignoring data from the past for frame servo_link at time 200.567000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.248282646] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_left_link at time 200.567000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.248379188] []: TF_OLD_DATA ignoring data from the past for frame wheel_front_right_link at time 200.567000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.248387884] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_left_link at time 200.567000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[WARN] [1792669031.248392453] []: TF_OLD_DATA ignoring data from the past for frame wheel_rear_right_link at time 200.567000 according to authority Authority undetectable
+Possible reasons are listed at http://wiki.ros.org/tf/Errors%20explained
+[INFO] [1792669041.109383344] [rviz]: Message Filter dropping message: frame 'base_link' at time 200.420 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1792669145.601430699] [rviz]: Message Filter dropping message: frame 'base_link' at time 280.401 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1792669155.461601675] [rviz]: Message Filter dropping message: frame 'base_link' at time 314.745 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1792669637.786138948] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1792669637.851365522] [rclcpp]: signal_handler(SIGINT/SIGTERM)

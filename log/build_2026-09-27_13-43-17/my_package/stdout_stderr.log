@@ -1,0 +1,48 @@
+running develop
+Removing /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my-package.egg-link (link to .)
+running egg_info
+writing ../../build/my_package/my_package.egg-info/PKG-INFO
+writing dependency_links to ../../build/my_package/my_package.egg-info/dependency_links.txt
+writing entry points to ../../build/my_package/my_package.egg-info/entry_points.txt
+writing requirements to ../../build/my_package/my_package.egg-info/requires.txt
+writing top-level names to ../../build/my_package/my_package.egg-info/top_level.txt
+reading manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+writing manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/collins/ros2_ws/build/my_package/build
+creating /home/collins/ros2_ws/build/my_package/build/lib
+creating /home/collins/ros2_ws/build/my_package/build/lib/my_package
+copying my_package/action_server.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+copying my_package/__init__.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+copying my_package/action_client.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+copying my_package/temp_publisher.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+copying my_package/heater_client.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+copying my_package/heater_server.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+running install
+running install_lib
+creating /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/action_server.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/__init__.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/action_client.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/temp_publisher.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/heater_client.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/heater_server.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/action_server.py to action_server.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/action_client.py to action_client.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/temp_publisher.py to temp_publisher.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/heater_client.py to heater_client.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/heater_server.py to heater_server.cpython-312.pyc
+running install_data
+copying resource/my_package -> /home/collins/ros2_ws/install/my_package/share/ament_index/resource_index/packages
+copying package.xml -> /home/collins/ros2_ws/install/my_package/share/my_package
+running install_egg_info
+Copying ../../build/my_package/my_package.egg-info to /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package-0.0.0-py3.12.egg-info
+running install_scripts
+Installing action_client script to /home/collins/ros2_ws/install/my_package/lib/my_package
+Installing action_server script to /home/collins/ros2_ws/install/my_package/lib/my_package
+Installing heater_client script to /home/collins/ros2_ws/install/my_package/lib/my_package
+Installing heater_server script to /home/collins/ros2_ws/install/my_package/lib/my_package
+Installing temp_publisher script to /home/collins/ros2_ws/install/my_package/lib/my_package
+writing list of installed files to '/home/collins/ros2_ws/build/my_package/install.log'

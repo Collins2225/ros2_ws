@@ -1,0 +1,50 @@
+[INFO] [1791893604.401236881] [avoidance_node]: running algorithm 'braitenberg', goal (3.0, 0.0)
+[braitenberg] t=0.0s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.00
+[INFO] [1791893604.519579030] [avoidance_node]:   0.0 s   position (0.00, 0.00)   goal 3.00 m away
+[braitenberg] t=1.0s left=0.06 right=0.04 ahead=0.15 -> speed=0.17 turn=-0.01
+[braitenberg] t=2.0s left=0.23 right=0.18 ahead=0.46 -> speed=0.11 turn=-0.04
+[INFO] [1791893606.569474624] [avoidance_node]:   2.1 s   position (0.32, -0.00)   goal 2.68 m away
+[braitenberg] t=3.0s left=0.48 right=0.35 ahead=0.66 -> speed=0.07 turn=-0.13
+[braitenberg] t=4.0s left=0.68 right=0.15 ahead=0.78 -> speed=0.04 turn=-0.54
+[INFO] [1791893608.619295734] [avoidance_node]:   4.1 s   position (0.46, -0.02)   goal 2.54 m away
+[braitenberg] t=5.1s left=0.67 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.47
+[braitenberg] t=6.1s left=0.44 right=0.00 ahead=0.00 -> speed=0.20 turn=+0.11
+[INFO] [1791893610.619528447] [avoidance_node]:   6.1 s   position (0.63, -0.28)   goal 2.39 m away
+[braitenberg] t=7.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=+0.95
+[braitenberg] t=8.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=+0.37
+[INFO] [1791893612.619539361] [avoidance_node]:   8.1 s   position (0.93, -0.51)   goal 2.13 m away
+[braitenberg] t=9.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=+0.14
+[braitenberg] t=10.1s left=0.00 right=0.05 ahead=0.00 -> speed=0.20 turn=+0.12
+[INFO] [1791893614.669381812] [avoidance_node]:  10.2 s   position (1.33, -0.46)   goal 1.73 m away
+[braitenberg] t=11.1s left=0.00 right=0.08 ahead=0.08 -> speed=0.18 turn=+0.06
+[braitenberg] t=12.1s left=0.00 right=0.47 ahead=0.00 -> speed=0.20 turn=+0.35
+[INFO] [1791893616.669657613] [avoidance_node]:  12.2 s   position (1.69, -0.32)   goal 1.35 m away
+[braitenberg] t=13.1s left=0.08 right=0.47 ahead=0.00 -> speed=0.20 turn=+0.10
+[braitenberg] t=14.1s left=0.08 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.42
+[INFO] [1791893618.719361479] [avoidance_node]:  14.2 s   position (1.99, -0.05)   goal 1.01 m away
+[braitenberg] t=15.1s left=0.07 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.18
+[braitenberg] t=16.1s left=0.07 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.08
+[INFO] [1791893620.719384995] [avoidance_node]:  16.2 s   position (2.39, -0.00)   goal 0.61 m away
+[braitenberg] t=17.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=+0.01
+[braitenberg] t=18.1s left=0.01 right=0.00 ahead=0.04 -> speed=0.19 turn=-0.00
+[INFO] [1791893622.719703549] [avoidance_node]:  18.2 s   position (2.78, -0.00)   goal 0.22 m away
+[INFO] [1791893623.519153942] [avoidance_node]: GOAL REACHED in 19.0 s
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

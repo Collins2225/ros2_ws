@@ -1,0 +1,50 @@
+[INFO] [1793781616.060852007] [avoidance_node]: running algorithm 'stop_and_turn', goal (4.7, 0.0), pose source 'gyro'
+[INFO] [1793781616.185196359] [avoidance_node]:   0.0 s   position (-0.00, -0.00)   heading -0 deg (wheels alone say 0)   goal 4.70 m away
+[INFO] [1793781618.187219166] [avoidance_node]:   2.0 s   position (0.20, -0.00)   heading 36 deg (wheels alone say 35)   goal 4.50 m away
+[INFO] [1793781620.196854793] [avoidance_node]:   4.0 s   position (0.27, 0.14)   heading 45 deg (wheels alone say 46)   goal 4.43 m away
+[INFO] [1793781622.203843596] [avoidance_node]:   6.0 s   position (0.48, 0.25)   heading 13 deg (wheels alone say 12)   goal 4.23 m away
+[INFO] [1793781624.204659375] [avoidance_node]:   8.0 s   position (0.87, 0.30)   heading 4 deg (wheels alone say -10)   goal 3.84 m away
+[INFO] [1793781626.211845357] [avoidance_node]:  10.0 s   position (1.05, 0.32)   heading 14 deg (wheels alone say 12)   goal 3.66 m away
+[INFO] [1793781628.261350876] [avoidance_node]:  12.1 s   position (1.15, 0.34)   heading -27 deg (wheels alone say -66)   goal 3.56 m away
+[INFO] [1793781630.262506731] [avoidance_node]:  14.1 s   position (1.15, 0.34)   heading -90 deg (wheels alone say -158)   goal 3.56 m away
+[INFO] [1793781632.262619944] [avoidance_node]:  16.1 s   position (1.15, 0.05)   heading -55 deg (wheels alone say -124)   goal 3.55 m away
+[INFO] [1793781634.262734626] [avoidance_node]:  18.1 s   position (1.21, -0.14)   heading -67 deg (wheels alone say -139)   goal 3.49 m away
+[INFO] [1793781636.312696769] [avoidance_node]:  20.1 s   position (1.24, -0.36)   heading -63 deg (wheels alone say -143)   goal 3.48 m away
+[INFO] [1793781638.362498372] [avoidance_node]:  22.2 s   position (1.33, -0.47)   heading -93 deg (wheels alone say -170)   goal 3.40 m away
+[INFO] [1793781640.362729953] [avoidance_node]:  24.2 s   position (1.51, -0.78)   heading -18 deg (wheels alone say -94)   goal 3.28 m away
+[INFO] [1793781642.412873570] [avoidance_node]:  26.2 s   position (1.92, -0.77)   heading 12 deg (wheels alone say -68)   goal 2.89 m away
+[INFO] [1793781644.462388764] [avoidance_node]:  28.3 s   position (2.32, -0.67)   heading 15 deg (wheels alone say -65)   goal 2.47 m away
+[INFO] [1793781646.464667373] [avoidance_node]:  30.3 s   position (2.70, -0.56)   heading 16 deg (wheels alone say -64)   goal 2.08 m away
+[INFO] [1793781648.464814619] [avoidance_node]:  32.2 s   position (3.09, -0.45)   heading 16 deg (wheels alone say -64)   goal 1.68 m away
+[INFO] [1793781650.468635270] [avoidance_node]:  34.2 s   position (3.43, -0.36)   heading 20 deg (wheels alone say -60)   goal 1.32 m away
+[INFO] [1793781652.471086857] [avoidance_node]:  36.2 s   position (3.43, -0.33)   heading 86 deg (wheels alone say 11)   goal 1.31 m away
+[INFO] [1793781654.521195990] [avoidance_node]:  38.3 s   position (3.56, 0.05)   heading 82 deg (wheels alone say -83)   goal 1.14 m away
+[INFO] [1793781656.570782582] [avoidance_node]:  40.4 s   position (3.59, 0.46)   heading 88 deg (wheels alone say -178)   goal 1.20 m away
+[INFO] [1793781658.572633828] [avoidance_node]:  42.4 s   position (3.60, 0.86)   heading 89 deg (wheels alone say 92)   goal 1.40 m away
+[INFO] [1793781660.574085011] [avoidance_node]:  44.4 s   position (3.61, 1.26)   heading 89 deg (wheels alone say -0)   goal 1.67 m away
+[INFO] [1793781662.574320134] [avoidance_node]:  46.4 s   position (3.61, 1.66)   heading 89 deg (wheels alone say -92)   goal 1.99 m away
+[INFO] [1793781664.574578454] [avoidance_node]:  48.4 s   position (3.62, 2.06)   heading 89 deg (wheels alone say 176)   goal 2.33 m away
+[INFO] [1793781666.624167793] [avoidance_node]:  50.4 s   position (3.63, 2.47)   heading 89 deg (wheels alone say 82)   goal 2.69 m away
+[INFO] [1793781668.624185647] [avoidance_node]:  52.4 s   position (3.63, 2.87)   heading 89 deg (wheels alone say -10)   goal 3.06 m away
+[INFO] [1793781670.674251167] [avoidance_node]:  54.5 s   position (3.64, 3.28)   heading 89 deg (wheels alone say -103)   goal 3.45 m away
+[INFO] [1793781672.675567801] [avoidance_node]:  56.5 s   position (3.64, 3.68)   heading 89 deg (wheels alone say 165)   goal 3.83 m away
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

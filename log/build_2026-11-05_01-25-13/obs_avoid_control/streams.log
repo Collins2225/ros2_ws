@@ -1,0 +1,20 @@
+[0.998s] Invoking command in '/home/collins/ros2_ws/build/obs_avoid_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/collins/ros2_ws/build/obs_avoid_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/collins/ros2_ws/build/obs_avoid_control/build --no-deps symlink_data
+[1.280s] running develop
+[1.465s] running egg_info
+[1.484s] writing obs_avoid_control.egg-info/PKG-INFO
+[1.484s] writing dependency_links to obs_avoid_control.egg-info/dependency_links.txt
+[1.484s] writing entry points to obs_avoid_control.egg-info/entry_points.txt
+[1.484s] writing requirements to obs_avoid_control.egg-info/requires.txt
+[1.484s] writing top-level names to obs_avoid_control.egg-info/top_level.txt
+[1.520s] reading manifest file 'obs_avoid_control.egg-info/SOURCES.txt'
+[1.521s] writing manifest file 'obs_avoid_control.egg-info/SOURCES.txt'
+[1.540s] running build_ext
+[1.540s] Creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs-avoid-control.egg-link (link to .)
+[1.541s] Installing avoidance_node script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+[1.541s] Installing hello_robot script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+[1.541s] Installing judge script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+[1.541s] Installing sweep_scanner script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+[1.541s] 
+[1.542s] Installed /home/collins/ros2_ws/build/obs_avoid_control
+[1.542s] running symlink_data
+[1.567s] Invoked command in '/home/collins/ros2_ws/build/obs_avoid_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/collins/ros2_ws/build/obs_avoid_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/collins/ros2_ws/build/obs_avoid_control/build --no-deps symlink_data

@@ -1,0 +1,44 @@
+[INFO] [1792282253.266296374] [judge]: referee started for 'potential_field_s3'
+[INFO] [1792282253.268053327] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1792282255.675047967] [judge]: robot started moving - the clock is running
+[INFO] [1792282255.675733544] [judge]:   0.0 s  true position (0.02, 0.00)  closest gap 0.72 m
+[INFO] [1792282260.675976991] [judge]:   5.0 s  true position (0.43, -0.02)  closest gap 0.28 m
+[INFO] [1792282265.696197945] [judge]:  10.0 s  true position (0.51, 0.09)  closest gap 0.20 m
+[INFO] [1792282270.715909790] [judge]:  15.0 s  true position (0.63, 0.21)  closest gap 0.14 m
+[INFO] [1792282275.735803391] [judge]:  20.1 s  true position (0.87, 0.43)  closest gap 0.16 m
+[INFO] [1792282280.735831208] [judge]:  25.1 s  true position (1.20, 0.50)  closest gap 0.22 m
+[INFO] [1792282285.735864832] [judge]:  30.1 s  true position (1.22, 0.46)  closest gap 0.24 m
+[INFO] [1792282290.755829672] [judge]:  35.1 s  true position (1.27, 0.38)  closest gap 0.17 m
+[INFO] [1792282295.775994027] [judge]:  40.1 s  true position (1.61, 0.14)  closest gap 0.17 m
+[INFO] [1792282300.795836743] [judge]:  45.1 s  true position (2.08, 0.04)  closest gap 0.30 m
+[INFO] [1792282305.076019433] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1792282305.076360819] [judge]:  label            : potential_field_s3
+[INFO] [1792282305.076631705] [judge]:  outcome          : SUCCESS
+[INFO] [1792282305.076992999] [judge]:  time             : 49.4 s
+[INFO] [1792282305.077278551] [judge]:  distance driven  : 3.65 m   (straight line would be 3.00 m)
+[INFO] [1792282305.077550799] [judge]:  path efficiency  : 0.78
+[INFO] [1792282305.077836332] [judge]:  collisions       : 0
+[INFO] [1792282305.078109501] [judge]:  closest approach : 0.088 m   (box_1 at 18.7 s, robot at (0.81, 0.36))
+[INFO] [1792282305.078380216] [judge]:  final goal dist  : 0.15 m
+[INFO] [1792282305.078648496] [judge]: ============================================
+[INFO] [1792282305.084315947] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/potential_field_s3_20261018_031145.csv
+[INFO] [1792282305.084687350] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 245, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

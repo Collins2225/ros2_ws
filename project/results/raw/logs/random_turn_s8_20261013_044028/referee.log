@@ -1,0 +1,39 @@
+[INFO] [1791855644.326906305] [judge]: referee started for 'random_turn_s8'
+[INFO] [1791855644.328307377] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791855646.960437712] [judge]: robot started moving - the clock is running
+[INFO] [1791855646.961090840] [judge]:   0.0 s  true position (0.02, -0.00)  closest gap 0.72 m
+[INFO] [1791855651.980450244] [judge]:   5.0 s  true position (0.54, -0.21)  closest gap 0.18 m
+[INFO] [1791855656.980465630] [judge]:  10.0 s  true position (1.51, -0.20)  closest gap 0.25 m
+[INFO] [1791855661.980502437] [judge]:  15.0 s  true position (2.49, 0.01)  closest gap 0.31 m
+[INFO] [1791855667.000616739] [judge]:  20.0 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855672.020541119] [judge]:  25.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855677.020759824] [judge]:  30.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855682.040930765] [judge]:  35.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855687.060444765] [judge]:  40.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855692.060461292] [judge]:  45.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855697.080443435] [judge]:  50.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855702.080533645] [judge]:  55.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855707.080584647] [judge]:  60.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855712.100676039] [judge]:  65.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855717.101273427] [judge]:  70.1 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855722.120670389] [judge]:  75.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855727.120740076] [judge]:  80.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855732.140586252] [judge]:  85.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855737.140699713] [judge]:  90.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855742.160499525] [judge]:  95.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855747.180506220] [judge]: 100.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855752.201017396] [judge]: 105.2 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855757.220693183] [judge]: 110.3 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855762.240753622] [judge]: 115.3 s  true position (2.85, 0.09)  closest gap 0.48 m
+[INFO] [1791855766.980417565] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791855766.980758843] [judge]:  label            : random_turn_s8
+[INFO] [1791855766.981057601] [judge]:  outcome          : TIMEOUT
+[INFO] [1791855766.981316625] [judge]:  time             : 120.0 s
+[INFO] [1791855766.981567995] [judge]:  distance driven  : 3.07 m   (straight line would be 3.00 m)
+[INFO] [1791855766.981846605] [judge]:  path efficiency  : 0.93
+[INFO] [1791855766.982126088] [judge]:  collisions       : 0
+[INFO] [1791855766.982379351] [judge]:  closest approach : 0.039 m   (box_1 at 8.1 s, robot at (1.13, -0.28))
+[INFO] [1791855766.982626873] [judge]:  final goal dist  : 0.18 m
+[INFO] [1791855766.982905965] [judge]: ============================================
+[INFO] [1791855766.985143266] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/random_turn_s8_20261013_044246.csv
+[INFO] [1791855766.985506775] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.

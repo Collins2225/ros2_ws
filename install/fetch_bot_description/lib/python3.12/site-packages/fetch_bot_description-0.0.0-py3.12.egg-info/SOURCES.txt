@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+../../build/fetch_bot_description/fetch_bot_description.egg-info/PKG-INFO
+../../build/fetch_bot_description/fetch_bot_description.egg-info/SOURCES.txt
+../../build/fetch_bot_description/fetch_bot_description.egg-info/dependency_links.txt
+../../build/fetch_bot_description/fetch_bot_description.egg-info/requires.txt
+../../build/fetch_bot_description/fetch_bot_description.egg-info/top_level.txt
+../../build/fetch_bot_description/fetch_bot_description.egg-info/zip-safe
+fetch_bot_description/__init__.py
+resource/fetch_bot_description
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

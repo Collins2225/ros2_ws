@@ -1,0 +1,49 @@
+[INFO] [launch]: All log files can be found below /home/collins/.ros/log/2026-10-12-14-40-13-998873-collins-ASUS-TUF-Gaming-A15-FA507NV-FA507NV-64678
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [64687]
+[INFO] [robot_state_publisher-2]: process started with pid [64688]
+[INFO] [create-3]: process started with pid [64689]
+[INFO] [parameter_bridge-4]: process started with pid [64690]
+[robot_state_publisher-2] [INFO] [1791805214.494654397] [robot_state_publisher]: Robot initialized
+[create-3] [INFO] [1791805214.498742607] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-4] [INFO] [1791805214.512352391] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791805214.513348158] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791805214.514806213] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791805214.515994743] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791805214.517119150] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791805214.518156980] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/sonar (gz.msgs.LaserScan) -> /sonar (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791805214.518499993] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/servo_cmd (std_msgs/msg/Float64) -> /servo_cmd (gz.msgs.Double)] (Lazy 0)
+[create-3] [INFO] [1791805215.061035661] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-3] [INFO] [1791805215.073036330] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-3]: process has finished cleanly [pid 64689]
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 95: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 96: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 95: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 96: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<data-string>:L226]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 62: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 63: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 62: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 63: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[parameter_bridge-4] [INFO] [1791805221.185692237] [ros_gz_bridge]: Passing message from ROS std_msgs/msg/Float64 to Gazebo gz.msgs.Double (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1791805226.776177381] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-2] [INFO] [1791805226.776198572] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-4]: process has finished cleanly [pid 64690]
+[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 64688]

@@ -1,0 +1,15 @@
+[random_turn] seed = 1
+[INFO] [1792673774.607635668] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0), pose source 'gyro'
+[WARN] [1792673774.610432889] [avoidance_node]: waiting for /odom and /imu ...
+[INFO] [1792673774.722306582] [avoidance_node]:   0.0 s   position (0.00, -0.00)   heading -0 deg (wheels alone say 0)   goal 3.00 m away
+[INFO] [1792673776.771675384] [avoidance_node]:   2.1 s   position (0.38, -0.00)   heading 0 deg (wheels alone say 0)   goal 2.62 m away
+[random_turn] t=2.4s blocked at 0.31 m -> dice: turn RIGHT for 98 deg (about 2.1 s)
+[INFO] [1792673778.821680433] [avoidance_node]:   4.1 s   position (0.46, 0.00)   heading -75 deg (wheels alone say -77)   goal 2.54 m away
+[INFO] [1792673780.871578340] [avoidance_node]:   6.2 s   position (0.50, -0.28)   heading -48 deg (wheels alone say -51)   goal 2.51 m away
+[INFO] [1792673782.872483947] [avoidance_node]:   8.2 s   position (0.87, -0.39)   heading 3 deg (wheels alone say 1)   goal 2.16 m away
+[INFO] [1792673784.873689639] [avoidance_node]:  10.2 s   position (1.27, -0.33)   heading 10 deg (wheels alone say 7)   goal 1.76 m away
+[INFO] [1792673786.923809604] [avoidance_node]:  12.2 s   position (1.67, -0.26)   heading 11 deg (wheels alone say 7)   goal 1.35 m away
+[INFO] [1792673788.973111781] [avoidance_node]:  14.3 s   position (2.07, -0.18)   heading 11 deg (wheels alone say 7)   goal 0.95 m away
+[INFO] [1792673790.974772349] [avoidance_node]:  16.3 s   position (2.47, -0.10)   heading 11 deg (wheels alone say 7)   goal 0.54 m away
+[INFO] [1792673793.024580427] [avoidance_node]:  18.3 s   position (2.87, -0.03)   heading 11 deg (wheels alone say 7)   goal 0.14 m away
+[INFO] [1792673793.224331568] [avoidance_node]: GOAL REACHED in 18.5 s (the brain believes: x=2.91 y=-0.02 heading=11 deg)

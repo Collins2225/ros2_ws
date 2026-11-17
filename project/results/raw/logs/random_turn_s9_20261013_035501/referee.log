@@ -1,0 +1,37 @@
+[INFO] [1791852917.934471331] [judge]: referee started for 'random_turn_s9'
+[INFO] [1791852917.935796897] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791852920.392164001] [judge]: robot started moving - the clock is running
+[INFO] [1791852920.392725862] [judge]:   0.0 s  true position (0.02, -0.00)  closest gap 0.72 m
+[INFO] [1791852925.412522064] [judge]:   5.0 s  true position (0.51, 0.05)  closest gap 0.21 m
+[WARN] [1791852926.812377184] [judge]: TOUCH! at 6.4 s, position (0.74, 0.21)
+[INFO] [1791852926.812820221] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791852926.813095484] [judge]:  label            : random_turn_s9
+[INFO] [1791852926.813418365] [judge]:  outcome          : COLLISION
+[INFO] [1791852926.813805707] [judge]:  time             : 6.4 s
+[INFO] [1791852926.814072082] [judge]:  distance driven  : 0.85 m   (straight line would be 3.00 m)
+[INFO] [1791852926.814367376] [judge]:  path efficiency  : 1.00
+[INFO] [1791852926.814762996] [judge]:  collisions       : 1
+[INFO] [1791852926.815030944] [judge]:  closest approach : 0.000 m   (box_1 at 6.4 s, robot at (0.74, 0.21))
+[INFO] [1791852926.815307280] [judge]:  final goal dist  : 2.27 m
+[INFO] [1791852926.815719192] [judge]: ============================================
+[INFO] [1791852926.816451210] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/random_turn_s9_20261013_035526.csv
+[INFO] [1791852926.816908896] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 245, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

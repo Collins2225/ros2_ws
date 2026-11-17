@@ -1,0 +1,39 @@
+[INFO] [1792673511.893681469] [avoidance_node]: running algorithm 'potential_field', goal (3.0, 0.0), pose source 'gyro'
+[INFO] [1792673514.116978082] [avoidance_node]:   0.0 s   position (0.00, -0.00)   heading -0 deg (wheels alone say -0)   goal 3.00 m away
+[INFO] [1792673516.133561167] [avoidance_node]:   2.0 s   position (0.34, 0.00)   heading 0 deg (wheels alone say -0)   goal 2.66 m away
+[INFO] [1792673518.133652734] [avoidance_node]:   4.0 s   position (0.44, 0.01)   heading -21 deg (wheels alone say -19)   goal 2.56 m away
+[INFO] [1792673520.135106011] [avoidance_node]:   6.0 s   position (0.44, 0.01)   heading -87 deg (wheels alone say -88)   goal 2.56 m away
+[INFO] [1792673522.136441948] [avoidance_node]:   8.0 s   position (0.46, -0.04)   heading -56 deg (wheels alone say -57)   goal 2.54 m away
+[INFO] [1792673524.137248860] [avoidance_node]:  10.0 s   position (0.48, -0.06)   heading -110 deg (wheels alone say -109)   goal 2.52 m away
+[INFO] [1792673526.137839405] [avoidance_node]:  12.0 s   position (0.49, -0.09)   heading -62 deg (wheels alone say -65)   goal 2.51 m away
+[INFO] [1792673528.187294600] [avoidance_node]:  14.0 s   position (0.50, -0.11)   heading -124 deg (wheels alone say -123)   goal 2.50 m away
+[INFO] [1792673530.189347185] [avoidance_node]:  16.0 s   position (0.51, -0.14)   heading -60 deg (wheels alone say -63)   goal 2.49 m away
+[INFO] [1792673532.238253277] [avoidance_node]:  18.1 s   position (0.70, -0.27)   heading -33 deg (wheels alone say -34)   goal 2.32 m away
+[INFO] [1792673534.239951525] [avoidance_node]:  20.1 s   position (0.70, -0.27)   heading -83 deg (wheels alone say -86)   goal 2.32 m away
+[INFO] [1792673536.289889417] [avoidance_node]:  22.1 s   position (0.86, -0.40)   heading -18 deg (wheels alone say -18)   goal 2.18 m away
+[INFO] [1792673538.289931341] [avoidance_node]:  24.1 s   position (1.25, -0.42)   heading 8 deg (wheels alone say 4)   goal 1.80 m away
+[INFO] [1792673540.290186855] [avoidance_node]:  26.1 s   position (1.61, -0.35)   heading 18 deg (wheels alone say 14)   goal 1.44 m away
+[INFO] [1792673542.340022836] [avoidance_node]:  28.2 s   position (1.84, -0.14)   heading 36 deg (wheels alone say 33)   goal 1.17 m away
+[INFO] [1792673544.389847636] [avoidance_node]:  30.2 s   position (2.21, -0.02)   heading 6 deg (wheels alone say 4)   goal 0.79 m away
+[INFO] [1792673546.439716729] [avoidance_node]:  32.3 s   position (2.62, -0.00)   heading 1 deg (wheels alone say -1)   goal 0.38 m away
+[INFO] [1792673547.939652944] [avoidance_node]: GOAL REACHED in 33.8 s (the brain believes: x=2.90 y=0.00 heading=0 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+[ERROR] [1792673697.701409945] [rclpy.signals]: rcl_trigger_guard_condition() failed: guard condition handle not from this implementation, at ./src/rmw_trigger_guard_condition.cpp:34, at ./src/rcl/guard_condition.c:161

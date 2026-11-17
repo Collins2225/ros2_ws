@@ -1,0 +1,15 @@
+[INFO] [1793343909.235674114] [avoidance_node]: running algorithm 'braitenberg', goal (4.7, 0.0), pose source 'gyro'
+[INFO] [1793343909.335674777] [avoidance_node]:   0.0 s   position (0.00, -0.00)   heading 0 deg (wheels alone say -0)   goal 4.70 m away
+[INFO] [1793343911.385457970] [avoidance_node]:   2.1 s   position (0.38, -0.09)   heading -19 deg (wheels alone say -17)   goal 4.32 m away
+[INFO] [1793343913.385575653] [avoidance_node]:   4.1 s   position (0.75, -0.18)   heading -10 deg (wheels alone say -9)   goal 3.95 m away
+[INFO] [1793343915.435528589] [avoidance_node]:   6.1 s   position (0.99, -0.19)   heading 18 deg (wheels alone say 16)   goal 3.72 m away
+[INFO] [1793343917.485517631] [avoidance_node]:   8.1 s   position (1.31, -0.01)   heading 29 deg (wheels alone say 27)   goal 3.39 m away
+[INFO] [1793343919.485722040] [avoidance_node]:  10.2 s   position (1.69, 0.07)   heading 8 deg (wheels alone say 7)   goal 3.01 m away
+[INFO] [1793343921.485751617] [avoidance_node]:  12.2 s   position (2.09, 0.11)   heading -0 deg (wheels alone say -0)   goal 2.61 m away
+[INFO] [1793343923.535532739] [avoidance_node]:  14.2 s   position (2.49, 0.17)   heading 15 deg (wheels alone say 13)   goal 2.21 m away
+[INFO] [1793343925.535843891] [avoidance_node]:  16.2 s   position (2.89, 0.25)   heading 10 deg (wheels alone say 8)   goal 1.83 m away
+[INFO] [1793343927.585725247] [avoidance_node]:  18.2 s   position (3.29, 0.30)   heading 3 deg (wheels alone say 2)   goal 1.44 m away
+[INFO] [1793343929.635709203] [avoidance_node]:  20.3 s   position (3.70, 0.30)   heading -2 deg (wheels alone say -2)   goal 1.04 m away
+[INFO] [1793343931.685614649] [avoidance_node]:  22.4 s   position (4.10, 0.22)   heading -22 deg (wheels alone say -20)   goal 0.63 m away
+[INFO] [1793343933.735602227] [avoidance_node]:  24.4 s   position (4.48, 0.07)   heading -19 deg (wheels alone say -17)   goal 0.23 m away
+[INFO] [1793343934.385380136] [avoidance_node]: GOAL REACHED in 25.1 s (the brain believes: x=4.60 y=0.02 heading=-23 deg)

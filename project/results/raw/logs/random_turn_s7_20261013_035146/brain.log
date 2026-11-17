@@ -1,0 +1,41 @@
+[random_turn] seed = 7
+[INFO] [1791852724.528532000] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791852724.910902538] [avoidance_node]:   0.0 s   position (-0.00, -0.00)   goal 3.00 m away
+[random_turn] t=2.0s blocked at 0.38 m -> dice: turn LEFT for 144 deg (about 3.1 s)
+[INFO] [1791852726.960527883] [avoidance_node]:   2.0 s   position (0.38, -0.00)   goal 2.62 m away
+[INFO] [1791852728.960693686] [avoidance_node]:   4.1 s   position (0.38, 0.00)   goal 2.62 m away
+[INFO] [1791852730.960793562] [avoidance_node]:   6.0 s   position (0.31, 0.14)   goal 2.69 m away
+[INFO] [1791852733.010512541] [avoidance_node]:   8.1 s   position (0.54, 0.43)   goal 2.50 m away
+[INFO] [1791852735.010769391] [avoidance_node]:  10.1 s   position (0.94, 0.42)   goal 2.11 m away
+[random_turn] t=10.5s blocked at 0.36 m -> dice: turn LEFT for 108 deg (about 2.4 s)
+[INFO] [1791852737.060590624] [avoidance_node]:  12.2 s   position (1.02, 0.41)   goal 2.02 m away
+[random_turn] t=12.9s blocked at 0.33 m -> dice: turn RIGHT for 129 deg (about 2.8 s)
+[INFO] [1791852739.060588285] [avoidance_node]:  14.2 s   position (1.02, 0.41)   goal 2.02 m away
+[random_turn] t=15.8s blocked at 0.33 m -> dice: turn RIGHT for 74 deg (about 1.6 s)
+[INFO] [1791852741.061128960] [avoidance_node]:  16.1 s   position (1.02, 0.41)   goal 2.02 m away
+[INFO] [1791852743.061769856] [avoidance_node]:  18.1 s   position (0.97, 0.29)   goal 2.05 m away
+[INFO] [1791852745.061772683] [avoidance_node]:  20.1 s   position (1.16, -0.02)   goal 1.84 m away
+[INFO] [1791852747.111720241] [avoidance_node]:  22.2 s   position (1.56, -0.07)   goal 1.44 m away
+[INFO] [1791852749.111773923] [avoidance_node]:  24.2 s   position (1.96, -0.06)   goal 1.04 m away
+[INFO] [1791852751.111874185] [avoidance_node]:  26.2 s   position (2.36, -0.04)   goal 0.64 m away
+[random_turn] t=27.3s blocked at 0.40 m -> dice: turn RIGHT for 139 deg (about 3.0 s)
+[INFO] [1791852753.161747884] [avoidance_node]:  28.2 s   position (2.59, -0.03)   goal 0.41 m away
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

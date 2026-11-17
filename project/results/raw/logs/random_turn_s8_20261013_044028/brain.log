@@ -1,0 +1,32 @@
+[random_turn] seed = 8
+[INFO] [1791855646.353170822] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791855646.750654707] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   goal 3.00 m away
+[INFO] [1791855648.801192802] [avoidance_node]:   2.0 s   position (0.39, -0.00)   goal 2.61 m away
+[random_turn] t=2.2s blocked at 0.36 m -> dice: turn RIGHT for 74 deg (about 1.6 s)
+[INFO] [1791855650.850584206] [avoidance_node]:   4.1 s   position (0.42, -0.03)   goal 2.58 m away
+[INFO] [1791855652.900587699] [avoidance_node]:   6.2 s   position (0.69, -0.29)   goal 2.33 m away
+[INFO] [1791855654.950508343] [avoidance_node]:   8.2 s   position (1.10, -0.29)   goal 1.92 m away
+[INFO] [1791855656.950518287] [avoidance_node]:  10.2 s   position (1.50, -0.23)   goal 1.52 m away
+[INFO] [1791855658.950570918] [avoidance_node]:  12.2 s   position (1.89, -0.17)   goal 1.12 m away
+[INFO] [1791855661.000545009] [avoidance_node]:  14.3 s   position (2.30, -0.11)   goal 0.71 m away
+[INFO] [1791855663.000596084] [avoidance_node]:  16.2 s   position (2.69, -0.05)   goal 0.31 m away
+[INFO] [1791855663.800500832] [avoidance_node]: GOAL REACHED in 17.0 s
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

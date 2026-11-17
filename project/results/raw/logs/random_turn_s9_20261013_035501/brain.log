@@ -1,0 +1,28 @@
+[random_turn] seed = 9
+[INFO] [1791852920.027726699] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791852920.172928360] [avoidance_node]:   0.0 s   position (0.00, 0.00)   goal 3.00 m away
+[INFO] [1791852922.222408851] [avoidance_node]:   2.1 s   position (0.39, 0.00)   goal 2.61 m away
+[random_turn] t=2.4s blocked at 0.30 m -> dice: turn LEFT for 104 deg (about 2.3 s)
+[INFO] [1791852924.272590533] [avoidance_node]:   4.1 s   position (0.47, 0.00)   goal 2.53 m away
+[INFO] [1791852926.322387717] [avoidance_node]:   6.2 s   position (0.57, 0.22)   goal 2.44 m away
+[random_turn] t=7.4s blocked at 0.24 m -> dice: turn LEFT for 47 deg (about 1.0 s)
+[INFO] [1791852928.322513285] [avoidance_node]:   8.2 s   position (0.80, 0.30)   goal 2.22 m away
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

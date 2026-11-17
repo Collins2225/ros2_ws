@@ -1,0 +1,14 @@
+[random_turn] seed = 5
+[INFO] [1791852131.863379948] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791852132.651580775] [avoidance_node]:   0.0 s   position (0.00, 0.00)   goal 3.00 m away
+[random_turn] t=2.0s blocked at 0.39 m -> dice: turn LEFT for 119 deg (about 2.6 s)
+[INFO] [1791852134.701600844] [avoidance_node]:   2.1 s   position (0.37, -0.00)   goal 2.63 m away
+[INFO] [1791852136.701746933] [avoidance_node]:   4.1 s   position (0.37, 0.00)   goal 2.63 m away
+[INFO] [1791852138.751553990] [avoidance_node]:   6.1 s   position (0.44, 0.26)   goal 2.58 m away
+[INFO] [1791852140.751623124] [avoidance_node]:   8.1 s   position (0.82, 0.35)   goal 2.21 m away
+[INFO] [1791852142.802244739] [avoidance_node]:  10.2 s   position (1.22, 0.31)   goal 1.80 m away
+[INFO] [1791852144.851512434] [avoidance_node]:  12.2 s   position (1.63, 0.24)   goal 1.40 m away
+[INFO] [1791852146.851667426] [avoidance_node]:  14.2 s   position (2.02, 0.17)   goal 0.99 m away
+[INFO] [1791852148.851686387] [avoidance_node]:  16.2 s   position (2.42, 0.10)   goal 0.59 m away
+[INFO] [1791852150.855210206] [avoidance_node]:  18.2 s   position (2.81, 0.03)   goal 0.19 m away
+[INFO] [1791852151.105105659] [avoidance_node]: GOAL REACHED in 18.5 s

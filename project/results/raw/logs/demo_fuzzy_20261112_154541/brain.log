@@ -1,0 +1,26 @@
+[INFO] [1794487568.427241468] [avoidance_node]: running algorithm 'fuzzy', goal (4.7, 0.0), pose source 'gyro'
+[WARN] [1794487568.756715241] [avoidance_node]: waiting for /odom and /imu ...
+[INFO] [1794487568.783142476] [avoidance_node]:   0.0 s   position (0.00, 0.00)   heading -0 deg (wheels alone say 0)   goal 4.70 m away
+[INFO] [1794487570.783357918] [avoidance_node]:   2.0 s   position (0.19, -0.04)   heading -40 deg (wheels alone say -39)   goal 4.51 m away
+[INFO] [1794487572.833432007] [avoidance_node]:   4.1 s   position (0.33, -0.31)   heading -58 deg (wheels alone say -59)   goal 4.38 m away
+[INFO] [1794487574.834552309] [avoidance_node]:   6.1 s   position (0.55, -0.58)   heading -51 deg (wheels alone say -51)   goal 4.19 m away
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

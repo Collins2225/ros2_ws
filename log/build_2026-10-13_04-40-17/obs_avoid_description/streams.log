@@ -1,0 +1,48 @@
+[0.019s] Invoking command in '/home/collins/ros2_ws/build/obs_avoid_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/collins/ros2_ws/install/obs_avoid_control:/home/collins/warehouse_robot_ws/install/warehouse_robot_control:/home/collins/multi_robot_slam_ws/install/ros2_basics:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/collins/ros2_ws/src/obs_avoid_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/collins/ros2_ws/install/obs_avoid_description
+[0.086s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.327s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.416s] -- Configuring done (0.4s)
+[0.426s] -- Generating done (0.0s)
+[0.428s] -- Build files have been written to: /home/collins/ros2_ws/build/obs_avoid_description
+[0.431s] Invoked command in '/home/collins/ros2_ws/build/obs_avoid_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/collins/ros2_ws/install/obs_avoid_control:/home/collins/warehouse_robot_ws/install/warehouse_robot_control:/home/collins/multi_robot_slam_ws/install/ros2_basics:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/collins/ros2_ws/src/obs_avoid_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/collins/ros2_ws/install/obs_avoid_description
+[0.433s] Invoking command in '/home/collins/ros2_ws/build/obs_avoid_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/collins/ros2_ws/install/obs_avoid_control:/home/collins/warehouse_robot_ws/install/warehouse_robot_control:/home/collins/multi_robot_slam_ws/install/ros2_basics:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/collins/ros2_ws/build/obs_avoid_description -- -j16 -l16
+[0.476s] Invoked command in '/home/collins/ros2_ws/build/obs_avoid_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/collins/ros2_ws/install/obs_avoid_control:/home/collins/warehouse_robot_ws/install/warehouse_robot_control:/home/collins/multi_robot_slam_ws/install/ros2_basics:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/collins/ros2_ws/build/obs_avoid_description -- -j16 -l16
+[0.486s] Invoking command in '/home/collins/ros2_ws/build/obs_avoid_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/collins/ros2_ws/install/obs_avoid_control:/home/collins/warehouse_robot_ws/install/warehouse_robot_control:/home/collins/multi_robot_slam_ws/install/ros2_basics:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/collins/ros2_ws/build/obs_avoid_description
+[0.494s] -- Install configuration: ""
+[0.495s] -- Execute custom install script
+[0.495s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/urdf/obs_avoid.urdf
+[0.506s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/urdf/obs_avoid_gz.urdf
+[0.515s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/base_arduino.stl
+[0.524s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/base_battery.stl
+[0.534s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/base_chassis.stl
+[0.543s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/base_motors.stl
+[0.553s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/base_servo.stl
+[0.562s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/bracket.stl
+[0.570s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/sonar_body.stl
+[0.579s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/sonar_transducers.stl
+[0.588s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/wheel_left_rim.stl
+[0.597s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/wheel_left_tyre.stl
+[0.607s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/wheel_right_rim.stl
+[0.616s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/meshes/wheel_right_tyre.stl
+[0.626s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/launch/__pycache__/display.launch.cpython-312.pyc
+[0.635s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/launch/__pycache__/sim.launch.cpython-312.pyc
+[0.644s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/launch/display.launch.py
+[0.653s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/launch/sim.launch.py
+[0.661s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/gazebo/plugins_gz_sim.xml
+[0.670s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/worlds/obstacle_course.sdf
+[0.679s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/ament_index/resource_index/package_run_dependencies/obs_avoid_description
+[0.691s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/ament_index/resource_index/parent_prefix_path/obs_avoid_description
+[0.700s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/environment/ament_prefix_path.sh
+[0.710s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/environment/ament_prefix_path.dsv
+[0.720s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/environment/path.sh
+[0.729s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/environment/path.dsv
+[0.738s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/local_setup.bash
+[0.747s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/local_setup.sh
+[0.755s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/local_setup.zsh
+[0.763s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/local_setup.dsv
+[0.772s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/package.dsv
+[0.782s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/ament_index/resource_index/packages/obs_avoid_description
+[0.791s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/cmake/obs_avoid_descriptionConfig.cmake
+[0.800s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/cmake/obs_avoid_descriptionConfig-version.cmake
+[0.810s] -- Symlinking: /home/collins/ros2_ws/install/obs_avoid_description/share/obs_avoid_description/package.xml
+[0.821s] Invoked command in '/home/collins/ros2_ws/build/obs_avoid_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/collins/ros2_ws/install/obs_avoid_control:/home/collins/warehouse_robot_ws/install/warehouse_robot_control:/home/collins/multi_robot_slam_ws/install/ros2_basics:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/collins/ros2_ws/build/obs_avoid_description

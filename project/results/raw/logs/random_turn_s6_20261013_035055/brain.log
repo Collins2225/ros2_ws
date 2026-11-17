@@ -1,0 +1,23 @@
+[random_turn] seed = 6
+[INFO] [1791852673.507815523] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791852673.917989977] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   goal 3.00 m away
+[INFO] [1791852675.918281675] [avoidance_node]:   2.0 s   position (0.38, 0.00)   goal 2.62 m away
+[random_turn] t=2.2s blocked at 0.35 m -> dice: turn RIGHT for 88 deg (about 1.9 s)
+[INFO] [1791852677.967930565] [avoidance_node]:   4.1 s   position (0.42, -0.00)   goal 2.58 m away
+[random_turn] t=4.2s blocked at 0.34 m -> dice: turn LEFT for 34 deg (about 0.8 s)
+[INFO] [1791852679.968028632] [avoidance_node]:   6.1 s   position (0.54, -0.15)   goal 2.46 m away
+[random_turn] t=6.2s blocked at 0.15 m -> dice: turn RIGHT for 110 deg (about 2.4 s)
+[INFO] [1791852682.017943866] [avoidance_node]:   8.1 s   position (0.57, -0.16)   goal 2.43 m away
+[INFO] [1791852684.018044145] [avoidance_node]:  10.1 s   position (0.44, -0.39)   goal 2.59 m away
+[INFO] [1791852686.067891311] [avoidance_node]:  12.2 s   position (0.70, -0.65)   goal 2.39 m away
+[INFO] [1791852688.067945161] [avoidance_node]:  14.2 s   position (1.09, -0.60)   goal 2.00 m away
+[random_turn] t=15.4s blocked at 0.34 m -> dice: turn LEFT for 146 deg (about 3.2 s)
+[INFO] [1791852690.068022073] [avoidance_node]:  16.2 s   position (1.34, -0.53)   goal 1.74 m away
+[INFO] [1791852692.117888402] [avoidance_node]:  18.2 s   position (1.34, -0.53)   goal 1.74 m away
+[INFO] [1791852694.167945685] [avoidance_node]:  20.2 s   position (1.21, -0.28)   goal 1.82 m away
+[INFO] [1791852696.217878578] [avoidance_node]:  22.3 s   position (1.49, -0.02)   goal 1.51 m away
+[INFO] [1791852698.217887206] [avoidance_node]:  24.3 s   position (1.89, 0.02)   goal 1.11 m away
+[INFO] [1791852700.217947888] [avoidance_node]:  26.3 s   position (2.29, 0.02)   goal 0.71 m away
+[random_turn] t=27.6s blocked at 0.27 m -> dice: turn LEFT for 68 deg (about 1.5 s)
+[INFO] [1791852702.267914187] [avoidance_node]:  28.4 s   position (2.55, 0.01)   goal 0.45 m away
+[random_turn] t=29.1s blocked at 0.25 m -> dice: turn RIGHT for 63 deg (about 1.4 s)

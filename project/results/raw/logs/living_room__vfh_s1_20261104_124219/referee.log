@@ -1,0 +1,31 @@
+[INFO] [1793785355.397344551] [judge]: obstacles from /home/collins/ros2_ws/project/scenarios/living_room.json: 42 objects
+[INFO] [1793785355.779321927] [judge]: referee started for 'living_room__vfh_s1'
+[INFO] [1793785355.783650712] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1793785362.323594866] [judge]: robot started moving - the clock is running
+[INFO] [1793785362.325057903] [judge]:   0.0 s  true position (0.02, -0.01)  closest gap 0.44 m
+[INFO] [1793785367.344790279] [judge]:   5.0 s  true position (0.37, -0.67)  closest gap 0.32 m
+[INFO] [1793785372.345928478] [judge]:  10.0 s  true position (1.01, -0.96)  closest gap 0.26 m
+[INFO] [1793785377.365808314] [judge]:  15.0 s  true position (1.50, -0.99)  closest gap 0.32 m
+[INFO] [1793785382.372527039] [judge]:  20.0 s  true position (1.61, -1.03)  closest gap 0.37 m
+[INFO] [1793785387.373084094] [judge]:  25.0 s  true position (2.36, -1.53)  closest gap 0.27 m
+[INFO] [1793785392.383258764] [judge]:  30.0 s  true position (3.07, -1.41)  closest gap 0.26 m
+[INFO] [1793785397.384203902] [judge]:  35.0 s  true position (3.30, -1.23)  closest gap 0.43 m
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 253, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

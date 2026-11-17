@@ -1,0 +1,763 @@
+#!/usr/bin/env python3
+"""make_world.py  - builds the living-room test world from ONE layout.
+
+    python3 make_world.py            writes living_room.sdf and living_room.json next to this file
+    python3 make_world.py --check    also checks the room (no overlaps, a route exists) and draws living_room.png
+
+Why one layout?  The Gazebo world and the referee must agree about where every object is.
+Both files are produced from the furniture list below, so they cannot disagree.
+
+Coordinates: metres. The robot starts at (0, 0) facing +x (forward). +y is to the left.
+"""
+import json
+import math
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+NAME = 'living_room'
+GOAL = (4.7, 0.0)
+TIMEOUT = 150.0            # seconds; the old arena used 120
+OVERHEAD = 0.20            # a part whose underside is higher than this does not touch a low robot
+
+# How wide the room is (the y direction, left-right when you look along the robot's start direction).
+# 4.0 = the first living room.  6.0 = the wider house (default).  Change it here, or for one run:
+#     ROOM_WIDTH=5 python3 make_world.py --check
+ROOM_WIDTH = float(os.environ.get('ROOM_WIDTH', '6.0'))
+if not 4.0 <= ROOM_WIDTH <= 10.0:
+    sys.exit('ROOM_WIDTH must be between 4 and 10 metres')
+# ROOM_CLUTTER=1 (default): a busy flat with extra furniture in the way. ROOM_CLUTTER=0: the emptier house from before.
+CLUTTER = os.environ.get('ROOM_CLUTTER', '1') != '0'
+HALF = ROOM_WIDTH / 2.0            # the room runs from y = -HALF to y = +HALF
+DN = (ROOM_WIDTH - 4.0) / 2.0      # how far each long wall moved outwards compared with the first 4 m room
+
+parts = []                 # every solid piece of the room
+
+
+def rot(px, py, yaw):
+    c, s = math.cos(yaw), math.sin(yaw)
+    return c * px - s * py, s * px + c * py
+
+
+def box(name, x, y, sx, sy, h, color, zbase=0.0, yaw=0.0):
+    parts.append(dict(name=name, shape='box', x=x, y=y, sx=sx, sy=sy, h=h, zbase=zbase, yaw=yaw, color=color,
+                      visible=True))
+
+
+def cyl(name, x, y, r, h, color, zbase=0.0, visible=True):
+    parts.append(dict(name=name, shape='cyl', x=x, y=y, r=r, h=h, zbase=zbase, yaw=0.0, color=color,
+                      visible=visible))
+
+
+def local_box(prefix, gx, gy, gyaw, lx, ly, sx, sy, h, color, zbase=0.0, suffix=''):
+    """A box placed in a piece of furniture's own frame (lx forward, ly = the BACK side of the furniture)."""
+    dx, dy = rot(lx, ly, gyaw)
+    box(f'{prefix}_{suffix}', gx + dx, gy + dy, sx, sy, h, color, zbase, gyaw)
+
+
+# ---------------------------------------------------------------- colours
+WOOD = (0.55, 0.38, 0.22)
+DARK_WOOD = (0.35, 0.24, 0.15)
+GREY = (0.45, 0.50, 0.60)
+GREEN = (0.30, 0.55, 0.35)
+WALL = (0.88, 0.86, 0.80)
+PLANT = (0.15, 0.50, 0.20)
+SHELF = (0.50, 0.32, 0.18)
+RED = (0.70, 0.30, 0.25)
+
+
+# ---------------------------------------------------------------- furniture builders
+def sofa(name, x, y, yaw=0.0):
+    local_box(name, x, y, yaw, 0, 0, 1.8, 0.8, 0.40, GREY, 0.0, 'seat')
+    local_box(name, x, y, yaw, 0, 0.30, 1.8, 0.20, 0.45, GREY, 0.40, 'back')
+
+
+def armchair(name, x, y, yaw=0.0):
+    local_box(name, x, y, yaw, 0, 0, 0.8, 0.8, 0.40, GREEN, 0.0, 'seat')
+    local_box(name, x, y, yaw, 0, 0.30, 0.8, 0.20, 0.45, GREEN, 0.40, 'back')
+
+
+def dining_table(name, x, y, length=1.4, width=0.8, yaw=0.0):
+    local_box(name, x, y, yaw, 0, 0, length, width, 0.04, WOOD, 0.72, 'top')
+    for i, (sx_, sy_) in enumerate(((-1, -1), (1, -1), (1, 1), (-1, 1))):
+        lx = sx_ * (length / 2 - 0.09)
+        ly = sy_ * (width / 2 - 0.09)
+        dx, dy = rot(lx, ly, yaw)
+        box(f'{name}_leg{i + 1}', x + dx, y + dy, 0.08, 0.08, 0.72, DARK_WOOD, 0.0, yaw)
+
+
+def chair(name, x, y, yaw=0.0):
+    """Seat 0.42 x 0.42, four thin legs, a backrest on the +y side (before turning by yaw)."""
+    local_box(name, x, y, yaw, 0, 0, 0.42, 0.42, 0.04, WOOD, 0.43, 'seat')
+    local_box(name, x, y, yaw, 0, 0.19, 0.42, 0.04, 0.45, WOOD, 0.47, 'back')
+    for i, (sx_, sy_) in enumerate(((-1, -1), (1, -1), (1, 1), (-1, 1))):
+        dx, dy = rot(sx_ * 0.165, sy_ * 0.165, yaw)
+        box(f'{name}_leg{i + 1}', x + dx, y + dy, 0.05, 0.05, 0.43, DARK_WOOD, 0.0, yaw)
+
+
+WALL_H = 1.4               # low walls: you can look into the room from above, like a dolls' house
+WEST_WALL_H = 0.40         # the wall nearest the camera is lower, so it cannot hide the robot at the start
+
+
+# ---------------------------------------------------------------- the room
+# interior: x from -0.6 to 5.4, y from -HALF to +HALF  (6.0 m x ROOM_WIDTH)
+# Things that stand against the NORTH wall (+y) move out with it, things against the SOUTH wall (-y) too.
+# The middle of the room (plant, dining table, chairs) stays exactly where it was, so the way from the
+# start to the goal is the same kind of way as before.
+box('wall_north', 2.4, HALF + 0.05, 6.2, 0.10, WALL_H, WALL)
+box('wall_south', 2.4, -HALF - 0.05, 6.2, 0.10, WALL_H, WALL)
+box('wall_west', -0.65, 0.0, 0.10, ROOM_WIDTH + 0.2, WEST_WALL_H, WALL)
+box('wall_east', 5.45, 0.0, 0.10, ROOM_WIDTH + 0.2, WALL_H, WALL)
+
+SOFA_XY = (1.0, 1.55 + DN)
+ARMCHAIR_XY = (2.6, 1.45 + DN)
+COFFEE_XY = (1.0, 0.55 + DN)
+SIDEBOARD_XY = (1.2, -1.75 - DN)
+PLANT2_XY = (4.9, -1.6 - DN) if not CLUTTER else (-0.30, HALF - 0.30)
+
+# fancy_world.py reads these, so the pretty room always matches the plain one
+LAYOUT = dict(sofa=SOFA_XY, armchair=ARMCHAIR_XY, coffee_table=COFFEE_XY, sideboard=SIDEBOARD_XY)
+
+sofa('sofa', *SOFA_XY)
+box('coffee_table', COFFEE_XY[0], COFFEE_XY[1], 0.9, 0.5, 0.40, WOOD)
+armchair('armchair', *ARMCHAIR_XY)
+cyl('plant_1', 1.6, -0.35, 0.20, 0.80, PLANT, visible=False)     # drawn by plant_decor()
+box('sideboard', SIDEBOARD_XY[0], SIDEBOARD_XY[1], 1.4, 0.4, 0.80, DARK_WOOD)
+
+dining_table('dining_table', 3.3, -0.9)
+chair('chair_1', 2.95, -0.32, 0.0)                  # north side, back towards the room
+chair('chair_2', 3.65, -0.32, 0.0)
+chair('chair_3', 2.35, -0.9, math.pi / 2)           # west end, back towards the west
+
+box('ottoman', 4.5, 1.0, 0.5, 0.5, 0.35, RED, 0.0, 0.3)
+box('bookshelf', 5.2, 1.0, 0.4, 1.2, 1.30, SHELF)
+cyl('plant_2', PLANT2_XY[0], PLANT2_XY[1], 0.18, 0.80, PLANT, visible=False)
+
+
+
+CARDBOARD = (0.72, 0.55, 0.36)
+SCREEN = (0.62, 0.50, 0.36)
+BASKET = (0.80, 0.78, 0.70)
+BIN = (0.38, 0.40, 0.42)
+FRIDGE = (0.85, 0.87, 0.89)
+COUNTER = (0.55, 0.58, 0.62)
+BED = (0.36, 0.42, 0.62)
+WARDROBE = (0.62, 0.46, 0.30)
+EXTRAS = {}                # where the extra pieces stand (the decorations below use these numbers)
+EXTRA_PARTS = []
+_n0 = len(parts)
+
+if CLUTTER:
+    # --- in the way between the start and the goal
+    EXTRAS['cardboard_1'] = (0.85, 0.15, 0.55, 0.45, 0.40, 0.3)
+    EXTRAS['cardboard_2'] = (1.05, -0.40, 0.45, 0.40, 0.30, -0.2)
+    EXTRAS['divider'] = (0.90, -1.60, 1.40, 0.06, 1.50, 0.0)          # a folding screen
+    box('cardboard_1', EXTRAS['cardboard_1'][0], EXTRAS['cardboard_1'][1], 0.55, 0.45, 0.40, CARDBOARD, 0.0, 0.3)
+    box('cardboard_2', EXTRAS['cardboard_2'][0], EXTRAS['cardboard_2'][1], 0.45, 0.40, 0.30, CARDBOARD, 0.0, -0.2)
+    box('divider', 0.90, -1.60, 1.40, 0.06, 1.50, SCREEN)
+    cyl('plant_3', 3.40, 0.65, 0.20, 0.80, PLANT, visible=False)       # drawn by plant_decor()
+    cyl('laundry_basket', -0.30, 1.35, 0.22, 0.55, BASKET)
+    cyl('wastebin_1', -0.40, -1.10, 0.13, 0.35, BIN)
+    box('cardboard_3', 2.35, -2.50, 0.40, 0.40, 0.30, CARDBOARD, 0.0, 0.4)
+    # --- kitchen corner (north-east): everything keeps to the north side of the room
+    box('refrigerator', 5.03, HALF - 0.37, 0.70, 0.70, 1.80, FRIDGE)
+    box('kitchen_island', 3.90, HALF - 0.95, 1.40, 0.60, 0.90, COUNTER)
+    cyl('wastebin_2', 4.45, HALF - 0.20, 0.13, 0.35, BIN)
+    # --- sleeping corner (south-east)
+    box('bed_seat', 4.30, -HALF + 0.475, 2.00, 0.90, 0.50, BED)
+    box('bed_back', 5.345, -HALF + 0.475, 0.09, 0.90, 0.95, WARDROBE)
+    box('bedside_table', 5.10, -HALF + 1.18, 0.40, 0.40, 0.50, WARDROBE)
+    box('wardrobe', -0.05, -HALF + 0.32, 0.90, 0.60, 2.00, WARDROBE)
+    EXTRA_PARTS = parts[_n0:]
+
+
+# ---------------------------------------------------------------- looks only: no collision, not known to the referee
+# Gazebo's sonar sees what is DRAWN, so every decoration must obey one rule (checked automatically below):
+#   - it sits at least SAFE_Z above the floor (the chair seats are already that high), or
+#   - it lies inside the footprint of a solid piece (a cushion on a sofa), sticking out at most 5 mm, or
+#   - it is a flat floor covering (planks, rug) thinner than FLOOR_TOP.
+SAFE_Z = 0.43
+FLOOR_TOP = 0.012
+SLACK = 0.005
+
+decor = []                 # every picture-only piece
+WHITE = (0.96, 0.95, 0.92)
+FABRIC = (0.40, 0.44, 0.55)
+FABRIC_G = (0.24, 0.45, 0.30)
+MUSTARD = (0.85, 0.65, 0.20)
+TERRACOTTA = (0.72, 0.38, 0.25)
+SOIL = (0.22, 0.15, 0.10)
+TRUNK = (0.35, 0.25, 0.15)
+LEAF = (0.18, 0.52, 0.22)
+LEAF2 = (0.25, 0.60, 0.28)
+DARK = (0.12, 0.10, 0.09)
+BOOKS = [(0.70, 0.20, 0.20), (0.20, 0.35, 0.60), (0.85, 0.70, 0.25), (0.25, 0.50, 0.35),
+         (0.50, 0.30, 0.55), (0.90, 0.90, 0.85), (0.80, 0.45, 0.20)]
+
+
+def _d(kind, group, x, y, zbase, yaw, color, **size):
+    decor.append(dict(kind=kind, group=group, x=x, y=y, zbase=zbase, yaw=yaw, color=color, **size))
+
+
+def dbox(group, x, y, zbase, sx, sy, h, color, yaw=0.0):
+    _d('box', group, x, y, zbase, yaw, color, sx=sx, sy=sy, h=h)
+
+
+def dcyl(group, x, y, zbase, r, h, color):
+    _d('cyl', group, x, y, zbase, 0.0, color, r=r, h=h)
+
+
+def dsphere(group, x, y, zcentre, r, color):
+    _d('sphere', group, x, y, zcentre - r, 0.0, color, r=r, h=2 * r)
+
+
+def at(gx, gy, gyaw, lx, ly):
+    """A point given in a piece of furniture's own frame -> room coordinates."""
+    dx, dy = rot(lx, ly, gyaw)
+    return gx + dx, gy + dy
+
+
+def floor_planks():
+    import random
+    rnd = random.Random(7)                                   # same planks every time
+    dbox('floor', 2.4, 0.0, 0.0, 6.0, ROOM_WIDTH, 0.004, (0.30, 0.21, 0.15))          # dark seams between planks
+    rows = int(round(7 * ROOM_WIDTH))          # 28 rows for 4 m, 42 for 6 m: planks stay about 14 cm wide
+    w = ROOM_WIDTH / rows
+    for r in range(rows):
+        y = -HALF + w * (r + 0.5)
+        x = -0.6 - rnd.uniform(0.0, 1.2)
+        while x < 5.4:
+            length = rnd.uniform(0.9, 1.7)
+            a, b = max(x, -0.6), min(x + length, 5.4)
+            if b - a > 0.05:
+                sh = rnd.uniform(-0.06, 0.06)
+                dbox('floor', (a + b) / 2, y, 0.004, b - a - 0.004, w - 0.004, 0.002,
+                     (0.70 + sh, 0.53 + sh, 0.34 + 0.7 * sh))
+            x += length
+
+
+def rug():
+    cx, cy = COFFEE_XY
+    dbox('rug', cx, cy, 0.006, 1.80, 1.30, 0.003, (0.45, 0.20, 0.22))
+    dbox('rug', cx, cy, 0.009, 1.62, 1.12, 0.0015, (0.86, 0.80, 0.68))
+    dbox('rug', cx, cy, 0.0105, 1.50, 1.00, 0.0013, (0.45, 0.20, 0.22))
+
+
+def walls_detail():
+    t = 0.004
+    for p in parts:
+        if p['name'].startswith('wall_'):
+            dbox('trim', p['x'], p['y'], 0.0, p['sx'] + 2 * t, p['sy'] + 2 * t, min(0.10, p['h']), WHITE)   # baseboards, 4 mm proud
+
+
+def window():
+    cx, face, w, z0, z1, f = 3.9, HALF, 1.2, 0.60, 1.15, 0.05
+    dbox('window', cx, face - 0.002, z0, w, 0.004, z1 - z0, (0.70, 0.84, 0.96))      # the glass
+    for x, zb, sx, h in ((cx, z0 - f, w + 2 * f, f), (cx, z1, w + 2 * f, f),
+                         (cx - w / 2 - f / 2, z0, f, z1 - z0), (cx + w / 2 + f / 2, z0, f, z1 - z0),
+                         (cx, (z0 + z1) / 2 - 0.015, w, 0.03), (cx, z0, 0.03, z1 - z0)):
+        dbox('window', x, face - 0.01, zb, sx, 0.02, h, WHITE)
+    dbox('window', cx, face - 0.05, z0 - f - 0.03, w + 0.2, 0.10, 0.03, WHITE)      # sill
+
+
+def door():
+    face, cy, w, h = 5.4, -0.75, 0.9, 1.1
+    dbox('door', face - 0.002, cy, 0.0, 0.004, w, h, (0.42, 0.28, 0.17))
+    for y in (cy - w / 2 - 0.03, cy + w / 2 + 0.03):
+        dbox('door', face - 0.002, y, 0.0, 0.004, 0.06, h + 0.06, WHITE)
+    dbox('door', face - 0.01, cy, h, 0.02, w + 0.12, 0.06, WHITE)
+    dsphere('door', face - 0.035, cy + 0.33, 0.55, 0.03, (0.80, 0.70, 0.30))        # the handle
+
+
+def pictures():
+    for cx, w, h, z0, art in ((0.55, 0.50, 0.60, 0.75, (0.35, 0.55, 0.75)), (1.45, 0.40, 0.50, 0.80, (0.80, 0.55, 0.30)),
+                              (2.55, 0.50, 0.40, 0.95, (0.45, 0.65, 0.45))):
+        dbox('pictures', cx, HALF - 0.015, z0, w, 0.03, h, DARK_WOOD)
+        dbox('pictures', cx, HALF - 0.032, z0 + 0.05, w - 0.10, 0.004, h - 0.10, art)
+
+
+def sofa_decor(g, gx, gy, yaw, width, seat_w, arm_w, throw=False):
+    """Cushions and armrests on a sofa or armchair (front = local -y, back = local +y)."""
+    n = 2 if width > 1.0 else 1
+    xs = (-0.40, 0.40) if n == 2 else (0.0,)
+    for lx in xs:
+        x, y = at(gx, gy, yaw, lx, -0.08)
+        dbox(g, x, y, 0.40, seat_w, 0.62, 0.09, FABRIC if n == 2 else FABRIC_G, yaw)           # seat cushion
+        x, y = at(gx, gy, yaw, lx, 0.12)
+        dbox(g, x, y, 0.49, seat_w, 0.14, 0.36, FABRIC if n == 2 else FABRIC_G, yaw)           # back cushion
+    for sgn in (-1, 1):
+        x, y = at(gx, gy, yaw, sgn * (width / 2 - arm_w / 2), -0.05)
+        dbox(g, x, y, 0.40, arm_w, 0.70, 0.20, FABRIC if n == 2 else FABRIC_G, yaw)             # armrest
+    if throw:
+        x, y = at(gx, gy, yaw, -0.62, -0.02)
+        dbox(g, x, y, 0.49, 0.32, 0.10, 0.30, MUSTARD, yaw + 0.5)
+
+
+def coffee_table_decor():
+    g = 'coffee_table_deco'
+    cx, cy = COFFEE_XY
+    dbox(g, cx - 0.15, cy - 0.05, 0.40, 0.26, 0.19, 0.035, (0.70, 0.22, 0.20), 0.3)
+    dbox(g, cx - 0.14, cy - 0.05, 0.435, 0.22, 0.16, 0.03, (0.20, 0.35, 0.60), -0.2)
+    dcyl(g, cx + 0.25, cy + 0.10, 0.40, 0.04, 0.09, WHITE)
+
+
+def dining_decor():
+    g = 'dining_deco'
+    dcyl(g, 3.3, -0.9, 0.76, 0.055, 0.20, (0.25, 0.45, 0.70))
+    dsphere(g, 3.3, -0.9, 1.05, 0.10, (0.85, 0.45, 0.55))
+    for x, y in ((3.0, -1.15), (3.6, -1.15), (3.0, -0.65), (3.6, -0.65)):
+        dbox(g, x, y, 0.76, 0.34, 0.22, 0.004, (0.85, 0.80, 0.65))
+        dcyl(g, x, y, 0.764, 0.10, 0.012, WHITE)
+
+
+def chairs_decor():
+    for x, y, yaw in ((2.95, -0.32, 0.0), (3.65, -0.32, 0.0), (2.35, -0.9, math.pi / 2)):
+        dbox('chairs_deco', x, y, 0.47, 0.38, 0.36, 0.03, (0.70, 0.30, 0.28), yaw)
+
+
+def sideboard_decor():
+    g = 'sideboard_deco'
+    sx0, sy0 = SIDEBOARD_XY                      # centre of the sideboard
+    front = sy0 + 0.20                           # its face towards the room
+    for dx in (-0.35, 0.0, 0.35):
+        dbox(g, sx0 + dx, front + 0.002, 0.05, 0.012, 0.004, 0.70, DARK)              # drawer joints
+    for dx in (-0.42, -0.08, 0.08, 0.42):
+        dsphere(g, sx0 + dx, front + 0.01, 0.55, 0.012, (0.80, 0.70, 0.30))           # knobs
+    dbox(g, sx0, sy0 - 0.05, 0.80, 0.40, 0.20, 0.012, DARK)                           # TV stand
+    dbox(g, sx0, sy0 - 0.05, 0.80, 0.12, 0.10, 0.12, DARK)
+    dbox(g, sx0, sy0 - 0.05, 0.92, 0.80, 0.04, 0.46, (0.05, 0.05, 0.07))              # TV
+    dbox(g, sx0, sy0 - 0.05 + 0.021, 0.95, 0.74, 0.004, 0.40, (0.10, 0.14, 0.22))     # screen
+    dcyl(g, sx0 + 0.55, sy0, 0.80, 0.07, 0.03, DARK)                                  # lamp
+    dcyl(g, sx0 + 0.55, sy0, 0.83, 0.012, 0.28, (0.70, 0.60, 0.30))
+    dcyl(g, sx0 + 0.55, sy0, 1.08, 0.12, 0.17, (0.95, 0.90, 0.75))
+
+
+def bookshelf_decor():
+    import random
+    rnd = random.Random(11)
+    g = 'bookshelf_deco'
+    face = 5.0 - 0.002
+    for zb in (0.03, 0.36, 0.69, 1.02):
+        dbox(g, face, 1.0, zb, 0.004, 1.2, 0.025, DARK)                              # shelf boards
+        y = 0.43
+        while y < 1.55:
+            wd = rnd.uniform(0.025, 0.05)
+            if rnd.random() < 0.12:
+                y += 0.08                                                           # a gap between books
+                continue
+            hh = rnd.uniform(0.18, 0.27)
+            dbox(g, face, y + wd / 2, zb + 0.025, 0.004, wd, hh, rnd.choice(BOOKS))
+            y += wd + 0.002
+
+
+def plant_decor(name, x, y, r):
+    g = name + '_deco'
+    dcyl(g, x, y, 0.0, r, 0.40, TERRACOTTA)                                         # pot: same footprint as the solid circle
+    dcyl(g, x, y, 0.40, r - 0.02, 0.02, SOIL)
+    dcyl(g, x, y, 0.42, 0.02, 0.40, TRUNK)
+    dsphere(g, x, y, 0.88, 0.22, LEAF)                                              # leaves, well above the sonar
+    dsphere(g, x + 0.10, y + 0.05, 1.05, 0.16, LEAF2)
+    dsphere(g, x - 0.10, y - 0.08, 0.66, 0.18, LEAF2)
+
+
+def ottoman_decor():
+    dbox('ottoman_deco', 4.5, 1.0, 0.35, 0.46, 0.46, 0.05, (0.80, 0.42, 0.35), 0.3)
+
+
+def extras_decor():
+    if not CLUTTER:
+        return
+    for k in ('cardboard_1', 'cardboard_2'):
+        x, y, sx, sy, h, yaw = EXTRAS[k]
+        dbox(k + '_deco', x, y, h, sx * 0.9, 0.07, 0.004, (0.85, 0.82, 0.70), yaw)                   # tape on the lid
+    plant_decor('plant_3', 3.40, 0.65, 0.20)
+    dbox('divider_deco', 0.90, -1.60, 1.50, 1.40, 0.06, 0.02, (0.45, 0.35, 0.25))                      # frame on top
+    for xx in (0.50, 0.90, 1.30):
+        dbox('divider_deco', xx, -1.60 + 0.032, 0.15, 0.34, 0.004, 1.20, (0.72, 0.62, 0.45))           # panels
+    dcyl('laundry_deco', -0.30, 1.35, 0.55, 0.20, 0.06, (0.70, 0.45, 0.55))                            # clothes on top
+    dcyl('bin_deco', -0.40, -1.10, 0.35, 0.115, 0.02, DARK)
+    dcyl('bin_deco', 4.45, HALF - 0.20, 0.35, 0.115, 0.02, DARK)
+    dbox('fridge_deco', 5.03 - 0.352, HALF - 0.37, 0.05, 0.004, 0.012, 1.70, DARK)                      # door seam (west face)
+    dbox('fridge_deco', 5.03 - 0.352, HALF - 0.37 - 0.25, 1.05, 0.008, 0.03, 0.40, (0.55, 0.57, 0.60)) # handle
+    dbox('fridge_deco', 5.03 - 0.352, HALF - 0.37, 1.18, 0.004, 0.70, 0.012, DARK)
+    dbox('island_deco', 3.90, HALF - 0.95, 0.90, 1.44, 0.64, 0.03, (0.82, 0.80, 0.74))                 # worktop
+    dcyl('island_deco', 3.50, HALF - 0.95, 0.93, 0.09, 0.10, (0.80, 0.30, 0.25))
+    dbox('island_deco', 4.15, HALF - 0.95, 0.93, 0.30, 0.20, 0.03, (0.70, 0.55, 0.30))
+    bx, by = 4.30, -HALF + 0.475
+    dbox('bed_deco', bx - 0.05, by, 0.50, 1.90, 0.80, 0.10, (0.88, 0.88, 0.92))                         # mattress sheet
+    dbox('bed_deco', bx - 0.55, by, 0.60, 0.80, 0.76, 0.03, (0.30, 0.45, 0.65))                         # blanket
+    dbox('bed_deco', 4.95 + 0.20, by, 0.60, 0.40, 0.55, 0.12, (0.95, 0.95, 0.97), 0.0)                   # pillow
+    dbox('bedside_deco', 5.10, -HALF + 1.18, 0.50, 0.16, 0.16, 0.30, (0.95, 0.85, 0.55))                 # lamp base
+    dbox('wardrobe_deco', -0.05, -HALF + 0.32 + 0.302, 0.05, 0.004, 0.004, 1.90, DARK)                 # door seam
+    dsphere('wardrobe_deco', -0.12, -HALF + 0.32 + 0.31, 1.0, 0.018, (0.80, 0.70, 0.30))
+    dsphere('wardrobe_deco', 0.02, -HALF + 0.32 + 0.31, 1.0, 0.018, (0.80, 0.70, 0.30))
+    dbox('cardboard_3_deco', 2.35, -2.50, 0.30, 0.36, 0.07, 0.004, (0.85, 0.82, 0.70), 0.4)
+
+
+def build_decor():
+    floor_planks()
+    rug()
+    walls_detail()
+    window()
+    door()
+    pictures()
+    sofa_decor('sofa_deco', SOFA_XY[0], SOFA_XY[1], 0.0, 1.8, 0.70, 0.15, throw=True)
+    sofa_decor('armchair_deco', ARMCHAIR_XY[0], ARMCHAIR_XY[1], 0.0, 0.8, 0.52, 0.12)
+    coffee_table_decor()
+    dining_decor()
+    chairs_decor()
+    sideboard_decor()
+    bookshelf_decor()
+    plant_decor('plant_1', 1.6, -0.35, 0.20)
+    plant_decor('plant_2', PLANT2_XY[0], PLANT2_XY[1], 0.18)
+    ottoman_decor()
+    extras_decor()
+
+
+def decor_problems():
+    """Every looks-only piece must obey the rule above. Returns a list of complaints (empty = all fine)."""
+    obs = referee_obstacles()
+
+    def inside(px, py):
+        for o in obs:
+            if o['shape'] == 'box':
+                c, s = math.cos(-o['yaw']), math.sin(-o['yaw'])
+                dx, dy = px - o['x'], py - o['y']
+                lx, ly = c * dx - s * dy, s * dx + c * dy
+                if abs(lx) <= o['sx'] / 2 + SLACK and abs(ly) <= o['sy'] / 2 + SLACK:
+                    return True
+            elif math.hypot(px - o['x'], py - o['y']) <= o['r'] + SLACK:
+                return True
+        return False
+
+    bad = []
+    for i, d in enumerate(decor):
+        top = d['zbase'] + d['h']
+        if d['zbase'] >= SAFE_Z - 1e-9 or top <= FLOOR_TOP + 1e-9:
+            continue
+        if d['kind'] == 'box':
+            pts = [(d['x'] + rot(a, b, d['yaw'])[0], d['y'] + rot(a, b, d['yaw'])[1])
+                   for a in (-d['sx'] / 2, d['sx'] / 2) for b in (-d['sy'] / 2, d['sy'] / 2)]
+        else:
+            pts = [(d['x'] + d['r'] * math.cos(k * math.pi / 4), d['y'] + d['r'] * math.sin(k * math.pi / 4))
+                   for k in range(8)]
+        if not all(inside(px, py) for px, py in pts):
+            bad.append(f"{d['group']} piece #{i} ({d['kind']} at x={d['x']:.2f}, y={d['y']:.2f}, "
+                       f"z={d['zbase']:.2f}..{top:.2f}) sticks out low enough for the sonar to see it")
+    return bad
+
+
+# ---------------------------------------------------------------- what the referee needs
+def blocks_robot(p):
+    return p['zbase'] < OVERHEAD
+
+
+def referee_obstacles():
+    out = []
+    for p in parts:
+        if not blocks_robot(p):
+            continue
+        if p['shape'] == 'box':
+            out.append(dict(name=p['name'], shape='box', x=round(p['x'], 4), y=round(p['y'], 4),
+                            sx=p['sx'], sy=p['sy'], yaw=round(p['yaw'], 4)))
+        else:
+            out.append(dict(name=p['name'], shape='circle', x=round(p['x'], 4), y=round(p['y'], 4), r=p['r']))
+    return out
+
+
+# ---------------------------------------------------------------- the Gazebo world
+HEADER = '''<?xml version="1.0"?>
+<sdf version="1.9">
+  <!-- Generated by make_world.py - do not edit by hand, change the layout there.
+       The world is still called "obstacle_course" on purpose: the referee and the bridge listen to
+       /world/obstacle_course/..., so every scenario keeps that name. -->
+  <world name="obstacle_course">
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.8</gravity>
+    <scene><ambient>0.55 0.55 0.55 1</ambient><background>0.80 0.87 0.95 1</background><shadows>true</shadows></scene>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>40 40</size></plane></geometry>
+          <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>40 40</size></plane></geometry>
+          <material><ambient>0.75 0.75 0.75 1</ambient><diffuse>0.75 0.75 0.75 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+'''
+
+FOOTER = '''  </world>
+</sdf>
+'''
+
+
+def mat(c, alpha=1.0):
+    return (f'<material><ambient>{c[0]:.2f} {c[1]:.2f} {c[2]:.2f} {alpha}</ambient>'
+            f'<diffuse>{c[0]:.2f} {c[1]:.2f} {c[2]:.2f} {alpha}</diffuse></material>')
+
+
+def part_xml(p):
+    z = p['zbase'] + p['h'] / 2
+    if p['shape'] == 'box':
+        geom = f"<box><size>{p['sx']} {p['sy']} {p['h']}</size></box>"
+    else:
+        geom = f"<cylinder><radius>{p['r']}</radius><length>{p['h']}</length></cylinder>"
+    return (f'    <model name="{p["name"]}"><static>true</static>'
+            f'<pose>{p["x"]:.4f} {p["y"]:.4f} {z:.4f} 0 0 {p["yaw"]:.4f}</pose>\n'
+            f'      <link name="link">\n'
+            f'        <collision name="c"><geometry>{geom}</geometry></collision>\n'
+            + (f'        <visual name="v"><geometry>{geom}</geometry>{mat(p["color"])}</visual>\n' if p.get('visible', True) else '')
+            + f'      </link></model>\n')
+
+
+def flat_visual(name, x, y, sx, sy, z, color, alpha=1.0, round_=False):
+    """A thin picture on the floor with NO collision (floor, rug, goal mark): the robot drives over it."""
+    if round_:
+        geom = f'<cylinder><radius>{sx}</radius><length>0.004</length></cylinder>'
+    else:
+        geom = f'<box><size>{sx} {sy} 0.004</size></box>'
+    return (f'    <model name="{name}"><static>true</static><pose>{x} {y} {z} 0 0 0</pose>\n'
+            f'      <link name="link"><visual name="v"><geometry>{geom}</geometry>{mat(color, alpha)}</visual></link>'
+            f'</model>\n')
+
+
+def decor_xml():
+    """One model per group, each piece a visual only (no collision): the robot drives over or past it."""
+    groups = {}
+    for d in decor:
+        groups.setdefault(d['group'], []).append(d)
+    s = ''
+    for g, items in groups.items():
+        s += f'    <model name="decor_{g}"><static>true</static>\n      <link name="link">\n'
+        for i, d in enumerate(items):
+            zc = d['zbase'] + d['h'] / 2
+            if d['kind'] == 'box':
+                geom = f"<box><size>{d['sx']:.4f} {d['sy']:.4f} {d['h']:.4f}</size></box>"
+            elif d['kind'] == 'cyl':
+                geom = f"<cylinder><radius>{d['r']:.4f}</radius><length>{d['h']:.4f}</length></cylinder>"
+            else:
+                geom = f"<sphere><radius>{d['r']:.4f}</radius></sphere>"
+            shadow = '' if d['h'] > 0.012 else '<cast_shadows>false</cast_shadows>'
+            s += (f'        <visual name="v{i}">{shadow}<pose>{d["x"]:.4f} {d["y"]:.4f} {zc:.4f} 0 0 {d["yaw"]:.4f}</pose>'
+                  f'<geometry>{geom}</geometry>{mat(d["color"])}</visual>\n')
+        s += '      </link></model>\n'
+    return s
+
+
+def sdf_text():
+    s = HEADER
+    s += '\n    <!-- goal mark: a picture only, no collision -->\n'
+    s += flat_visual('goal_mark', GOAL[0], GOAL[1], 0.15, 0.15, 0.006, (0.1, 0.9, 0.2), 0.8, round_=True)
+    s += '\n    <!-- walls and furniture (the robot starts at the origin facing +x) -->\n'
+    for p in parts:
+        s += part_xml(p)
+    s += '\n    <!-- looks only: floor, rug, trim, window, door, pictures, cushions, books, plants ... -->\n'
+    s += decor_xml()
+    return s + FOOTER
+
+
+def json_text():
+    return json.dumps(dict(name=NAME, goal=list(GOAL), timeout=TIMEOUT, start=[0.0, 0.0, 0.0],
+                           obstacles=referee_obstacles()), indent=1)
+
+
+# ---------------------------------------------------------------- checks and a picture
+def group(name):
+    """'chair_1_leg3' -> 'chair_1': the pieces of one piece of furniture may touch each other."""
+    import re
+    return re.sub(r'_(leg\d|seat|back|top)$', '', name)
+
+
+def check_and_draw(draw=True):
+    import numpy as np
+    res = 0.02
+    x0, x1, y0, y1 = -0.8, 5.6, -HALF - 0.2, HALF + 0.2
+    nx, ny = int(round((x1 - x0) / res)), int(round((y1 - y0) / res))
+    xs = x0 + (np.arange(nx) + 0.5) * res
+    ys = y0 + (np.arange(ny) + 0.5) * res
+    X, Y = np.meshgrid(xs, ys, indexing='ij')
+
+    def mask(o):
+        if o['shape'] == 'box':
+            dx, dy = X - o['x'], Y - o['y']
+            c, s = math.cos(-o['yaw']), math.sin(-o['yaw'])
+            lx, ly = c * dx - s * dy, s * dx + c * dy
+            return (abs(lx) <= o['sx'] / 2) & (abs(ly) <= o['sy'] / 2)
+        return (X - o['x']) ** 2 + (Y - o['y']) ** 2 <= o['r'] ** 2
+
+    obs = referee_obstacles()
+    masks = [mask(o) for o in obs]
+    occ = np.zeros((nx, ny), bool)
+    problems = []
+    for i, m in enumerate(masks):
+        for j in range(i):
+            if (m & masks[j]).any():
+                a, b = obs[i]['name'], obs[j]['name']
+                walls = a.startswith('wall') and b.startswith('wall')
+                if not walls and group(a) != group(b):
+                    problems.append(f'{a} overlaps {b}')
+        occ |= m
+
+    # robot footprint rectangle at the start (0.21 x 0.164, same numbers as the referee)
+    def footprint_free(x, y, yaw):
+        c, s = math.cos(yaw), math.sin(yaw)
+        for px in (-0.10, 0.0, 0.11):
+            for py in (-0.082, 0.0, 0.082):
+                wx, wy = x + c * px - s * py, y + s * px + c * py
+                i, j = int((wx - x0) / res), int((wy - y0) / res)
+                if occ[i, j]:
+                    return False
+        return True
+
+    if not footprint_free(0.0, 0.0, 0.0):
+        problems.append('the robot start pose touches an obstacle')
+    gi, gj = int((GOAL[0] - x0) / res), int((GOAL[1] - y0) / res)
+    if occ[gi, gj]:
+        problems.append('the goal is inside an obstacle')
+
+    def inflate(r):
+        k = int(math.ceil(r / res))
+        out = np.zeros_like(occ)
+        for di in range(-k, k + 1):
+            for dj in range(-k, k + 1):
+                if di * di + dj * dj <= (r / res) ** 2:
+                    a = np.roll(np.roll(occ, di, 0), dj, 1)
+                    out |= a
+        return out
+
+    def route(blocked):
+        si, sj = int((0.0 - x0) / res), int((0.0 - y0) / res)
+        if blocked[si, sj] or blocked[gi, gj]:
+            return None
+        from collections import deque
+        dist = {(si, sj): 0.0}
+        dq = deque([(si, sj)])
+        while dq:
+            i, j = dq.popleft()
+            if (i, j) == (gi, gj):
+                return dist[(i, j)]
+            for di, dj in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                n = (i + di, j + dj)
+                if 0 <= n[0] < nx and 0 <= n[1] < ny and not blocked[n] and n not in dist:
+                    dist[n] = dist[(i, j)] + res
+                    dq.append(n)
+        return None
+
+    k = int(math.ceil(0.12 / res))
+    blocked_line = False
+    for t in np.linspace(0.0, 1.0, 400):
+        px, py = GOAL[0] * t, GOAL[1] * t
+        i, j = int((px - x0) / res), int((py - y0) / res)
+        if occ[max(0, i - k):i + k + 1, max(0, j - k):j + k + 1].any():
+            blocked_line = True
+            break
+    print('straight line start -> goal :', 'BLOCKED (the robot must go around something)' if blocked_line else 'FREE (too easy?)')
+    best = None
+    for r in (0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50):
+        d = route(inflate(r))
+        if d is None:
+            break
+        best = (r, d)
+    print(f'objects the referee knows : {len(obs)}')
+    print('overlaps / problems       :', 'none' if not problems else problems)
+    if best:
+        print(f'a route exists that stays {best[0]:.2f} m or more from every obstacle edge '
+              f'(about {best[1]:.1f} m long, grid steps; straight line is {math.hypot(*GOAL):.1f} m)')
+    else:
+        print('NO ROUTE with even 0.10 m of room - the layout is blocked!')
+        problems.append('no route from start to goal')
+    if draw:
+        try:
+            import matplotlib
+            matplotlib.use('Agg')
+            import matplotlib.pyplot as plt
+            from matplotlib.patches import Circle, Polygon
+            fig, ax = plt.subplots(figsize=(10, 3.0 + 0.95 * ROOM_WIDTH))
+            for o in obs:
+                if o['shape'] == 'box':
+                    c, s = math.cos(o['yaw']), math.sin(o['yaw'])
+                    pts = [(o['x'] + c * px - s * py, o['y'] + s * px + c * py)
+                           for px, py in ((-o['sx'] / 2, -o['sy'] / 2), (o['sx'] / 2, -o['sy'] / 2),
+                                          (o['sx'] / 2, o['sy'] / 2), (-o['sx'] / 2, o['sy'] / 2))]
+                    ax.add_patch(Polygon(pts, closed=True, fc='#b9a58a', ec='k', lw=0.8))
+                else:
+                    ax.add_patch(Circle((o['x'], o['y']), o['r'], fc='#7fbf7f', ec='k', lw=0.8))
+            ax.add_patch(Polygon([(-0.10, -0.082), (0.11, -0.082), (0.11, 0.082), (-0.10, 0.082)], fc='#3b6fd4', ec='k'))
+            ax.add_patch(Circle(GOAL, 0.15, fc='#33dd44', ec='k', alpha=0.7))
+            ax.annotate('start', (0.0, -0.25), ha='center', fontsize=9)
+            ax.annotate('goal', (GOAL[0], GOAL[1] - 0.3), ha='center', fontsize=9)
+            for name, (tx, ty) in (('sofa', SOFA_XY), ('coffee table', COFFEE_XY), ('armchair', ARMCHAIR_XY),
+                                   ('plant', (1.6, -0.35)), ('sideboard', SIDEBOARD_XY), ('dining table', (3.3, -0.9)),
+                                   ('ottoman', (4.5, 1.0)), ('bookshelf', (5.2, 1.0)), ('plant', PLANT2_XY)) + tuple(
+                    (p['name'].replace('_', ' '), (p['x'], p['y'])) for p in EXTRA_PARTS):
+                ax.annotate(name, (tx, ty), ha='center', va='center', fontsize=8)
+            ax.set_xlim(-0.8, 5.6)
+            ax.set_ylim(-HALF - 0.2, HALF + 0.2)
+            ax.set_aspect('equal')
+            ax.grid(True, alpha=0.3)
+            ax.set_title('living_room, seen from above (x forward, y left). Only legs of tables and chairs are shown')
+            fig.savefig(os.path.join(HERE, NAME + '.png'), dpi=110)
+            print('picture saved             :', os.path.join(HERE, NAME + '.png'))
+        except Exception as err:       # the picture is a bonus, never a reason to fail
+            print('(no picture:', err, ')')
+    return not problems
+
+
+# The original obstacle course (its world file is NOT regenerated: obstacle_course.sdf stays as it is).
+# Only its description is written, so the RViz demo can draw it. Keep it equal to OBSTACLES in judge.py.
+OLD_ARENA = dict(name='obstacle_course', goal=[3.0, 0.0], timeout=120.0, start=[0.0, 0.0, 0.0], obstacles=[
+    dict(name='box_1', shape='box', x=1.0, y=0.0, sx=0.30, sy=0.30, yaw=0.0),
+    dict(name='box_2', shape='box', x=1.8, y=0.6, sx=0.40, sy=0.20, yaw=0.4),
+    dict(name='pillar_1', shape='circle', x=2.2, y=-0.5, r=0.15),
+    dict(name='wall_1', shape='box', x=3.5, y=0.0, sx=0.10, sy=3.00, yaw=0.0)])
+
+
+def main():
+    build_decor()
+    bad = decor_problems()
+    print(f'looks-only pieces         : {len(decor)}, ' + ('all obey the sonar rule' if not bad else f'{len(bad)} BREAK THE RULE'))
+    if bad:
+        for b in bad:
+            print('  -', b)
+        print('Nothing was written. (This is a bug in the decoration list; please send me this message.)')
+        sys.exit(1)
+    with open(os.path.join(HERE, 'obstacle_course.json'), 'w') as f:
+        json.dump(OLD_ARENA, f, indent=1)
+    sdf_path = os.path.join(HERE, NAME + '.sdf')
+    json_path = os.path.join(HERE, NAME + '.json')
+    with open(sdf_path, 'w') as f:
+        f.write(sdf_text())
+    with open(json_path, 'w') as f:
+        f.write(json_text())
+    print('wrote', sdf_path)
+    print('wrote', json_path)
+    if '--check' in sys.argv:
+        ok = check_and_draw()
+        sys.exit(0 if ok else 1)
+
+
+if __name__ == '__main__':
+    main()

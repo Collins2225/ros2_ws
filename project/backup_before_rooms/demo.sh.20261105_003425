@@ -1,0 +1,156 @@
+#!/usr/bin/env bash
+# demo.sh <algorithm|all> [seed]
+# Starts Gazebo (the arena), RViz (what the robot sees + its trail) and ONE algorithm.
+#   demo fuzzy          demo random_turn 2          demo all
+# Another room:  SCENARIO=living_room demo fuzzy      (or the short form:  demo_house fuzzy)
+
+PROJ="$HOME/ros2_ws/project"
+PKG="$HOME/ros2_ws/src/obs_avoid_control/obs_avoid_control/algorithms"
+ORDER="stop_and_turn random_turn braitenberg fuzzy potential_field follow_the_gap vfh vfh_plus"
+ARG="$1"
+SEED="${2:-1}"
+SCENARIO="${SCENARIO:-obstacle_course}"
+SCEN_DIR="$HOME/ros2_ws/project/scenarios"
+SCEN_FILE="$SCEN_DIR/$SCENARIO.json"      # describes the room: goal, time limit, obstacles (drawn in RViz)
+if [ "$SCENARIO" = "obstacle_course" ]; then
+  GOAL_X=3.0
+  GOAL_Y=0.0
+  TIMEOUT=120.0
+  export OBS_AVOID_WORLD=""
+else
+  if [ ! -f "$SCEN_FILE" ] || [ ! -f "$SCEN_DIR/$SCENARIO.sdf" ]; then
+    echo "There is no scenario '$SCENARIO' (looked for $SCEN_FILE and $SCEN_DIR/$SCENARIO.sdf)."
+    exit 1
+  fi
+  read -r GOAL_X GOAL_Y TIMEOUT < <(python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(float(d['goal'][0]), float(d['goal'][1]), float(d['timeout']))" "$SCEN_FILE")
+  export OBS_AVOID_WORLD="$SCEN_DIR/$SCENARIO.sdf"
+fi
+MAX_WAIT=$(( ${TIMEOUT%.*} + 30 ))      # real seconds before the demo gives up waiting for the robot
+
+if [ -z "$ARG" ]; then
+  echo "usage: demo <algorithm> [seed]        or        demo all"
+  echo "algorithms: $ORDER"
+  exit 1
+fi
+
+# "all": run every algorithm one after another (press Enter between them)
+if [ "$ARG" = "all" ]; then
+  for a in $ORDER; do
+    [ -f "$PKG/$a.py" ] || continue
+    echo
+    echo "################  $a  ################"
+    bash "$0" "$a" "$SEED"
+  done
+  exit 0
+fi
+
+if [ ! -f "$PKG/$ARG.py" ]; then
+  echo "There is no algorithm called '$ARG'."
+  echo "Available: $ORDER"
+  exit 1
+fi
+
+[ -f /opt/ros/jazzy/setup.bash ] && source /opt/ros/jazzy/setup.bash
+[ -f "$HOME/ros2_ws/install/setup.bash" ] && source "$HOME/ros2_ws/install/setup.bash"
+
+LOGDIR="$PROJ/results/raw/logs/demo_${ARG}_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$LOGDIR"
+TAIL_PID=""
+
+stop_all() {
+  [ -n "$TAIL_PID" ] && kill "$TAIL_PID" 2>/dev/null
+  pkill -f demo_markers
+  pkill -f rviz2
+  pkill -f sweep_scanner
+  pkill -f avoidance_node
+  pkill -f "obs_avoid_control/judge"
+  pkill -f "judge --ros-args"
+  pkill -f parameter_bridge
+  pkill -f robot_state_publisher
+  pkill -f "ros2 launch obs_avoid_description"
+  pkill -f "gz sim"
+  sleep 3
+}
+trap stop_all EXIT
+
+wait_for_topic() {   # wait_for_topic <topic> <seconds>
+  for _ in $(seq 1 "$2"); do
+    ros2 topic list 2>/dev/null | grep -qx "$1" && return 0
+    sleep 1
+  done
+  return 1
+}
+
+echo "=== demo: $ARG   room: $SCENARIO   (seed $SEED, logs in $LOGDIR) ==="
+
+echo "[1/5] clearing leftovers from earlier runs"
+stop_all
+if pgrep -f "gz sim" > /dev/null; then
+  echo "Gazebo is still running. Close its window by hand, then try again."
+  exit 1
+fi
+
+echo "[2/5] starting Gazebo (the arena)"
+ros2 launch obs_avoid_description sim.launch.py > "$LOGDIR/world.log" 2>&1 &
+if ! wait_for_topic /odom 90; then
+  echo "The world did not start (no /odom after 90 s). See $LOGDIR/world.log"
+  exit 1
+fi
+sleep 5
+
+echo "[3/5] starting the sonar neck"
+ros2 run obs_avoid_control sweep_scanner --ros-args -p use_sim_time:=true > "$LOGDIR/neck.log" 2>&1 &
+if ! wait_for_topic /scan_wide 30; then
+  echo "The neck scanner did not start (no /scan_wide). See $LOGDIR/neck.log"
+  exit 1
+fi
+sleep 3
+
+echo "[4/5] opening RViz"
+FRAME=$(timeout 6 ros2 topic echo /scan_wide --once --field header.frame_id 2>/dev/null | head -n 1)
+[ -n "$FRAME" ] && echo "      the sonar picture is drawn in frame: $FRAME"
+ros2 topic list 2>/dev/null | grep -qx /tf || echo "      WARNING: no /tf topic, RViz will not be able to place the robot (tell me)."
+RVIZ_CFG="$PROJ/demo/demo.rviz"
+if [ "$SCENARIO" != "obstacle_course" ]; then      # a bigger room: zoom out and centre the picture
+  RVIZ_CFG="$LOGDIR/view.rviz"
+  VIEW_SCALE=$(python3 -c "import json,sys; d=json.load(open(sys.argv[1])); ys=[abs(o['y'])+(o['sy']/2 if o['shape']=='box' else o['r']) for o in d['obstacles']]; print(max(40, min(115, round(115*4.4/(2*max(ys)+0.2)))))" "$SCEN_FILE" 2>/dev/null)
+  sed -e "s/Scale: 170/Scale: ${VIEW_SCALE:-115}/" -e 's/^      X: 1.6$/      X: 2.4/' "$PROJ/demo/demo.rviz" > "$RVIZ_CFG"
+fi
+DEMO_LABEL="$ARG" DEMO_GOAL_X="$GOAL_X" DEMO_GOAL_Y="$GOAL_Y" DEMO_SCENARIO_FILE="$SCEN_FILE" \
+  /usr/bin/python3 "$PROJ/scripts/demo_markers.py" --ros-args -p use_sim_time:=true \
+  > "$LOGDIR/markers.log" 2>&1 &
+rviz2 -d "$RVIZ_CFG" --ros-args -p use_sim_time:=true > "$LOGDIR/rviz.log" 2>&1 &
+sleep 4
+
+for s in 5 4 3 2 1; do
+  printf "\r[5/5] the robot starts in %s s  (arrange the Gazebo and RViz windows now) " "$s"
+  sleep 1
+done
+echo
+ALGO_SEED="$SEED" ros2 run obs_avoid_control avoidance_node --ros-args \
+  -p use_sim_time:=true -p algorithm:="$ARG" -p goal_x:="$GOAL_X" -p goal_y:="$GOAL_Y" -p timeout:="$TIMEOUT" \
+  > "$LOGDIR/brain.log" 2>&1 &
+sleep 1
+tail -n +1 -f "$LOGDIR/brain.log" &
+TAIL_PID=$!
+
+START=$SECONDS
+while [ $((SECONDS - START)) -lt "$MAX_WAIT" ]; do
+  grep -qE "GOAL REACHED|TIMEOUT after" "$LOGDIR/brain.log" && break
+  sleep 1
+done
+sleep 2
+echo
+if grep -q "GOAL REACHED" "$LOGDIR/brain.log"; then
+  echo ">>> $ARG: the robot says it reached the goal (its own estimate; no referee runs in demo mode)."
+elif grep -q "TIMEOUT after" "$LOGDIR/brain.log"; then
+  echo ">>> $ARG: time ran out before the goal."
+else
+  echo ">>> $ARG: no result after $MAX_WAIT s. See $LOGDIR/brain.log"
+fi
+
+if [ -t 0 ]; then
+  read -r -p "Look at RViz and Gazebo. Press Enter to close this demo... "
+else
+  sleep 3
+fi

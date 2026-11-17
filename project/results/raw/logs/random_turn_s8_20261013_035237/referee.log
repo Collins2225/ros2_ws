@@ -1,0 +1,59 @@
+[INFO] [1791852773.534963840] [judge]: referee started for 'random_turn_s8'
+[INFO] [1791852773.536205386] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791852776.279972414] [judge]: robot started moving - the clock is running
+[INFO] [1791852776.280618114] [judge]:   0.0 s  true position (0.02, 0.00)  closest gap 0.72 m
+[INFO] [1791852781.300199688] [judge]:   5.0 s  true position (0.47, -0.03)  closest gap 0.25 m
+[INFO] [1791852786.300261562] [judge]:  10.0 s  true position (0.43, -0.15)  closest gap 0.30 m
+[INFO] [1791852791.300596078] [judge]:  15.0 s  true position (-0.19, 0.44)  closest gap 0.96 m
+[INFO] [1791852796.320145030] [judge]:  20.0 s  true position (-0.46, 1.41)  closest gap 1.69 m
+[INFO] [1791852801.340089771] [judge]:  25.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852806.340209998] [judge]:  30.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852811.340506341] [judge]:  35.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852816.345234037] [judge]:  40.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852821.365208101] [judge]:  45.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852826.369518756] [judge]:  50.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852831.370521328] [judge]:  55.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852836.370551907] [judge]:  60.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852841.370580203] [judge]:  65.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852846.390689284] [judge]:  70.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852851.390730679] [judge]:  75.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852856.410783961] [judge]:  80.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852861.410846295] [judge]:  85.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852866.430746959] [judge]:  90.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852871.433934311] [judge]:  95.1 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852876.453637419] [judge]: 100.2 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852881.454273224] [judge]: 105.2 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852886.473578304] [judge]: 110.2 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852891.473634528] [judge]: 115.2 s  true position (-0.68, 2.25)  closest gap 2.48 m
+[INFO] [1791852896.313685612] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791852896.314015811] [judge]:  label            : random_turn_s8
+[INFO] [1791852896.314323543] [judge]:  outcome          : TIMEOUT
+[INFO] [1791852896.314610112] [judge]:  time             : 120.0 s
+[INFO] [1791852896.314899718] [judge]:  distance driven  : 3.67 m   (straight line would be 3.00 m)
+[INFO] [1791852896.315189684] [judge]:  path efficiency  : 0.78
+[INFO] [1791852896.315482566] [judge]:  collisions       : 0
+[INFO] [1791852896.315874691] [judge]:  closest approach : 0.149 m   (box_1 at 9.1 s, robot at (0.57, -0.05))
+[INFO] [1791852896.316223017] [judge]:  final goal dist  : 4.32 m
+[INFO] [1791852896.316534517] [judge]: ============================================
+[INFO] [1791852896.319170244] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/random_turn_s8_20261013_035456.csv
+[INFO] [1791852896.319545095] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 245, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

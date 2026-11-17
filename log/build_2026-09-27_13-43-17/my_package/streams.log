@@ -1,0 +1,52 @@
+[0.706s] Invoking command in '/home/collins/ros2_ws/build/my_package': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/collins/ros2_ws/build/my_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/collins/ros2_ws/build/my_package/build
+[0.949s] running develop
+[1.119s] Removing /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my-package.egg-link (link to .)
+[1.145s] Invoked command in '/home/collins/ros2_ws/build/my_package' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/collins/ros2_ws/build/my_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/collins/ros2_ws/build/my_package/build
+[1.147s] Invoking command in '/home/collins/ros2_ws/src/my_package': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/collins/ros2_ws/build/my_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_package build --build-base /home/collins/ros2_ws/build/my_package/build install --record /home/collins/ros2_ws/build/my_package/install.log --install-scripts $base/lib/my_package --single-version-externally-managed install_data --force
+[1.367s] running egg_info
+[1.383s] writing ../../build/my_package/my_package.egg-info/PKG-INFO
+[1.384s] writing dependency_links to ../../build/my_package/my_package.egg-info/dependency_links.txt
+[1.384s] writing entry points to ../../build/my_package/my_package.egg-info/entry_points.txt
+[1.384s] writing requirements to ../../build/my_package/my_package.egg-info/requires.txt
+[1.384s] writing top-level names to ../../build/my_package/my_package.egg-info/top_level.txt
+[1.417s] reading manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+[1.418s] writing manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+[1.418s] running build
+[1.418s] running build_py
+[1.418s] creating /home/collins/ros2_ws/build/my_package/build
+[1.419s] creating /home/collins/ros2_ws/build/my_package/build/lib
+[1.419s] creating /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] copying my_package/action_server.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] copying my_package/__init__.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] copying my_package/action_client.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] copying my_package/temp_publisher.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] copying my_package/heater_client.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] copying my_package/heater_server.py -> /home/collins/ros2_ws/build/my_package/build/lib/my_package
+[1.419s] running install
+[1.424s] running install_lib
+[1.441s] creating /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.441s] copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/action_server.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.441s] copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/__init__.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.441s] copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/action_client.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.441s] copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/temp_publisher.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.442s] copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/heater_client.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.442s] copying /home/collins/ros2_ws/build/my_package/build/lib/my_package/heater_server.py -> /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package
+[1.442s] byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/action_server.py to action_server.cpython-312.pyc
+[1.442s] byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/__init__.py to __init__.cpython-312.pyc
+[1.442s] byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/action_client.py to action_client.cpython-312.pyc
+[1.442s] byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/temp_publisher.py to temp_publisher.cpython-312.pyc
+[1.443s] byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/heater_client.py to heater_client.cpython-312.pyc
+[1.443s] byte-compiling /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package/heater_server.py to heater_server.cpython-312.pyc
+[1.443s] running install_data
+[1.444s] copying resource/my_package -> /home/collins/ros2_ws/install/my_package/share/ament_index/resource_index/packages
+[1.444s] copying package.xml -> /home/collins/ros2_ws/install/my_package/share/my_package
+[1.444s] running install_egg_info
+[1.461s] Copying ../../build/my_package/my_package.egg-info to /home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages/my_package-0.0.0-py3.12.egg-info
+[1.462s] running install_scripts
+[1.571s] Installing action_client script to /home/collins/ros2_ws/install/my_package/lib/my_package
+[1.572s] Installing action_server script to /home/collins/ros2_ws/install/my_package/lib/my_package
+[1.572s] Installing heater_client script to /home/collins/ros2_ws/install/my_package/lib/my_package
+[1.572s] Installing heater_server script to /home/collins/ros2_ws/install/my_package/lib/my_package
+[1.572s] Installing temp_publisher script to /home/collins/ros2_ws/install/my_package/lib/my_package
+[1.572s] writing list of installed files to '/home/collins/ros2_ws/build/my_package/install.log'
+[1.592s] Invoked command in '/home/collins/ros2_ws/src/my_package' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/collins/ros2_ws/build/my_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/collins/ros2_ws/install/my_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_package build --build-base /home/collins/ros2_ws/build/my_package/build install --record /home/collins/ros2_ws/build/my_package/install.log --install-scripts $base/lib/my_package --single-version-externally-managed install_data --force

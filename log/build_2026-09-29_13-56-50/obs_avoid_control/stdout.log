@@ -1,0 +1,50 @@
+running egg_info
+creating ../../build/obs_avoid_control/obs_avoid_control.egg-info
+writing ../../build/obs_avoid_control/obs_avoid_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/obs_avoid_control/obs_avoid_control.egg-info/dependency_links.txt
+writing requirements to ../../build/obs_avoid_control/obs_avoid_control.egg-info/requires.txt
+writing top-level names to ../../build/obs_avoid_control/obs_avoid_control.egg-info/top_level.txt
+writing manifest file '../../build/obs_avoid_control/obs_avoid_control.egg-info/SOURCES.txt'
+reading manifest file '../../build/obs_avoid_control/obs_avoid_control.egg-info/SOURCES.txt'
+writing manifest file '../../build/obs_avoid_control/obs_avoid_control.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/collins/ros2_ws/build/obs_avoid_control/build
+creating /home/collins/ros2_ws/build/obs_avoid_control/build/lib
+creating /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control
+copying obs_avoid_control/__init__.py -> /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control
+creating /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/metrics
+copying obs_avoid_control/metrics/__init__.py -> /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/metrics
+creating /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/core
+copying obs_avoid_control/core/__init__.py -> /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/core
+creating /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/algorithms
+copying obs_avoid_control/algorithms/__init__.py -> /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/algorithms
+creating /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/experiments
+copying obs_avoid_control/experiments/__init__.py -> /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/experiments
+running install
+running install_lib
+creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control
+copying /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/__init__.py -> /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control
+creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/metrics
+copying /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/metrics/__init__.py -> /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/metrics
+creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/core
+copying /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/core/__init__.py -> /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/core
+creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/algorithms
+copying /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/algorithms/__init__.py -> /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/algorithms
+creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/experiments
+copying /home/collins/ros2_ws/build/obs_avoid_control/build/lib/obs_avoid_control/experiments/__init__.py -> /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/experiments
+byte-compiling /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/metrics/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/core/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/algorithms/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/experiments/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/collins/ros2_ws/install/obs_avoid_control/share/ament_index
+creating /home/collins/ros2_ws/install/obs_avoid_control/share/ament_index/resource_index
+creating /home/collins/ros2_ws/install/obs_avoid_control/share/ament_index/resource_index/packages
+copying resource/obs_avoid_control -> /home/collins/ros2_ws/install/obs_avoid_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/collins/ros2_ws/install/obs_avoid_control/share/obs_avoid_control
+running install_egg_info
+Copying ../../build/obs_avoid_control/obs_avoid_control.egg-info to /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/collins/ros2_ws/build/obs_avoid_control/install.log'

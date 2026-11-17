@@ -1,0 +1,35 @@
+[random_turn] seed = 3
+[INFO] [1791854269.771272990] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791854270.171945765] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   goal 3.00 m away
+[INFO] [1791854272.221851091] [avoidance_node]:   2.1 s   position (0.39, -0.00)   goal 2.61 m away
+[random_turn] t=2.2s blocked at 0.34 m -> dice: turn RIGHT for 101 deg (about 2.2 s)
+[INFO] [1791854274.271750376] [avoidance_node]:   4.1 s   position (0.43, -0.00)   goal 2.57 m away
+[INFO] [1791854276.271775708] [avoidance_node]:   6.1 s   position (0.44, -0.28)   goal 2.57 m away
+[INFO] [1791854278.271788652] [avoidance_node]:   8.1 s   position (0.80, -0.41)   goal 2.23 m away
+[INFO] [1791854280.321912422] [avoidance_node]:  10.2 s   position (1.21, -0.36)   goal 1.83 m away
+[INFO] [1791854282.371824069] [avoidance_node]:  12.2 s   position (1.62, -0.28)   goal 1.41 m away
+[INFO] [1791854284.422138126] [avoidance_node]:  14.2 s   position (2.02, -0.20)   goal 1.00 m away
+[INFO] [1791854286.471849136] [avoidance_node]:  16.3 s   position (2.42, -0.12)   goal 0.60 m away
+[random_turn] t=18.4s blocked at 0.38 m -> dice: turn RIGHT for 74 deg (about 1.6 s)
+[INFO] [1791854288.522191762] [avoidance_node]:  18.4 s   position (2.82, -0.04)   goal 0.19 m away
+[random_turn] t=20.0s blocked at 0.36 m -> dice: turn LEFT for 105 deg (about 2.3 s)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

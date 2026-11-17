@@ -1,0 +1,59 @@
+{
+ "note": "model = OWNER/NAME of a model you downloaded (empty text = keep the plain shape). turn = extra rotation in degrees (0, 90, 180, 270). fit = stretch (fill the footprint) or uniform (keep proportions). grow = extra size factor (1.0 = none). After a change run: ~/fuel_venv/bin/python fancy_world.py",
+ "pieces": {
+  "sofa": {
+   "model": "OpenRobotics/Sofa",
+   "turn": 0,
+   "fit": "stretch",
+   "grow": 1.0
+  },
+  "armchair": {
+   "model": "OpenRobotics/Armchair",
+   "turn": 0,
+   "fit": "uniform",
+   "grow": 1.0
+  },
+  "coffee_table": {
+   "model": "OpenRobotics/CoffeeTable",
+   "turn": 0,
+   "fit": "stretch",
+   "grow": 1.0
+  },
+  "dining_table": {
+   "model": "OpenRobotics/Table",
+   "turn": 0,
+   "fit": "stretch",
+   "grow": 1.0
+  },
+  "chair_1": {
+   "model": "OpenRobotics/Chair",
+   "turn": 0,
+   "fit": "uniform",
+   "grow": 1.0
+  },
+  "chair_2": {
+   "model": "OpenRobotics/Chair",
+   "turn": 0,
+   "fit": "uniform",
+   "grow": 1.0
+  },
+  "chair_3": {
+   "model": "OpenRobotics/Chair",
+   "turn": 0,
+   "fit": "uniform",
+   "grow": 1.0
+  },
+  "bookshelf": {
+   "model": "OpenRobotics/Bookshelf",
+   "turn": 0,
+   "fit": "stretch",
+   "grow": 1.0
+  },
+  "sideboard": {
+   "model": "OpenRobotics/TVStand",
+   "turn": 0,
+   "fit": "stretch",
+   "grow": 1.0
+  }
+ }
+}

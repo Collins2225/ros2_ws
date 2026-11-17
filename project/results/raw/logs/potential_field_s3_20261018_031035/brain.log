@@ -1,0 +1,96 @@
+[INFO] [1792282255.340673040] [avoidance_node]: running algorithm 'potential_field', goal (3.0, 0.0)
+[potential_field] t=0.0s force=(+1.00,+0.00) heading_err=+0deg -> speed=0.20 turn=+0.00
+[INFO] [1792282255.465133714] [avoidance_node]:   0.0 s   position (0.00, 0.00)   goal 3.00 m away
+[potential_field] t=1.0s force=(+1.00,-0.00) heading_err=-0deg -> speed=0.19 turn=-0.00
+[potential_field] t=2.0s force=(+0.37,+0.04) heading_err=+6deg -> speed=0.11 turn=+0.11
+[INFO] [1792282257.514596675] [avoidance_node]:   2.1 s   position (0.36, -0.00)   goal 2.64 m away
+[potential_field] t=3.0s force=(-1.45,-0.03) heading_err=-179deg -> speed=0.00 turn=-0.60
+[potential_field] t=4.0s force=(-1.63,+0.41) heading_err=+166deg -> speed=0.00 turn=+0.60
+[INFO] [1792282259.514629847] [avoidance_node]:   4.1 s   position (0.43, 0.00)   goal 2.57 m away
+[potential_field] t=5.0s force=(-1.00,+0.38) heading_err=+159deg -> speed=0.00 turn=+0.60
+[potential_field] t=6.0s force=(+0.03,+0.11) heading_err=+75deg -> speed=0.05 turn=+0.60
+[INFO] [1792282261.516395908] [avoidance_node]:   6.1 s   position (0.44, 0.01)   goal 2.56 m away
+[potential_field] t=7.0s force=(-0.55,+0.32) heading_err=+150deg -> speed=0.00 turn=+0.60
+[potential_field] t=8.0s force=(-0.16,-0.99) heading_err=-99deg -> speed=0.00 turn=-0.60
+[INFO] [1792282263.565894478] [avoidance_node]:   8.1 s   position (0.45, 0.02)   goal 2.55 m away
+[potential_field] t=9.0s force=(+0.41,-0.91) heading_err=-66deg -> speed=0.08 turn=-0.60
+[potential_field] t=10.0s force=(-1.27,+2.55) heading_err=+116deg -> speed=0.00 turn=+0.60
+[INFO] [1792282265.616209960] [avoidance_node]:  10.2 s   position (0.50, 0.11)   goal 2.50 m away
+[potential_field] t=11.0s force=(-2.31,+2.72) heading_err=+130deg -> speed=0.00 turn=+0.60
+[potential_field] t=12.0s force=(+0.15,-0.99) heading_err=-81deg -> speed=0.03 turn=-0.60
+[INFO] [1792282267.665870138] [avoidance_node]:  12.2 s   position (0.51, 0.12)   goal 2.50 m away
+[potential_field] t=13.0s force=(+0.67,-0.74) heading_err=-48deg -> speed=0.13 turn=-0.60
+[potential_field] t=14.0s force=(-3.94,+9.56) heading_err=+112deg -> speed=0.00 turn=+0.60
+[INFO] [1792282269.665963965] [avoidance_node]:  14.2 s   position (0.61, 0.22)   goal 2.40 m away
+[potential_field] t=15.0s force=(-4.45,+9.24) heading_err=+116deg -> speed=0.00 turn=+0.60
+[potential_field] t=16.0s force=(+0.33,-0.94) heading_err=-70deg -> speed=0.07 turn=-0.60
+[INFO] [1792282271.666225803] [avoidance_node]:  16.2 s   position (0.63, 0.25)   goal 2.39 m away
+[potential_field] t=17.0s force=(+0.78,-0.62) heading_err=-39deg -> speed=0.16 turn=-0.60
+[potential_field] t=18.0s force=(+0.21,+0.83) heading_err=+76deg -> speed=0.05 turn=+0.60
+[INFO] [1792282273.715909245] [avoidance_node]:  18.2 s   position (0.80, 0.36)   goal 2.23 m away
+[potential_field] t=19.0s force=(-0.29,+0.51) heading_err=+119deg -> speed=0.00 turn=+0.60
+[potential_field] t=20.0s force=(+0.60,-0.80) heading_err=-53deg -> speed=0.12 turn=-0.60
+[INFO] [1792282275.765925053] [avoidance_node]:  20.3 s   position (0.87, 0.44)   goal 2.18 m away
+[potential_field] t=21.0s force=(+0.91,-0.39) heading_err=-23deg -> speed=0.17 turn=-0.41
+[potential_field] t=22.0s force=(+0.68,-0.12) heading_err=-10deg -> speed=0.12 turn=-0.18
+[INFO] [1792282277.766012121] [avoidance_node]:  22.3 s   position (1.15, 0.47)   goal 1.91 m away
+[potential_field] t=23.0s force=(-0.05,+0.03) heading_err=+152deg -> speed=0.00 turn=+0.60
+[potential_field] t=24.0s force=(+0.08,-0.21) heading_err=-70deg -> speed=0.07 turn=-0.60
+[INFO] [1792282279.815861021] [avoidance_node]:  24.4 s   position (1.20, 0.45)   goal 1.86 m away
+[potential_field] t=25.0s force=(-1.21,+1.66) heading_err=+126deg -> speed=0.00 turn=+0.60
+[potential_field] t=26.0s force=(-0.89,+0.87) heading_err=+136deg -> speed=0.00 turn=+0.60
+[INFO] [1792282281.815879805] [avoidance_node]:  26.4 s   position (1.20, 0.45)   goal 1.86 m away
+[potential_field] t=27.0s force=(-0.80,-1.43) heading_err=-119deg -> speed=0.00 turn=-0.60
+[potential_field] t=28.0s force=(+0.21,-0.29) heading_err=-54deg -> speed=0.12 turn=-0.60
+[INFO] [1792282283.865887020] [avoidance_node]:  28.4 s   position (1.21, 0.42)   goal 1.83 m away
+[potential_field] t=29.0s force=(-1.89,+2.73) heading_err=+125deg -> speed=0.00 turn=+0.60
+[potential_field] t=30.0s force=(-2.30,+1.33) heading_err=+150deg -> speed=0.00 turn=+0.60
+[INFO] [1792282285.865888131] [avoidance_node]:  30.4 s   position (1.21, 0.42)   goal 1.83 m away
+[potential_field] t=31.0s force=(-0.35,-1.48) heading_err=-103deg -> speed=0.00 turn=-0.60
+[potential_field] t=32.0s force=(+0.24,-0.04) heading_err=-10deg -> speed=0.20 turn=-0.18
+[INFO] [1792282287.915778966] [avoidance_node]:  32.5 s   position (1.25, 0.34)   goal 1.78 m away
+[potential_field] t=33.0s force=(-0.66,+2.89) heading_err=+103deg -> speed=0.00 turn=+0.60
+[potential_field] t=34.0s force=(-1.69,+0.88) heading_err=+152deg -> speed=0.00 turn=+0.60
+[INFO] [1792282289.915947136] [avoidance_node]:  34.5 s   position (1.25, 0.34)   goal 1.78 m away
+[potential_field] t=35.0s force=(-0.31,-1.70) heading_err=-100deg -> speed=0.00 turn=-0.60
+[potential_field] t=36.0s force=(+0.02,-0.22) heading_err=-86deg -> speed=0.02 turn=-0.60
+[INFO] [1792282291.915986264] [avoidance_node]:  36.5 s   position (1.28, 0.29)   goal 1.74 m away
+[potential_field] t=37.0s force=(-0.24,+2.62) heading_err=+95deg -> speed=0.00 turn=+0.60
+[potential_field] t=38.0s force=(+0.90,-0.19) heading_err=-12deg -> speed=0.20 turn=-0.21
+[INFO] [1792282293.916018329] [avoidance_node]:  38.5 s   position (1.36, 0.27)   goal 1.66 m away
+[potential_field] t=39.0s force=(+0.48,-0.98) heading_err=-64deg -> speed=0.09 turn=-0.60
+[potential_field] t=40.0s force=(+0.22,-0.14) heading_err=-31deg -> speed=0.17 turn=-0.55
+[INFO] [1792282295.965817264] [avoidance_node]:  40.5 s   position (1.57, 0.06)   goal 1.44 m away
+[potential_field] t=41.0s force=(+0.08,+1.00) heading_err=+86deg -> speed=0.02 turn=+0.60
+[potential_field] t=42.0s force=(+0.58,+0.81) heading_err=+54deg -> speed=0.12 turn=+0.60
+[INFO] [1792282297.965883204] [avoidance_node]:  42.5 s   position (1.63, -0.04)   goal 1.37 m away
+[potential_field] t=43.0s force=(+0.86,+0.40) heading_err=+25deg -> speed=0.15 turn=+0.44
+[potential_field] t=44.0s force=(+0.69,+0.44) heading_err=+33deg -> speed=0.17 turn=+0.57
+[INFO] [1792282300.015878374] [avoidance_node]:  44.5 s   position (1.90, -0.07)   goal 1.11 m away
+[potential_field] t=45.0s force=(+0.59,+0.06) heading_err=+6deg -> speed=0.20 turn=+0.10
+[potential_field] t=46.0s force=(+0.95,-0.31) heading_err=-18deg -> speed=0.19 turn=-0.32
+[INFO] [1792282302.065823478] [avoidance_node]:  46.6 s   position (2.26, 0.06)   goal 0.74 m away
+[potential_field] t=47.0s force=(+0.99,-0.13) heading_err=-7deg -> speed=0.20 turn=-0.13
+[potential_field] t=48.0s force=(+1.00,-0.07) heading_err=-4deg -> speed=0.20 turn=-0.07
+[INFO] [1792282304.066044925] [avoidance_node]:  48.6 s   position (2.66, 0.05)   goal 0.34 m away
+[potential_field] t=49.0s force=(+1.00,-0.04) heading_err=-2deg -> speed=0.20 turn=-0.04
+[INFO] [1792282305.365816261] [avoidance_node]: GOAL REACHED in 49.9 s
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

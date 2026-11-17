@@ -1,0 +1,40 @@
+[INFO] [1792660790.776846702] [avoidance_node]: running algorithm 'potential_field', goal (3.0, 0.0), pose source 'gyro'
+[INFO] [1792660790.883595499] [avoidance_node]:   0.0 s   position (-0.00, -0.00)   heading -0 deg (wheels alone say 0)   goal 3.00 m away
+[INFO] [1792660792.933470598] [avoidance_node]:   2.0 s   position (0.36, 0.00)   heading -0 deg (wheels alone say -0)   goal 2.64 m away
+[INFO] [1792660794.983159658] [avoidance_node]:   4.1 s   position (0.44, 0.00)   heading 10 deg (wheels alone say 8)   goal 2.56 m away
+[INFO] [1792660796.985005247] [avoidance_node]:   6.1 s   position (0.44, 0.00)   heading 65 deg (wheels alone say 66)   goal 2.56 m away
+[INFO] [1792660798.985081374] [avoidance_node]:   8.1 s   position (0.46, 0.04)   heading 111 deg (wheels alone say 108)   goal 2.54 m away
+[INFO] [1792660800.985481873] [avoidance_node]:  10.1 s   position (0.51, 0.12)   heading 41 deg (wheels alone say 40)   goal 2.49 m away
+[INFO] [1792660802.985521807] [avoidance_node]:  12.1 s   position (0.51, 0.12)   heading 88 deg (wheels alone say 88)   goal 2.49 m away
+[INFO] [1792660805.035203181] [avoidance_node]:  14.1 s   position (0.60, 0.22)   heading 32 deg (wheels alone say 29)   goal 2.41 m away
+[INFO] [1792660807.085418199] [avoidance_node]:  16.2 s   position (0.60, 0.24)   heading 64 deg (wheels alone say 63)   goal 2.41 m away
+[INFO] [1792660809.087502209] [avoidance_node]:  18.2 s   position (0.75, 0.35)   heading 32 deg (wheels alone say 28)   goal 2.28 m away
+[INFO] [1792660811.087604338] [avoidance_node]:  20.2 s   position (0.78, 0.40)   heading 48 deg (wheels alone say 46)   goal 2.26 m away
+[INFO] [1792660813.137199588] [avoidance_node]:  22.2 s   position (1.07, 0.48)   heading -6 deg (wheels alone say -8)   goal 1.99 m away
+[INFO] [1792660815.141952579] [avoidance_node]:  24.2 s   position (1.24, 0.43)   heading -34 deg (wheels alone say -36)   goal 1.81 m away
+[INFO] [1792660817.191256596] [avoidance_node]:  26.3 s   position (1.24, 0.43)   heading -33 deg (wheels alone say -35)   goal 1.81 m away
+[INFO] [1792660819.191445208] [avoidance_node]:  28.3 s   position (1.27, 0.37)   heading -61 deg (wheels alone say -66)   goal 1.77 m away
+[INFO] [1792660821.241219803] [avoidance_node]:  30.4 s   position (1.56, 0.15)   heading -21 deg (wheels alone say -22)   goal 1.45 m away
+[INFO] [1792660823.241220818] [avoidance_node]:  32.4 s   position (1.95, 0.07)   heading -6 deg (wheels alone say -9)   goal 1.06 m away
+[INFO] [1792660825.291215532] [avoidance_node]:  34.4 s   position (2.35, 0.06)   heading 3 deg (wheels alone say -1)   goal 0.65 m away
+[INFO] [1792660827.291270073] [avoidance_node]:  36.4 s   position (2.75, 0.04)   heading -7 deg (wheels alone say -10)   goal 0.25 m away
+[INFO] [1792660828.190895490] [avoidance_node]: GOAL REACHED in 37.3 s (the brain believes: x=2.91 y=0.02 heading=-11 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

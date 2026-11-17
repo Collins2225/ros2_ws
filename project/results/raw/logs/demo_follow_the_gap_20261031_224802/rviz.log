@@ -1,0 +1,6 @@
+[INFO] [1793476099.851892934] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1793476099.852053200] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1793476099.872872301] [rviz2]: Stereo is NOT SUPPORTED
+[WARN] [1793476261.427666864] [rviz2]: Detected jump back in time. Resetting RViz.
+[WARN] [1793476261.427778637] [tf2_buffer]: Detected jump back in time. Clearing TF buffer.
+[INFO] [1793476271.365901142] [rclcpp]: signal_handler(SIGINT/SIGTERM)

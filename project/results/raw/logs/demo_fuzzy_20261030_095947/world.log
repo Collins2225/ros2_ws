@@ -1,0 +1,65 @@
+[INFO] [launch]: All log files can be found below /home/collins/.ros/log/2026-10-30-09-59-51-029435-collins-ASUS-TUF-Gaming-A15-FA507NV-FA507NV-88523
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [88562]
+[INFO] [robot_state_publisher-2]: process started with pid [88563]
+[INFO] [create-3]: process started with pid [88564]
+[INFO] [parameter_bridge-4]: process started with pid [88566]
+[create-3] [INFO] [1793343591.607218774] [ros_gz_sim]: Requesting list of world names.
+[robot_state_publisher-2] [INFO] [1793343591.614616473] [robot_state_publisher]: Robot initialized
+[parameter_bridge-4] [INFO] [1793343591.627953625] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.628863156] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.630213968] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.632037328] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.633073888] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.634086133] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/sonar (gz.msgs.LaserScan) -> /sonar (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.634416184] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/imu (gz.msgs.IMU) -> /imu (sensor_msgs/msg/Imu)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793343591.634740143] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/servo_cmd (std_msgs/msg/Float64) -> /servo_cmd (gz.msgs.Double)] (Lazy 0)
+[create-3] [INFO] [1793343592.396388601] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-3] [INFO] [1793343592.495007363] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-3]: process has finished cleanly [pid 88564]
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 95: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 96: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 95: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 96: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="base_footprint"]/sensor[@name="imu"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 62: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 63: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 62: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 63: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] [1;31m[Err] [SystemPaths.cc:535] [0m[1;31mFile [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Roughness.png[0m[1;31m] resolved to path [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Roughness.png[0m[1;31m] but the path does not exist[0m[1;31m[0m
+[gazebo-1] [1;31m[Err] [SceneManager.cc:880] [0m[1;31mUnable to find file [[0m[1;31mmaterials/textures/Armchair_Roughness.png[0m[1;31m][0m
+[gazebo-1] [1;31m[Err] [SystemPaths.cc:535] [0m[1;31mFile [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Albedo.png[0m[1;31m] resolved to path [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Albedo.png[0m[1;31m] but the path does not exist[0m[1;31m[0m
+[gazebo-1] [1;31m[Err] [SceneManager.cc:928] [0m[1;31mUnable to find file [[0m[1;31mmaterials/textures/Armchair_Albedo.png[0m[1;31m][0m
+[gazebo-1] [1;31m[Err] [SystemPaths.cc:535] [0m[1;31mFile [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Normal.png[0m[1;31m] resolved to path [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Normal.png[0m[1;31m] but the path does not exist[0m[1;31m[0m
+[gazebo-1] [1;31m[Err] [SceneManager.cc:940] [0m[1;31mUnable to find file [[0m[1;31mmaterials/textures/Armchair_Normal.png[0m[1;31m][0m
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="base_footprint"]/sensor[@name="imu"]/gz_frame_id:<data-string>:L130]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<data-string>:L248]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;31m[GUI] [Err] [SystemPaths.cc:535] [0m[1;31mFile [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Roughness.png[0m[1;31m] resolved to path [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Roughness.png[0m[1;31m] but the path does not exist[0m[1;31m[0m
+[gazebo-1] [1;31m[GUI] [Err] [SceneManager.cc:880] [0m[1;31mUnable to find file [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Roughness.png[0m[1;31m][0m
+[gazebo-1] [1;31m[GUI] [Err] [SystemPaths.cc:535] [0m[1;31mFile [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Albedo.png[0m[1;31m] resolved to path [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Albedo.png[0m[1;31m] but the path does not exist[0m[1;31m[0m
+[gazebo-1] [1;31m[GUI] [Err] [SceneManager.cc:928] [0m[1;31mUnable to find file [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Albedo.png[0m[1;31m][0m
+[gazebo-1] [1;31m[GUI] [Err] [SystemPaths.cc:535] [0m[1;31mFile [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Normal.png[0m[1;31m] resolved to path [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Normal.png[0m[1;31m] but the path does not exist[0m[1;31m[0m
+[gazebo-1] [1;31m[GUI] [Err] [SceneManager.cc:940] [0m[1;31mUnable to find file [[0m[1;31m/home/collins/ros2_ws/project/scenarios/materials/textures/Armchair_Normal.png[0m[1;31m][0m
+[parameter_bridge-4] [INFO] [1793343597.491231647] [ros_gz_bridge]: Passing message from ROS std_msgs/msg/Float64 to Gazebo gz.msgs.Double (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1793343616.177879174] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1793343656.294214396] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-2] [INFO] [1793343656.294220397] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-4]: process has finished cleanly [pid 88566]
+[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 88563]

@@ -1,0 +1,13 @@
+[INFO] [1793279438.314592628] [avoidance_node]: running algorithm 'fuzzy', goal (3.0, 0.0), pose source 'gyro'
+[WARN] [1793279438.989911590] [avoidance_node]: waiting for /odom and /imu ...
+[INFO] [1793279439.034369861] [avoidance_node]:   0.0 s   position (0.00, -0.00)   heading -0 deg (wheels alone say 0)   goal 3.00 m away
+[INFO] [1793279441.034578225] [avoidance_node]:   2.0 s   position (0.30, 0.04)   heading 22 deg (wheels alone say 20)   goal 2.70 m away
+[INFO] [1793279443.084357151] [avoidance_node]:   4.1 s   position (0.46, 0.23)   heading 58 deg (wheels alone say 59)   goal 2.55 m away
+[INFO] [1793279445.134264596] [avoidance_node]:   6.1 s   position (0.72, 0.50)   heading 31 deg (wheels alone say 30)   goal 2.33 m away
+[INFO] [1793279447.134539280] [avoidance_node]:   8.1 s   position (1.05, 0.60)   heading 22 deg (wheels alone say 19)   goal 2.04 m away
+[INFO] [1793279449.184580403] [avoidance_node]:  10.2 s   position (1.26, 0.80)   heading 45 deg (wheels alone say 45)   goal 1.91 m away
+[INFO] [1793279451.234584622] [avoidance_node]:  12.2 s   position (1.52, 1.04)   heading 36 deg (wheels alone say 36)   goal 1.81 m away
+[INFO] [1793279453.284734630] [avoidance_node]:  14.3 s   position (1.87, 1.19)   heading 1 deg (wheels alone say 2)   goal 1.64 m away
+[INFO] [1793279455.334771898] [avoidance_node]:  16.3 s   position (2.25, 1.04)   heading -36 deg (wheels alone say -35)   goal 1.29 m away
+[INFO] [1793279457.384560573] [avoidance_node]:  18.4 s   position (2.55, 0.76)   heading -49 deg (wheels alone say -48)   goal 0.88 m away
+[ERROR] [1793279458.725200173] [rclpy.signals]: rcl_trigger_guard_condition() failed: guard condition handle not from this implementation, at ./src/rmw_trigger_guard_condition.cpp:34, at ./src/rcl/guard_condition.c:161

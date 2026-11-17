@@ -1,0 +1,52 @@
+[INFO] [1791892528.234938513] [avoidance_node]: running algorithm 'braitenberg', goal (3.0, 0.0)
+[braitenberg] t=0.0s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.00
+[INFO] [1791892529.246362009] [avoidance_node]:   0.0 s   position (0.00, 0.00)   goal 3.00 m away
+[braitenberg] t=1.0s left=0.09 right=0.12 ahead=0.24 -> speed=0.15 turn=+0.04
+[braitenberg] t=2.0s left=0.20 right=0.34 ahead=0.52 -> speed=0.10 turn=+0.14
+[INFO] [1791892531.269387024] [avoidance_node]:   2.0 s   position (0.32, 0.00)   goal 2.68 m away
+[braitenberg] t=3.0s left=0.26 right=0.62 ahead=0.70 -> speed=0.06 turn=+0.39
+[braitenberg] t=4.0s left=0.00 right=0.71 ahead=0.76 -> speed=0.05 turn=+0.71
+[INFO] [1791892533.319467020] [avoidance_node]:   4.1 s   position (0.46, 0.03)   goal 2.54 m away
+[braitenberg] t=5.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=-1.14
+[braitenberg] t=6.1s left=0.00 right=0.37 ahead=0.00 -> speed=0.20 turn=-0.13
+[INFO] [1791892535.369571857] [avoidance_node]:   6.1 s   position (0.64, 0.26)   goal 2.37 m away
+[braitenberg] t=7.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.80
+[braitenberg] t=8.1s left=0.00 right=0.04 ahead=0.00 -> speed=0.20 turn=-0.28
+[INFO] [1791892537.369616726] [avoidance_node]:   8.1 s   position (0.99, 0.45)   goal 2.06 m away
+[braitenberg] t=9.1s left=0.18 right=0.08 ahead=0.46 -> speed=0.11 turn=-0.18
+[braitenberg] t=10.1s left=0.61 right=0.00 ahead=0.62 -> speed=0.08 turn=-0.60
+[INFO] [1791892539.419420060] [avoidance_node]:  10.2 s   position (1.21, 0.43)   goal 1.84 m away
+[braitenberg] t=11.1s left=0.52 right=0.26 ahead=0.00 -> speed=0.20 turn=+0.02
+[braitenberg] t=12.1s left=0.00 right=0.26 ahead=0.00 -> speed=0.20 turn=+0.67
+[INFO] [1791892541.419469394] [avoidance_node]:  12.2 s   position (1.46, 0.16)   goal 1.55 m away
+[braitenberg] t=13.1s left=0.00 right=0.11 ahead=0.00 -> speed=0.20 turn=+0.24
+[braitenberg] t=14.1s left=0.10 right=0.11 ahead=0.00 -> speed=0.20 turn=+0.02
+[INFO] [1791892543.469296400] [avoidance_node]:  14.2 s   position (1.86, 0.08)   goal 1.14 m away
+[braitenberg] t=15.1s left=0.10 right=0.23 ahead=0.00 -> speed=0.20 turn=+0.10
+[braitenberg] t=16.1s left=0.00 right=0.23 ahead=0.00 -> speed=0.20 turn=+0.10
+[INFO] [1791892545.469340071] [avoidance_node]:  16.2 s   position (2.26, 0.09)   goal 0.75 m away
+[braitenberg] t=17.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.17
+[braitenberg] t=18.1s left=0.00 right=0.00 ahead=0.00 -> speed=0.20 turn=-0.09
+[INFO] [1791892547.469407750] [avoidance_node]:  18.2 s   position (2.66, 0.08)   goal 0.35 m away
+[braitenberg] t=19.1s left=0.22 right=0.04 ahead=0.25 -> speed=0.15 turn=-0.24
+[INFO] [1791892549.019426897] [avoidance_node]: GOAL REACHED in 19.8 s
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

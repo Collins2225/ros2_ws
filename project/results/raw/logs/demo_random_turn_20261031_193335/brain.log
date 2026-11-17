@@ -1,0 +1,50 @@
+[random_turn] seed = 5
+[INFO] [1793464441.077620913] [avoidance_node]: running algorithm 'random_turn', goal (4.7, 0.0), pose source 'gyro'
+[INFO] [1793464441.196328899] [avoidance_node]:   0.0 s   position (0.00, 0.00)   heading 0 deg (wheels alone say 0)   goal 4.70 m away
+[random_turn] t=1.4s blocked at 0.30 m -> dice: turn LEFT for 119 deg (about 2.6 s)
+[INFO] [1793464443.196506706] [avoidance_node]:   2.0 s   position (0.25, 0.00)   heading 25 deg (wheels alone say 23)   goal 4.45 m away
+[INFO] [1793464445.246422186] [avoidance_node]:   4.1 s   position (0.25, 0.00)   heading 111 deg (wheels alone say 110)   goal 4.45 m away
+[INFO] [1793464447.296505720] [avoidance_node]:   6.1 s   position (0.42, 0.32)   heading 13 deg (wheels alone say 21)   goal 4.29 m away
+[random_turn] t=6.2s blocked at 0.06 m -> dice: turn RIGHT for 131 deg (about 2.9 s)
+[INFO] [1793464449.346566500] [avoidance_node]:   8.2 s   position (0.45, 0.33)   heading -70 deg (wheels alone say -68)   goal 4.26 m away
+[INFO] [1793464451.351653528] [avoidance_node]:  10.2 s   position (0.37, 0.17)   heading -97 deg (wheels alone say -93)   goal 4.33 m away
+[random_turn] t=11.8s blocked at 0.31 m -> dice: turn RIGHT for 108 deg (about 2.4 s)
+[INFO] [1793464453.401518586] [avoidance_node]:  12.2 s   position (0.53, -0.09)   heading -46 deg (wheels alone say -44)   goal 4.17 m away
+[INFO] [1793464455.401834930] [avoidance_node]:  14.2 s   position (0.53, -0.09)   heading -139 deg (wheels alone say -135)   goal 4.18 m away
+[INFO] [1793464457.451686824] [avoidance_node]:  16.3 s   position (0.40, -0.43)   heading -63 deg (wheels alone say -63)   goal 4.32 m away
+[INFO] [1793464459.501546555] [avoidance_node]:  18.3 s   position (0.74, -0.60)   heading -1 deg (wheels alone say 2)   goal 4.00 m away
+[random_turn] t=18.4s blocked at 0.34 m -> dice: turn RIGHT for 44 deg (about 1.0 s)
+[INFO] [1793464461.501546844] [avoidance_node]:  20.3 s   position (0.90, -0.69)   heading -20 deg (wheels alone say -29)   goal 3.87 m away
+[INFO] [1793464463.551765828] [avoidance_node]:  22.4 s   position (1.30, -0.70)   heading 4 deg (wheels alone say -1)   goal 3.47 m away
+[INFO] [1793464465.601504773] [avoidance_node]:  24.4 s   position (1.71, -0.64)   heading 11 deg (wheels alone say 5)   goal 3.06 m away
+[INFO] [1793464467.651375097] [avoidance_node]:  26.4 s   position (2.11, -0.56)   heading 12 deg (wheels alone say 6)   goal 2.65 m away
+[random_turn] t=27.8s blocked at 0.40 m -> dice: turn LEFT for 134 deg (about 2.9 s)
+[INFO] [1793464469.651503837] [avoidance_node]:  28.4 s   position (2.37, -0.50)   heading 37 deg (wheels alone say 31)   goal 2.38 m away
+[INFO] [1793464471.651750548] [avoidance_node]:  30.4 s   position (2.37, -0.50)   heading 129 deg (wheels alone say 123)   goal 2.38 m away
+[INFO] [1793464473.651785917] [avoidance_node]:  32.5 s   position (2.32, -0.20)   heading 59 deg (wheels alone say 55)   goal 2.39 m away
+[INFO] [1793464475.701489372] [avoidance_node]:  34.5 s   position (2.67, -0.02)   heading 9 deg (wheels alone say 2)   goal 2.03 m away
+[INFO] [1793464477.701743192] [avoidance_node]:  36.5 s   position (3.07, 0.01)   heading 1 deg (wheels alone say -5)   goal 1.63 m away
+[INFO] [1793464479.751629643] [avoidance_node]:  38.5 s   position (3.48, 0.01)   heading -0 deg (wheels alone say -5)   goal 1.22 m away
+[INFO] [1793464481.801424187] [avoidance_node]:  40.6 s   position (3.89, 0.00)   heading -0 deg (wheels alone say -5)   goal 0.81 m away
+[INFO] [1793464483.851545431] [avoidance_node]:  42.7 s   position (4.30, 0.00)   heading -0 deg (wheels alone say -5)   goal 0.40 m away
+[INFO] [1793464485.351393284] [avoidance_node]: GOAL REACHED in 44.2 s (the brain believes: x=4.60 y=0.00 heading=-0 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control==0.0.0', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

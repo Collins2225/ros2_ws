@@ -1,0 +1,79 @@
+[INFO] [1792615458.449034430] [avoidance_node]: running algorithm 'potential_field', goal (3.0, 0.0), pose source 'gyro'
+[WARN] [1792615460.456699204] [avoidance_node]: waiting for /odom and /imu ...
+[potential_field] t=0.0s force=(+1.00,+0.00) heading_err=+0deg -> speed=0.20 turn=+0.00
+[INFO] [1792615460.538778224] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   heading -0 deg (wheels alone say 0)   goal 3.00 m away
+[potential_field] t=1.0s force=(+1.00,-0.00) heading_err=-0deg -> speed=0.20 turn=-0.00
+[potential_field] t=2.0s force=(+0.71,-0.06) heading_err=-5deg -> speed=0.11 turn=-0.09
+[INFO] [1792615462.588865989] [avoidance_node]:   2.1 s   position (0.36, -0.00)   heading -0 deg (wheels alone say -0)   goal 2.64 m away
+[potential_field] t=3.1s force=(-0.84,+0.13) heading_err=+171deg -> speed=0.00 turn=+0.60
+[potential_field] t=4.1s force=(-2.01,-0.02) heading_err=-180deg -> speed=0.00 turn=-0.60
+[INFO] [1792615464.592819941] [avoidance_node]:   4.1 s   position (0.43, -0.00)   heading -15 deg (wheels alone say -13)   goal 2.57 m away
+[potential_field] t=5.1s force=(-0.32,+0.09) heading_err=+164deg -> speed=0.00 turn=+0.60
+[potential_field] t=6.1s force=(-0.52,-0.36) heading_err=-145deg -> speed=0.00 turn=-0.60
+[INFO] [1792615466.593002579] [avoidance_node]:   6.1 s   position (0.43, -0.00)   heading -61 deg (wheels alone say -63)   goal 2.57 m away
+[potential_field] t=7.1s force=(-0.81,+0.02) heading_err=+179deg -> speed=0.00 turn=+0.60
+[potential_field] t=8.1s force=(+0.30,+0.95) heading_err=+73deg -> speed=0.06 turn=+0.60
+[INFO] [1792615468.642728878] [avoidance_node]:   8.1 s   position (0.43, -0.01)   heading -70 deg (wheels alone say -74)   goal 2.57 m away
+[potential_field] t=9.1s force=(-0.36,-0.70) heading_err=-117deg -> speed=0.00 turn=-0.60
+[potential_field] t=10.1s force=(-1.00,-1.24) heading_err=-129deg -> speed=0.00 turn=-0.60
+[INFO] [1792615470.642957107] [avoidance_node]:  10.1 s   position (0.49, -0.09)   heading -76 deg (wheels alone say -79)   goal 2.51 m away
+[potential_field] t=11.1s force=(-0.39,+0.92) heading_err=+113deg -> speed=0.00 turn=+0.60
+[potential_field] t=12.1s force=(+0.16,+0.99) heading_err=+81deg -> speed=0.03 turn=+0.60
+[INFO] [1792615472.692885352] [avoidance_node]:  12.2 s   position (0.49, -0.10)   heading -75 deg (wheels alone say -78)   goal 2.51 m away
+[potential_field] t=13.1s force=(-0.09,-0.77) heading_err=-97deg -> speed=0.00 turn=-0.60
+[potential_field] t=14.1s force=(-0.69,-0.64) heading_err=-137deg -> speed=0.00 turn=-0.60
+[INFO] [1792615474.695116031] [avoidance_node]:  14.2 s   position (0.53, -0.16)   heading -96 deg (wheels alone say -96)   goal 2.48 m away
+[potential_field] t=15.1s force=(-0.53,+0.85) heading_err=+122deg -> speed=0.00 turn=+0.60
+[potential_field] t=16.1s force=(+0.10,+1.00) heading_err=+84deg -> speed=0.02 turn=+0.60
+[INFO] [1792615476.745139702] [avoidance_node]:  16.2 s   position (0.53, -0.16)   heading -75 deg (wheels alone say -79)   goal 2.48 m away
+[potential_field] t=17.1s force=(+0.59,+0.72) heading_err=+51deg -> speed=0.13 turn=+0.60
+[potential_field] t=18.1s force=(+0.89,+0.35) heading_err=+21deg -> speed=0.19 turn=+0.37
+[INFO] [1792615478.795054075] [avoidance_node]:  18.3 s   position (0.73, -0.31)   heading -13 deg (wheels alone say -14)   goal 2.29 m away
+[potential_field] t=19.1s force=(-1.25,-4.64) heading_err=-105deg -> speed=0.00 turn=-0.60
+[potential_field] t=20.1s force=(-1.70,-4.33) heading_err=-111deg -> speed=0.00 turn=-0.60
+[INFO] [1792615480.845254263] [avoidance_node]:  20.3 s   position (0.76, -0.32)   heading -72 deg (wheels alone say -77)   goal 2.26 m away
+[potential_field] t=21.1s force=(+0.24,+0.97) heading_err=+76deg -> speed=0.05 turn=+0.60
+[potential_field] t=22.1s force=(+0.69,+0.72) heading_err=+46deg -> speed=0.14 turn=+0.60
+[INFO] [1792615482.895016846] [avoidance_node]:  22.4 s   position (0.87, -0.42)   heading -26 deg (wheels alone say -28)   goal 2.17 m away
+[potential_field] t=23.1s force=(+0.95,+0.32) heading_err=+18deg -> speed=0.19 turn=+0.32
+[potential_field] t=24.1s force=(+0.99,+0.10) heading_err=+6deg -> speed=0.20 turn=+0.10
+[INFO] [1792615484.895278298] [avoidance_node]:  24.4 s   position (1.23, -0.44)   heading 10 deg (wheels alone say 4)   goal 1.82 m away
+[potential_field] t=25.1s force=(+1.00,+0.04) heading_err=+2deg -> speed=0.20 turn=+0.04
+[potential_field] t=26.1s force=(+0.91,+0.03) heading_err=+2deg -> speed=0.15 turn=+0.03
+[INFO] [1792615486.899588482] [avoidance_node]:  26.4 s   position (1.59, -0.36)   heading 15 deg (wheels alone say 9)   goal 1.46 m away
+[potential_field] t=27.1s force=(-0.33,+0.82) heading_err=+112deg -> speed=0.00 turn=+0.60
+[potential_field] t=28.1s force=(-0.04,+0.21) heading_err=+99deg -> speed=0.00 turn=+0.60
+[INFO] [1792615488.949602520] [avoidance_node]:  28.4 s   position (1.66, -0.33)   heading 67 deg (wheels alone say 64)   goal 1.38 m away
+[potential_field] t=29.1s force=(+0.68,-0.73) heading_err=-47deg -> speed=0.14 turn=-0.60
+[potential_field] t=30.1s force=(+0.92,-0.38) heading_err=-23deg -> speed=0.18 turn=-0.39
+[INFO] [1792615490.999182159] [avoidance_node]:  30.5 s   position (1.86, -0.15)   heading 24 deg (wheels alone say 18)   goal 1.15 m away
+[potential_field] t=31.1s force=(+0.66,+0.62) heading_err=+43deg -> speed=0.15 turn=+0.60
+[potential_field] t=32.1s force=(+0.30,+0.11) heading_err=+20deg -> speed=0.19 turn=+0.35
+[INFO] [1792615493.049270412] [avoidance_node]:  32.5 s   position (2.11, 0.06)   heading 59 deg (wheels alone say 56)   goal 0.89 m away
+[potential_field] t=33.1s force=(+0.57,-0.84) heading_err=-56deg -> speed=0.11 turn=-0.60
+[potential_field] t=34.1s force=(+0.88,-0.48) heading_err=-28deg -> speed=0.18 turn=-0.50
+[INFO] [1792615495.099531998] [avoidance_node]:  34.6 s   position (2.36, 0.20)   heading 1 deg (wheels alone say -4)   goal 0.67 m away
+[potential_field] t=35.1s force=(+0.98,-0.20) heading_err=-11deg -> speed=0.20 turn=-0.20
+[potential_field] t=36.1s force=(+1.00,-0.10) heading_err=-6deg -> speed=0.20 turn=-0.10
+[INFO] [1792615497.100162246] [avoidance_node]:  36.6 s   position (2.75, 0.11)   heading -20 deg (wheels alone say -22)   goal 0.28 m away
+[potential_field] t=37.1s force=(+0.92,-0.10) heading_err=-6deg -> speed=0.16 turn=-0.10
+[INFO] [1792615498.100074062] [avoidance_node]: GOAL REACHED in 37.6 s (the brain believes: x=2.91 y=0.05 heading=-26 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

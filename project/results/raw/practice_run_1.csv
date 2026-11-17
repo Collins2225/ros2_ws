@@ -1,0 +1,2 @@
+label,outcome,success,time_s,path_m,straight_m,efficiency,collisions,first_collision_s,min_gap_m,final_goal_dist_m
+stop_and_turn,SUCCESS,1,16.64,2.992,3.000,1.003,0,,0.012,0.147

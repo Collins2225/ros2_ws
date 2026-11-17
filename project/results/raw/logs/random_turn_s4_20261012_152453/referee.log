@@ -1,0 +1,28 @@
+[INFO] [1791807910.930008498] [judge]: referee started for 'random_turn_s4'
+[INFO] [1791807910.931636877] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791807913.025591105] [judge]: robot started moving - the clock is running
+[INFO] [1791807913.026219516] [judge]:   0.0 s  true position (0.02, -0.00)  closest gap 0.72 m
+[INFO] [1791807918.028752081] [judge]:   5.0 s  true position (0.45, 0.01)  closest gap 0.27 m
+[INFO] [1791807923.029793651] [judge]:  10.0 s  true position (0.46, -0.03)  closest gap 0.28 m
+[INFO] [1791807928.029913857] [judge]:  15.0 s  true position (0.83, 0.48)  closest gap 0.25 m
+[INFO] [1791807933.049968476] [judge]:  20.0 s  true position (1.51, 0.31)  closest gap 0.07 m
+[INFO] [1791807938.069828806] [judge]:  25.0 s  true position (2.51, 0.22)  closest gap 0.48 m
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 245, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

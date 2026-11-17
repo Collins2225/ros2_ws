@@ -1,0 +1,19 @@
+[INFO] [1791893317.100087234] [judge]: referee started for 'braitenberg_s1'
+[INFO] [1791893317.101706398] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791893319.539150921] [judge]: robot started moving - the clock is running
+[INFO] [1791893319.539775554] [judge]:   0.0 s  true position (0.02, 0.00)  closest gap 0.72 m
+[INFO] [1791893324.559461684] [judge]:   5.0 s  true position (0.52, -0.13)  closest gap 0.22 m
+[INFO] [1791893329.559900813] [judge]:  10.0 s  true position (1.39, -0.52)  closest gap 0.33 m
+[INFO] [1791893334.579517590] [judge]:  15.0 s  true position (2.14, 0.01)  closest gap 0.28 m
+[INFO] [1791893338.259460985] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791893338.259855940] [judge]:  label            : braitenberg_s1
+[INFO] [1791893338.260135350] [judge]:  outcome          : SUCCESS
+[INFO] [1791893338.260415301] [judge]:  time             : 18.7 s
+[INFO] [1791893338.260715320] [judge]:  distance driven  : 3.25 m   (straight line would be 3.00 m)
+[INFO] [1791893338.261001262] [judge]:  path efficiency  : 0.88
+[INFO] [1791893338.261261997] [judge]:  collisions       : 0
+[INFO] [1791893338.261542520] [judge]:  closest approach : 0.135 m   (box_1 at 6.6 s, robot at (0.73, -0.33))
+[INFO] [1791893338.261847588] [judge]:  final goal dist  : 0.15 m
+[INFO] [1791893338.262112701] [judge]: ============================================
+[INFO] [1791893338.263002928] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/braitenberg_s1_20261013_150858.csv
+[INFO] [1791893338.263363049] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.

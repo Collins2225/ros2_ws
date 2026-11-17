@@ -1,0 +1,66 @@
+[INFO] [1792615404.446669356] [avoidance_node]: running algorithm 'potential_field', goal (3.0, 0.0), pose source 'gyro'
+[potential_field] t=0.0s force=(+1.00,-0.00) heading_err=-0deg -> speed=0.20 turn=-0.00
+[INFO] [1792615404.551701595] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   heading 0 deg (wheels alone say 0)   goal 3.00 m away
+[potential_field] t=1.0s force=(+1.00,-0.00) heading_err=-0deg -> speed=0.20 turn=-0.00
+[potential_field] t=2.0s force=(+0.91,-0.00) heading_err=-0deg -> speed=0.16 turn=-0.00
+[INFO] [1792615406.551733202] [avoidance_node]:   2.0 s   position (0.35, 0.00)   heading 0 deg (wheels alone say 0)   goal 2.65 m away
+[potential_field] t=3.0s force=(-0.14,-0.02) heading_err=-173deg -> speed=0.00 turn=-0.60
+[potential_field] t=4.0s force=(-0.65,+0.02) heading_err=+178deg -> speed=0.00 turn=+0.60
+[INFO] [1792615408.551918208] [avoidance_node]:   4.0 s   position (0.38, -0.00)   heading -8 deg (wheels alone say -9)   goal 2.62 m away
+[potential_field] t=5.0s force=(-0.20,+0.05) heading_err=+166deg -> speed=0.00 turn=+0.60
+[potential_field] t=6.0s force=(+0.03,+0.09) heading_err=+73deg -> speed=0.03 turn=+0.60
+[INFO] [1792615410.552200335] [avoidance_node]:   6.0 s   position (0.38, -0.00)   heading -38 deg (wheels alone say -40)   goal 2.62 m away
+[potential_field] t=7.0s force=(+0.09,+0.00) heading_err=+2deg -> speed=0.10 turn=+0.03
+[potential_field] t=8.0s force=(-0.44,-0.58) heading_err=-127deg -> speed=0.00 turn=-0.60
+[INFO] [1792615412.554791384] [avoidance_node]:   8.0 s   position (0.45, -0.05)   heading -60 deg (wheels alone say -64)   goal 2.55 m away
+[potential_field] t=9.0s force=(-1.06,-0.46) heading_err=-156deg -> speed=0.00 turn=-0.60
+[potential_field] t=10.0s force=(+0.19,+0.98) heading_err=+79deg -> speed=0.04 turn=+0.60
+[INFO] [1792615414.554830343] [avoidance_node]:  10.0 s   position (0.45, -0.05)   heading -78 deg (wheels alone say -82)   goal 2.55 m away
+[potential_field] t=11.0s force=(+0.24,+0.07) heading_err=+16deg -> speed=0.19 turn=+0.29
+[potential_field] t=12.0s force=(-0.68,-1.04) heading_err=-123deg -> speed=0.00 turn=-0.60
+[INFO] [1792615416.555009426] [avoidance_node]:  12.0 s   position (0.51, -0.13)   heading -74 deg (wheels alone say -80)   goal 2.49 m away
+[potential_field] t=13.0s force=(-0.43,+0.90) heading_err=+115deg -> speed=0.00 turn=+0.60
+[potential_field] t=14.0s force=(+0.01,+1.00) heading_err=+90deg -> speed=0.00 turn=+0.60
+[INFO] [1792615418.604784980] [avoidance_node]:  14.1 s   position (0.51, -0.13)   heading -84 deg (wheels alone say -89)   goal 2.49 m away
+[potential_field] t=15.0s force=(+0.40,+0.32) heading_err=+38deg -> speed=0.16 turn=+0.60
+[potential_field] t=16.0s force=(+0.64,+0.14) heading_err=+12deg -> speed=0.20 turn=+0.21
+[INFO] [1792615420.608013735] [avoidance_node]:  16.1 s   position (0.69, -0.31)   heading -30 deg (wheels alone say -33)   goal 2.33 m away
+[potential_field] t=17.0s force=(+0.77,+0.31) heading_err=+22deg -> speed=0.19 turn=+0.38
+[potential_field] t=18.0s force=(+0.87,+0.11) heading_err=+8deg -> speed=0.20 turn=+0.13
+[INFO] [1792615422.608349089] [avoidance_node]:  18.1 s   position (1.05, -0.44)   heading -8 deg (wheels alone say -11)   goal 2.00 m away
+[potential_field] t=19.0s force=(+0.98,+0.22) heading_err=+12deg -> speed=0.20 turn=+0.22
+[potential_field] t=20.0s force=(+0.96,+0.08) heading_err=+5deg -> speed=0.17 turn=+0.09
+[INFO] [1792615424.658035694] [avoidance_node]:  20.1 s   position (1.45, -0.42)   heading 12 deg (wheels alone say 5)   goal 1.61 m away
+[potential_field] t=21.0s force=(+0.96,+0.03) heading_err=+2deg -> speed=0.17 turn=+0.03
+[potential_field] t=22.0s force=(+0.25,+0.18) heading_err=+36deg -> speed=0.16 turn=+0.60
+[INFO] [1792615426.707979383] [avoidance_node]:  22.2 s   position (1.64, -0.36)   heading 45 deg (wheels alone say 39)   goal 1.41 m away
+[potential_field] t=23.0s force=(+0.13,-0.01) heading_err=-5deg -> speed=0.20 turn=-0.10
+[potential_field] t=24.0s force=(+0.58,+0.05) heading_err=+5deg -> speed=0.20 turn=+0.09
+[INFO] [1792615428.708246676] [avoidance_node]:  24.2 s   position (1.92, -0.09)   heading 43 deg (wheels alone say 38)   goal 1.09 m away
+[potential_field] t=25.0s force=(+0.50,-0.05) heading_err=-6deg -> speed=0.20 turn=-0.10
+[potential_field] t=26.0s force=(+0.91,-0.41) heading_err=-24deg -> speed=0.18 turn=-0.42
+[INFO] [1792615430.758101196] [avoidance_node]:  26.2 s   position (2.22, 0.12)   heading 10 deg (wheels alone say 4)   goal 0.79 m away
+[potential_field] t=27.0s force=(+0.99,-0.15) heading_err=-9deg -> speed=0.20 turn=-0.15
+[potential_field] t=28.0s force=(+1.00,-0.07) heading_err=-4deg -> speed=0.20 turn=-0.07
+[INFO] [1792615432.758141230] [avoidance_node]:  28.2 s   position (2.61, 0.10)   heading -10 deg (wheels alone say -13)   goal 0.40 m away
+[potential_field] t=29.0s force=(+1.00,-0.04) heading_err=-2deg -> speed=0.20 turn=-0.04
+[INFO] [1792615434.357764707] [avoidance_node]: GOAL REACHED in 29.8 s (the brain believes: x=2.91 y=0.03 heading=-17 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

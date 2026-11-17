@@ -1,0 +1,54 @@
+[INFO] [1793500701.993379025] [avoidance_node]: running algorithm 'fuzzy', goal (4.7, 0.0), pose source 'gyro'
+[WARN] [1793500701.997117042] [avoidance_node]: waiting for /odom and /imu ...
+[INFO] [1793500702.087817464] [avoidance_node]:   0.0 s   position (0.00, -0.00)   heading 0 deg (wheels alone say -0)   goal 4.70 m away
+[INFO] [1793500704.164692695] [avoidance_node]:   1.5 s   position (0.15, -0.02)   heading -23 deg (wheels alone say -21)   goal 4.55 m away
+[INFO] [1793500706.224553625] [avoidance_node]:   3.0 s   position (0.26, -0.13)   heading -62 deg (wheels alone say -63)   goal 4.44 m away
+[INFO] [1793500708.261246172] [avoidance_node]:   4.6 s   position (0.33, -0.36)   heading -73 deg (wheels alone say -75)   goal 4.38 m away
+[INFO] [1793500710.303654592] [avoidance_node]:   6.2 s   position (0.46, -0.64)   heading -60 deg (wheels alone say -61)   goal 4.29 m away
+[INFO] [1793500712.328332509] [avoidance_node]:   8.0 s   position (0.59, -0.88)   heading -64 deg (wheels alone say -65)   goal 4.20 m away
+[INFO] [1793500714.368707925] [avoidance_node]:   9.7 s   position (0.75, -1.06)   heading -28 deg (wheels alone say -26)   goal 4.09 m away
+[INFO] [1793500716.398666841] [avoidance_node]:  11.4 s   position (1.03, -1.10)   heading 7 deg (wheels alone say 6)   goal 3.83 m away
+[INFO] [1793500718.402610011] [avoidance_node]:  13.1 s   position (1.32, -1.06)   heading 5 deg (wheels alone say 4)   goal 3.54 m away
+[INFO] [1793500720.404109787] [avoidance_node]:  14.8 s   position (1.59, -1.04)   heading 5 deg (wheels alone say 5)   goal 3.28 m away
+[INFO] [1793500722.444186025] [avoidance_node]:  16.5 s   position (1.76, -1.03)   heading -4 deg (wheels alone say -3)   goal 3.11 m away
+[INFO] [1793500724.451112139] [avoidance_node]:  18.2 s   position (1.90, -1.09)   heading -44 deg (wheels alone say -43)   goal 3.01 m away
+[INFO] [1793500726.485565758] [avoidance_node]:  19.9 s   position (2.08, -1.30)   heading -45 deg (wheels alone say -45)   goal 2.92 m away
+[INFO] [1793500728.486829562] [avoidance_node]:  21.6 s   position (2.32, -1.49)   heading -36 deg (wheels alone say -34)   goal 2.81 m away
+[INFO] [1793500730.526922746] [avoidance_node]:  23.2 s   position (2.57, -1.66)   heading -25 deg (wheels alone say -23)   goal 2.70 m away
+[INFO] [1793500732.589659900] [avoidance_node]:  25.0 s   position (2.89, -1.67)   heading 18 deg (wheels alone say 15)   goal 2.46 m away
+[INFO] [1793500734.617574510] [avoidance_node]:  26.8 s   position (3.20, -1.52)   heading 35 deg (wheels alone say 33)   goal 2.14 m away
+[INFO] [1793500736.658655352] [avoidance_node]:  28.5 s   position (3.40, -1.32)   heading 53 deg (wheels alone say 54)   goal 1.86 m away
+[INFO] [1793500738.704543850] [avoidance_node]:  30.2 s   position (3.53, -1.09)   heading 74 deg (wheels alone say 75)   goal 1.60 m away
+[INFO] [1793500740.735880757] [avoidance_node]:  32.0 s   position (3.51, -0.91)   heading 128 deg (wheels alone say 125)   goal 1.50 m away
+[INFO] [1793500742.788602876] [avoidance_node]:  33.7 s   position (3.34, -0.83)   heading 171 deg (wheels alone say 171)   goal 1.60 m away
+[INFO] [1793500744.804920820] [avoidance_node]:  35.4 s   position (3.12, -0.87)   heading -153 deg (wheels alone say -157)   goal 1.81 m away
+[INFO] [1793500746.814561755] [avoidance_node]:  37.1 s   position (2.99, -1.02)   heading -107 deg (wheels alone say -108)   goal 1.99 m away
+[INFO] [1793500748.816620623] [avoidance_node]:  38.8 s   position (3.04, -1.29)   heading -54 deg (wheels alone say -57)   goal 2.10 m away
+[INFO] [1793500750.847301248] [avoidance_node]:  40.6 s   position (3.29, -1.48)   heading -16 deg (wheels alone say -17)   goal 2.04 m away
+[INFO] [1793500752.869964241] [avoidance_node]:  42.3 s   position (3.60, -1.48)   heading 6 deg (wheels alone say 2)   goal 1.84 m away
+[INFO] [1793500754.878490094] [avoidance_node]:  44.0 s   position (3.91, -1.46)   heading 15 deg (wheels alone say 10)   goal 1.65 m away
+[INFO] [1793500756.923287215] [avoidance_node]:  45.8 s   position (4.20, -1.27)   heading 47 deg (wheels alone say 44)   goal 1.37 m away
+[INFO] [1793500758.924045332] [avoidance_node]:  47.5 s   position (4.40, -0.99)   heading 60 deg (wheels alone say 59)   goal 1.04 m away
+[INFO] [1793500760.939243165] [avoidance_node]:  49.2 s   position (4.55, -0.69)   heading 68 deg (wheels alone say 66)   goal 0.71 m away
+[INFO] [1793500762.965099933] [avoidance_node]:  50.9 s   position (4.66, -0.37)   heading 74 deg (wheels alone say 72)   goal 0.37 m away
+[INFO] [1793500764.849433377] [avoidance_node]: GOAL REACHED in 52.5 s (the brain believes: x=4.71 y=-0.10 heading=94 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

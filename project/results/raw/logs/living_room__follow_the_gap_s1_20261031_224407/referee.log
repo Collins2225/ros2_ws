@@ -1,0 +1,56 @@
+[INFO] [1793475863.388204766] [judge]: obstacles from /home/collins/ros2_ws/project/scenarios/living_room.json: 42 objects
+[INFO] [1793475863.763927993] [judge]: referee started for 'living_room__follow_the_gap_s1'
+[INFO] [1793475863.793169707] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1793475866.593325845] [judge]: robot started moving - the clock is running
+[INFO] [1793475866.595255417] [judge]:   0.0 s  true position (0.02, 0.00)  closest gap 0.42 m
+[INFO] [1793475871.614222826] [judge]:   5.0 s  true position (0.59, -0.70)  closest gap 0.12 m
+[INFO] [1793475876.616918386] [judge]:  10.0 s  true position (0.74, -0.72)  closest gap 0.08 m
+[INFO] [1793475881.616979223] [judge]:  15.0 s  true position (0.53, -0.44)  closest gap 0.15 m
+[INFO] [1793475886.620341520] [judge]:  20.0 s  true position (0.61, -0.80)  closest gap 0.22 m
+[INFO] [1793475891.620499446] [judge]:  25.0 s  true position (1.42, -0.86)  closest gap 0.17 m
+[INFO] [1793475896.621970794] [judge]:  30.0 s  true position (1.78, -1.04)  closest gap 0.26 m
+[INFO] [1793475901.622332021] [judge]:  35.0 s  true position (2.12, -1.39)  closest gap 0.22 m
+[INFO] [1793475906.642376752] [judge]:  40.0 s  true position (2.90, -1.41)  closest gap 0.15 m
+[INFO] [1793475911.644203816] [judge]:  45.0 s  true position (3.44, -0.99)  closest gap 0.35 m
+[INFO] [1793475916.645843112] [judge]:  50.0 s  true position (3.48, -1.02)  closest gap 0.30 m
+[INFO] [1793475921.665916021] [judge]:  55.1 s  true position (3.24, -0.89)  closest gap 0.26 m
+[INFO] [1793475926.674140216] [judge]:  60.1 s  true position (3.60, -1.25)  closest gap 0.14 m
+[INFO] [1793475931.674233832] [judge]:  65.1 s  true position (3.66, -1.31)  closest gap 0.10 m
+[INFO] [1793475936.674400916] [judge]:  70.1 s  true position (3.54, -1.04)  closest gap 0.25 m
+[INFO] [1793475941.674517657] [judge]:  75.1 s  true position (3.15, -0.83)  closest gap 0.21 m
+[INFO] [1793475946.674608226] [judge]:  80.1 s  true position (3.38, -0.87)  closest gap 0.24 m
+[INFO] [1793475951.694863149] [judge]:  85.1 s  true position (3.48, -1.14)  closest gap 0.31 m
+[INFO] [1793475956.714185880] [judge]:  90.1 s  true position (3.67, -1.46)  closest gap 0.17 m
+[INFO] [1793475961.714577593] [judge]:  95.1 s  true position (4.11, -1.45)  closest gap 0.15 m
+[INFO] [1793475966.714819025] [judge]: 100.1 s  true position (4.49, -0.52)  closest gap 0.43 m
+[INFO] [1793475968.794525558] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1793475968.794990950] [judge]:  label            : living_room__follow_the_gap_s1
+[INFO] [1793475968.795334519] [judge]:  outcome          : SUCCESS
+[INFO] [1793475968.795623774] [judge]:  time             : 102.2 s
+[INFO] [1793475968.796011918] [judge]:  distance driven  : 10.53 m   (straight line would be 4.70 m)
+[INFO] [1793475968.796408228] [judge]:  path efficiency  : 0.43
+[INFO] [1793475968.796745374] [judge]:  collisions       : 0
+[INFO] [1793475968.797131905] [judge]:  closest approach : 0.022 m   (dining_table_leg2 at 68.9 s, robot at (3.72, -1.16))
+[INFO] [1793475968.797565266] [judge]:  final goal dist  : 0.15 m
+[INFO] [1793475968.797925036] [judge]: ============================================
+[INFO] [1793475968.800147797] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/living_room__follow_the_gap_s1_20261031_224608.csv
+[INFO] [1793475968.800574645] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 253, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

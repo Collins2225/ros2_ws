@@ -1,0 +1,33 @@
+[INFO] [1792673322.250399398] [avoidance_node]: running algorithm 'fuzzy', goal (3.0, 0.0), pose source 'gyro'
+[INFO] [1792673322.337519652] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   heading -0 deg (wheels alone say 0)   goal 3.00 m away
+[INFO] [1792673324.338976016] [avoidance_node]:   2.0 s   position (0.31, 0.04)   heading 17 deg (wheels alone say 15)   goal 2.69 m away
+[INFO] [1792673326.339035883] [avoidance_node]:   4.0 s   position (0.53, 0.21)   heading 40 deg (wheels alone say 40)   goal 2.48 m away
+[INFO] [1792673328.340027702] [avoidance_node]:   6.0 s   position (0.76, 0.43)   heading 49 deg (wheels alone say 49)   goal 2.28 m away
+[INFO] [1792673330.340491239] [avoidance_node]:   8.0 s   position (1.06, 0.63)   heading 18 deg (wheels alone say 16)   goal 2.04 m away
+[INFO] [1792673332.341657146] [avoidance_node]:  10.0 s   position (1.33, 0.78)   heading 29 deg (wheels alone say 27)   goal 1.85 m away
+[INFO] [1792673334.391397757] [avoidance_node]:  12.1 s   position (1.60, 0.97)   heading 38 deg (wheels alone say 37)   goal 1.70 m away
+[INFO] [1792673336.441449293] [avoidance_node]:  14.1 s   position (1.88, 1.19)   heading 31 deg (wheels alone say 30)   goal 1.63 m away
+[INFO] [1792673338.491618640] [avoidance_node]:  16.2 s   position (2.27, 1.23)   heading -19 deg (wheels alone say -17)   goal 1.43 m away
+[INFO] [1792673340.541485839] [avoidance_node]:  18.2 s   position (2.60, 0.98)   heading -51 deg (wheels alone say -51)   goal 1.06 m away
+[INFO] [1792673342.541592534] [avoidance_node]:  20.2 s   position (2.81, 0.65)   heading -62 deg (wheels alone say -64)   goal 0.68 m away
+[INFO] [1792673344.541726891] [avoidance_node]:  22.2 s   position (2.97, 0.32)   heading -69 deg (wheels alone say -70)   goal 0.32 m away
+[INFO] [1792673345.991465741] [avoidance_node]: GOAL REACHED in 23.7 s (the brain believes: x=3.01 y=0.09 heading=-88 deg)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 133, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

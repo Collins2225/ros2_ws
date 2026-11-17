@@ -1,0 +1,39 @@
+[random_turn] seed = 10
+[INFO] [1791852406.532046599] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791852407.551950476] [avoidance_node]:   0.0 s   position (0.00, 0.00)   goal 3.00 m away
+[INFO] [1791852409.559027068] [avoidance_node]:   2.6 s   position (0.38, -0.00)   goal 2.62 m away
+[random_turn] t=3.1s blocked at 0.27 m -> dice: turn RIGHT for 81 deg (about 1.8 s)
+[INFO] [1791852411.559125386] [avoidance_node]:   4.6 s   position (0.49, -0.00)   goal 2.51 m away
+[random_turn] t=4.9s blocked at 0.28 m -> dice: turn RIGHT for 55 deg (about 1.2 s)
+[INFO] [1791852413.563692741] [avoidance_node]:   6.6 s   position (0.44, -0.04)   goal 2.56 m away
+[INFO] [1791852415.613609411] [avoidance_node]:   8.6 s   position (0.41, -0.40)   goal 2.63 m away
+[INFO] [1791852417.613680444] [avoidance_node]:  10.6 s   position (0.78, -0.50)   goal 2.28 m away
+[INFO] [1791852419.663517216] [avoidance_node]:  12.7 s   position (1.18, -0.44)   goal 1.87 m away
+[random_turn] t=13.4s blocked at 0.39 m -> dice: turn LEFT for 129 deg (about 2.8 s)
+[INFO] [1791852421.663536008] [avoidance_node]:  14.7 s   position (1.33, -0.40)   goal 1.71 m away
+[INFO] [1791852423.713605731] [avoidance_node]:  16.7 s   position (1.30, -0.35)   goal 1.74 m away
+[INFO] [1791852425.763552624] [avoidance_node]:  18.8 s   position (1.42, 0.00)   goal 1.58 m away
+[INFO] [1791852427.764971238] [avoidance_node]:  20.8 s   position (1.80, 0.07)   goal 1.20 m away
+[INFO] [1791852429.764996904] [avoidance_node]:  22.8 s   position (2.20, 0.06)   goal 0.80 m away
+[random_turn] t=24.7s blocked at 0.33 m -> dice: turn RIGHT for 34 deg (about 0.7 s)
+[INFO] [1791852431.814887468] [avoidance_node]:  24.8 s   position (2.60, 0.03)   goal 0.41 m away
+[random_turn] t=25.5s blocked at 0.29 m -> dice: turn LEFT for 69 deg (about 1.5 s)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 785, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException

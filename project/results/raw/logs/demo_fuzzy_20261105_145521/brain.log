@@ -1,0 +1,28 @@
+[INFO] [1793879747.824694795] [avoidance_node]: running algorithm 'fuzzy', goal (4.7, 0.0), pose source 'gyro'
+[INFO] [1793879747.937927140] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   heading 0 deg (wheels alone say 0)   goal 4.70 m away
+[INFO] [1793879749.940054132] [avoidance_node]:   2.0 s   position (0.20, -0.03)   heading -31 deg (wheels alone say -29)   goal 4.50 m away
+[INFO] [1793879751.990213241] [avoidance_node]:   4.1 s   position (0.31, -0.26)   heading -66 deg (wheels alone say -68)   goal 4.39 m away
+[INFO] [1793879754.040094798] [avoidance_node]:   6.1 s   position (0.52, -0.56)   heading -54 deg (wheels alone say -55)   goal 4.22 m away
+[INFO] [1793879756.040154889] [avoidance_node]:   8.1 s   position (0.71, -0.84)   heading -50 deg (wheels alone say -50)   goal 4.08 m away
+[INFO] [1793879758.090073435] [avoidance_node]:  10.1 s   position (0.96, -1.04)   heading -18 deg (wheels alone say -18)   goal 3.88 m away
+[INFO] [1793879760.140088443] [avoidance_node]:  12.2 s   position (1.33, -1.04)   heading 10 deg (wheels alone say 9)   goal 3.52 m away
+[INFO] [1793879762.189984677] [avoidance_node]:  14.2 s   position (1.64, -0.99)   heading -6 deg (wheels alone say -5)   goal 3.22 m away
+[INFO] [1793879764.190030471] [avoidance_node]:  16.2 s   position (1.81, -1.05)   heading -28 deg (wheels alone say -26)   goal 3.07 m away
+[INFO] [1793879766.240086977] [avoidance_node]:  18.3 s   position (2.06, -1.23)   heading -42 deg (wheels alone say -41)   goal 2.91 m away
+[INFO] [1793879768.289913459] [avoidance_node]:  20.3 s   position (2.33, -1.46)   heading -39 deg (wheels alone say -39)   goal 2.78 m away
+[INFO] [1793879770.293102962] [avoidance_node]:  22.3 s   position (2.69, -1.59)   heading 4 deg (wheels alone say 3)   goal 2.57 m away
+[INFO] [1793879772.293128828] [avoidance_node]:  24.3 s   position (3.06, -1.46)   heading 29 deg (wheels alone say 27)   goal 2.19 m away
+[INFO] [1793879774.343336068] [avoidance_node]:  26.4 s   position (3.37, -1.24)   heading 39 deg (wheels alone say 38)   goal 1.82 m away
+[INFO] [1793879776.393008180] [avoidance_node]:  28.4 s   position (3.56, -1.01)   heading 71 deg (wheels alone say 72)   goal 1.52 m away
+[INFO] [1793879778.393103226] [avoidance_node]:  30.4 s   position (3.53, -0.81)   heading 124 deg (wheels alone say 121)   goal 1.42 m away
+[INFO] [1793879780.393196580] [avoidance_node]:  32.5 s   position (3.36, -0.72)   heading -174 deg (wheels alone say -178)   goal 1.52 m away
+[INFO] [1793879782.443148508] [avoidance_node]:  34.5 s   position (3.13, -0.85)   heading -127 deg (wheels alone say -128)   goal 1.79 m away
+[INFO] [1793879784.493158867] [avoidance_node]:  36.5 s   position (3.11, -1.09)   heading -67 deg (wheels alone say -71)   goal 1.93 m away
+[INFO] [1793879786.493289801] [avoidance_node]:  38.5 s   position (3.38, -1.38)   heading -24 deg (wheels alone say -25)   goal 1.91 m away
+[INFO] [1793879788.493357326] [avoidance_node]:  40.5 s   position (3.72, -1.47)   heading -16 deg (wheels alone say -17)   goal 1.77 m away
+[INFO] [1793879790.543223884] [avoidance_node]:  42.6 s   position (4.10, -1.48)   heading 22 deg (wheels alone say 17)   goal 1.60 m away
+[INFO] [1793879792.543440680] [avoidance_node]:  44.6 s   position (4.40, -1.22)   heading 56 deg (wheels alone say 54)   goal 1.26 m away
+[INFO] [1793879794.544367983] [avoidance_node]:  46.6 s   position (4.57, -0.86)   heading 70 deg (wheels alone say 69)   goal 0.87 m away
+[INFO] [1793879796.594732909] [avoidance_node]:  48.6 s   position (4.68, -0.47)   heading 78 deg (wheels alone say 76)   goal 0.47 m away
+[INFO] [1793879798.644642859] [avoidance_node]:  50.7 s   position (4.72, -0.10)   heading 97 deg (wheels alone say 93)   goal 0.11 m away
+[INFO] [1793879798.694182885] [avoidance_node]: GOAL REACHED in 50.8 s (the brain believes: x=4.71 y=-0.09 heading=98 deg)

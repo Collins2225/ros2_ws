@@ -1,0 +1,53 @@
+[INFO] [launch]: All log files can be found below /home/collins/.ros/log/2026-10-31-22-52-30-520154-collins-ASUS-TUF-Gaming-A15-FA507NV-FA507NV-26041
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [26050]
+[INFO] [robot_state_publisher-2]: process started with pid [26051]
+[INFO] [create-3]: process started with pid [26052]
+[INFO] [parameter_bridge-4]: process started with pid [26053]
+[robot_state_publisher-2] [INFO] [1793476350.887988656] [robot_state_publisher]: Robot initialized
+[create-3] [INFO] [1793476350.894984365] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-4] [INFO] [1793476350.907643171] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.908717824] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.910191245] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.911390986] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.912620544] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.913715115] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/sonar (gz.msgs.LaserScan) -> /sonar (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.914025445] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/imu (gz.msgs.IMU) -> /imu (sensor_msgs/msg/Imu)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1793476350.914358207] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/servo_cmd (std_msgs/msg/Float64) -> /servo_cmd (gz.msgs.Double)] (Lazy 0)
+[create-3] [INFO] [1793476351.838330796] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-3] [INFO] [1793476351.937459779] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-3]: process has finished cleanly [pid 26052]
+[gazebo-1] libEGL warning: pci id for fd 91: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 92: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 93: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 91: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 92: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 93: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 91: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="base_footprint"]/sensor[@name="imu"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] libEGL warning: pci id for fd 59: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 60: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 59: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 60: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 59: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="base_footprint"]/sensor[@name="imu"]/gz_frame_id:<data-string>:L130]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<data-string>:L248]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[parameter_bridge-4] [INFO] [1793476357.772141039] [ros_gz_bridge]: Passing message from ROS std_msgs/msg/Float64 to Gazebo gz.msgs.Double (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1793476373.953490888] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1793476646.118914803] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-2] [INFO] [1793476646.118914874] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-4]: process has finished cleanly [pid 26053]
+[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 26051]

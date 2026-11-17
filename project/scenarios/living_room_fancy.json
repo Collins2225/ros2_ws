@@ -1,0 +1,263 @@
+{
+ "name": "living_room_fancy",
+ "goal": [
+  4.7,
+  0.0
+ ],
+ "timeout": 150.0,
+ "start": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "obstacles": [
+  {
+   "name": "wall_north",
+   "shape": "box",
+   "x": 2.4,
+   "y": 2.05,
+   "sx": 6.2,
+   "sy": 0.1,
+   "yaw": 0.0
+  },
+  {
+   "name": "wall_south",
+   "shape": "box",
+   "x": 2.4,
+   "y": -2.05,
+   "sx": 6.2,
+   "sy": 0.1,
+   "yaw": 0.0
+  },
+  {
+   "name": "wall_west",
+   "shape": "box",
+   "x": -0.65,
+   "y": 0.0,
+   "sx": 0.1,
+   "sy": 4.2,
+   "yaw": 0.0
+  },
+  {
+   "name": "wall_east",
+   "shape": "box",
+   "x": 5.45,
+   "y": 0.0,
+   "sx": 0.1,
+   "sy": 4.2,
+   "yaw": 0.0
+  },
+  {
+   "name": "sofa_seat",
+   "shape": "box",
+   "x": 1.0,
+   "y": 1.55,
+   "sx": 1.8,
+   "sy": 0.8,
+   "yaw": 0.0
+  },
+  {
+   "name": "coffee_table",
+   "shape": "box",
+   "x": 1.0,
+   "y": 0.55,
+   "sx": 0.9,
+   "sy": 0.5,
+   "yaw": 0.0
+  },
+  {
+   "name": "armchair_seat",
+   "shape": "box",
+   "x": 2.6,
+   "y": 1.45,
+   "sx": 0.8,
+   "sy": 0.8,
+   "yaw": 0.0
+  },
+  {
+   "name": "plant_1",
+   "shape": "circle",
+   "x": 1.6,
+   "y": -0.35,
+   "r": 0.2
+  },
+  {
+   "name": "sideboard",
+   "shape": "box",
+   "x": 1.2,
+   "y": -1.75,
+   "sx": 1.4,
+   "sy": 0.4,
+   "yaw": 0.0
+  },
+  {
+   "name": "dining_table_leg1",
+   "shape": "box",
+   "x": 2.69,
+   "y": -1.21,
+   "sx": 0.08,
+   "sy": 0.08,
+   "yaw": 0.0
+  },
+  {
+   "name": "dining_table_leg2",
+   "shape": "box",
+   "x": 3.91,
+   "y": -1.21,
+   "sx": 0.08,
+   "sy": 0.08,
+   "yaw": 0.0
+  },
+  {
+   "name": "dining_table_leg3",
+   "shape": "box",
+   "x": 3.91,
+   "y": -0.59,
+   "sx": 0.08,
+   "sy": 0.08,
+   "yaw": 0.0
+  },
+  {
+   "name": "dining_table_leg4",
+   "shape": "box",
+   "x": 2.69,
+   "y": -0.59,
+   "sx": 0.08,
+   "sy": 0.08,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_1_leg1",
+   "shape": "box",
+   "x": 2.785,
+   "y": -0.485,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_1_leg2",
+   "shape": "box",
+   "x": 3.115,
+   "y": -0.485,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_1_leg3",
+   "shape": "box",
+   "x": 3.115,
+   "y": -0.155,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_1_leg4",
+   "shape": "box",
+   "x": 2.785,
+   "y": -0.155,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_2_leg1",
+   "shape": "box",
+   "x": 3.485,
+   "y": -0.485,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_2_leg2",
+   "shape": "box",
+   "x": 3.815,
+   "y": -0.485,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_2_leg3",
+   "shape": "box",
+   "x": 3.815,
+   "y": -0.155,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_2_leg4",
+   "shape": "box",
+   "x": 3.485,
+   "y": -0.155,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 0.0
+  },
+  {
+   "name": "chair_3_leg1",
+   "shape": "box",
+   "x": 2.515,
+   "y": -1.065,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 1.5708
+  },
+  {
+   "name": "chair_3_leg2",
+   "shape": "box",
+   "x": 2.515,
+   "y": -0.735,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 1.5708
+  },
+  {
+   "name": "chair_3_leg3",
+   "shape": "box",
+   "x": 2.185,
+   "y": -0.735,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 1.5708
+  },
+  {
+   "name": "chair_3_leg4",
+   "shape": "box",
+   "x": 2.185,
+   "y": -1.065,
+   "sx": 0.05,
+   "sy": 0.05,
+   "yaw": 1.5708
+  },
+  {
+   "name": "ottoman",
+   "shape": "box",
+   "x": 4.5,
+   "y": 1.0,
+   "sx": 0.5,
+   "sy": 0.5,
+   "yaw": 0.3
+  },
+  {
+   "name": "bookshelf",
+   "shape": "box",
+   "x": 5.2,
+   "y": 1.0,
+   "sx": 0.4,
+   "sy": 1.2,
+   "yaw": 0.0
+  },
+  {
+   "name": "plant_2",
+   "shape": "circle",
+   "x": 4.9,
+   "y": -1.6,
+   "r": 0.18
+  }
+ ]
+}

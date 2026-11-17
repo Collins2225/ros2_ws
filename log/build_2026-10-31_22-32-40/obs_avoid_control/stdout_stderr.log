@@ -1,0 +1,20 @@
+running develop
+running egg_info
+writing obs_avoid_control.egg-info/PKG-INFO
+writing dependency_links to obs_avoid_control.egg-info/dependency_links.txt
+writing entry points to obs_avoid_control.egg-info/entry_points.txt
+writing requirements to obs_avoid_control.egg-info/requires.txt
+writing top-level names to obs_avoid_control.egg-info/top_level.txt
+reading manifest file 'obs_avoid_control.egg-info/SOURCES.txt'
+writing manifest file 'obs_avoid_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/collins/ros2_ws/install/obs_avoid_control/lib/python3.12/site-packages/obs-avoid-control.egg-link (link to .)
+Installing avoidance_node script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+Installing hello_robot script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+Installing judge script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+Installing sweep_scanner script to /home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control
+
+Installed /home/collins/ros2_ws/build/obs_avoid_control
+running symlink_data
+symbolically linking /home/collins/ros2_ws/build/obs_avoid_control/resource/obs_avoid_control -> /home/collins/ros2_ws/install/obs_avoid_control/share/ament_index/resource_index/packages
+symbolically linking /home/collins/ros2_ws/build/obs_avoid_control/package.xml -> /home/collins/ros2_ws/install/obs_avoid_control/share/obs_avoid_control

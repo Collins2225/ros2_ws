@@ -1,0 +1,5 @@
+[INFO] [1793880544.245955995] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1793880544.246105747] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1793880544.270874126] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1793880554.400539333] [rviz]: Message Filter dropping message: frame 'base_link' at time 8.800 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1793880619.339070178] [rclcpp]: signal_handler(SIGINT/SIGTERM)

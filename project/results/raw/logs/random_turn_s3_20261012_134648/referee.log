@@ -1,0 +1,39 @@
+[INFO] [1791802024.389630480] [judge]: referee started for 'random_turn_s3'
+[INFO] [1791802024.391664774] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791802026.509660930] [judge]: robot started moving - the clock is running
+[INFO] [1791802026.510344879] [judge]:   0.0 s  true position (0.02, -0.00)  closest gap 0.72 m
+[INFO] [1791802031.530187773] [judge]:   5.0 s  true position (0.51, -0.05)  closest gap 0.22 m
+[INFO] [1791802036.549945961] [judge]:  10.0 s  true position (1.39, -0.30)  closest gap 0.16 m
+[INFO] [1791802041.555048236] [judge]:  15.0 s  true position (2.38, -0.12)  closest gap 0.15 m
+[INFO] [1791802043.994676469] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791802043.995050707] [judge]:  label            : random_turn_s3
+[INFO] [1791802043.995326334] [judge]:  outcome          : SUCCESS
+[INFO] [1791802043.995604145] [judge]:  time             : 17.5 s
+[INFO] [1791802043.995897876] [judge]:  distance driven  : 3.07 m   (straight line would be 3.00 m)
+[INFO] [1791802043.996193519] [judge]:  path efficiency  : 0.93
+[INFO] [1791802043.996502879] [judge]:  collisions       : 0
+[INFO] [1791802043.996980918] [judge]:  closest approach : 0.089 m   (box_1 at 6.9 s, robot at (0.77, -0.30))
+[INFO] [1791802043.997400139] [judge]:  final goal dist  : 0.15 m
+[INFO] [1791802043.997776451] [judge]: ============================================
+[INFO] [1791802044.000513006] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/random_turn_s3_20261012_134723.csv
+[INFO] [1791802044.000975867] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/judge", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'judge')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/metrics/judge.py", line 245, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

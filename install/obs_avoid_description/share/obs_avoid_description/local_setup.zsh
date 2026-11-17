@@ -1,0 +1,1 @@
+/home/collins/ros2_ws/build/obs_avoid_description/ament_cmake_environment_hooks/local_setup.zsh

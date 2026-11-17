@@ -1,0 +1,48 @@
+[INFO] [launch]: All log files can be found below /home/collins/.ros/log/2026-10-13-15-13-53-082198-collins-ASUS-TUF-Gaming-A15-FA507NV-FA507NV-14857
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [14866]
+[INFO] [robot_state_publisher-2]: process started with pid [14867]
+[INFO] [create-3]: process started with pid [14868]
+[INFO] [parameter_bridge-4]: process started with pid [14870]
+[robot_state_publisher-2] [INFO] [1791893633.436268063] [robot_state_publisher]: Robot initialized
+[create-3] [INFO] [1791893633.438988575] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-4] [INFO] [1791893633.451502095] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791893633.457110122] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791893633.458648158] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791893633.459878891] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791893633.461071708] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791893633.462149346] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/sonar (gz.msgs.LaserScan) -> /sonar (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-4] [INFO] [1791893633.462507350] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/servo_cmd (std_msgs/msg/Float64) -> /servo_cmd (gz.msgs.Double)] (Lazy 0)
+[create-3] [INFO] [1791893633.971411068] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[create-3] [INFO] [1791893634.070472058] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-3]: process has finished cleanly [pid 14868]
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 95: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 96: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 95: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 96: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 94: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="obs_avoid_robot"]/link[@name="servo_link"]/sensor[@name="sonar"]/gz_frame_id:<data-string>:L226]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 62: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 63: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 62: 10de:28e0, driver (null)
+[gazebo-1] pci id for fd 63: 10de:28e0, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 61: 10de:28e0, driver (null)
+[gazebo-1] 
+[parameter_bridge-4] [INFO] [1791893640.232236772] [ros_gz_bridge]: Passing message from ROS std_msgs/msg/Float64 to Gazebo gz.msgs.Double (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1791893647.279164296] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[parameter_bridge-4] [INFO] [1791893671.757355275] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-2] [INFO] [1791893671.791374864] [rclcpp]: signal_handler(SIGINT/SIGTERM)

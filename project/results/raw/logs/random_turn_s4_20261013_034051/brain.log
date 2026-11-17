@@ -1,0 +1,53 @@
+[random_turn] seed = 4
+[INFO] [1791852069.803367860] [avoidance_node]: running algorithm 'random_turn', goal (3.0, 0.0)
+[INFO] [1791852070.574351518] [avoidance_node]:   0.0 s   position (-0.00, 0.00)   goal 3.00 m away
+[random_turn] t=2.0s blocked at 0.38 m -> dice: turn RIGHT for 66 deg (about 1.4 s)
+[INFO] [1791852072.624266917] [avoidance_node]:   2.1 s   position (0.38, -0.00)   goal 2.62 m away
+[random_turn] t=3.5s blocked at 0.37 m -> dice: turn LEFT for 87 deg (about 1.9 s)
+[INFO] [1791852074.674335578] [avoidance_node]:   4.1 s   position (0.38, -0.00)   goal 2.62 m away
+[random_turn] t=5.4s blocked at 0.37 m -> dice: turn RIGHT for 38 deg (about 0.8 s)
+[INFO] [1791852076.724321093] [avoidance_node]:   6.2 s   position (0.38, -0.00)   goal 2.62 m away
+[random_turn] t=6.2s blocked at 0.36 m -> dice: turn LEFT for 96 deg (about 2.1 s)
+[INFO] [1791852078.774984951] [avoidance_node]:   8.2 s   position (0.38, 0.00)   goal 2.62 m away
+[random_turn] t=8.4s blocked at 0.36 m -> dice: turn LEFT for 126 deg (about 2.8 s)
+[INFO] [1791852080.824671779] [avoidance_node]:  10.2 s   position (0.38, -0.00)   goal 2.62 m away
+[INFO] [1791852082.874259440] [avoidance_node]:  12.3 s   position (0.25, 0.15)   goal 2.76 m away
+[INFO] [1791852084.924159757] [avoidance_node]:  14.4 s   position (0.43, 0.47)   goal 2.62 m away
+[INFO] [1791852086.974296005] [avoidance_node]:  16.4 s   position (0.83, 0.48)   goal 2.22 m away
+[random_turn] t=17.1s blocked at 0.32 m -> dice: turn RIGHT for 57 deg (about 1.2 s)
+[INFO] [1791852089.024182098] [avoidance_node]:  18.5 s   position (0.97, 0.45)   goal 2.08 m away
+[INFO] [1791852091.024262194] [avoidance_node]:  20.5 s   position (1.23, 0.18)   goal 1.78 m away
+[INFO] [1791852093.024265518] [avoidance_node]:  22.5 s   position (1.62, 0.10)   goal 1.38 m away
+[INFO] [1791852095.025631412] [avoidance_node]:  24.5 s   position (2.02, 0.07)   goal 0.98 m away
+[INFO] [1791852097.025745120] [avoidance_node]:  26.5 s   position (2.42, 0.04)   goal 0.58 m away
+[random_turn] t=28.2s blocked at 0.27 m -> dice: turn LEFT for 63 deg (about 1.4 s)
+[INFO] [1791852099.075804548] [avoidance_node]:  28.5 s   position (2.77, 0.01)   goal 0.23 m away
+[random_turn] t=29.6s blocked at 0.27 m -> dice: turn RIGHT for 129 deg (about 2.8 s)
+[INFO] [1791852101.076382636] [avoidance_node]:  30.5 s   position (2.77, 0.01)   goal 0.23 m away
+[random_turn] t=32.5s blocked at 0.29 m -> dice: turn LEFT for 56 deg (about 1.2 s)
+[INFO] [1791852103.125687192] [avoidance_node]:  32.6 s   position (2.77, 0.01)   goal 0.23 m away
+[random_turn] t=33.7s blocked at 0.34 m -> dice: turn RIGHT for 129 deg (about 2.8 s)
+[INFO] [1791852105.125792766] [avoidance_node]:  34.6 s   position (2.77, 0.01)   goal 0.23 m away
+[INFO] [1791852107.125867630] [avoidance_node]:  36.6 s   position (2.77, 0.01)   goal 0.23 m away
+[INFO] [1791852109.126897469] [avoidance_node]:  38.6 s   position (2.48, -0.16)   goal 0.55 m away
+[random_turn] t=39.6s blocked at 0.27 m -> dice: turn LEFT for 126 deg (about 2.8 s)
+Traceback (most recent call last):
+  File "/home/collins/ros2_ws/install/obs_avoid_control/lib/obs_avoid_control/avoidance_node", line 33, in <module>
+    sys.exit(load_entry_point('obs-avoid-control', 'console_scripts', 'avoidance_node')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/collins/ros2_ws/build/obs_avoid_control/obs_avoid_control/core/avoidance_node.py", line 101, in main
+    rclpy.spin(node)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 757, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+               ^^^^^^^^^^^^^^^
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

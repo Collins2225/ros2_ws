@@ -1,0 +1,2 @@
+[INFO] [1791852990.811725237] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/obstacle_course/dynamic_pose/info (gz.msgs.Pose_V) -> /world/obstacle_course/dynamic_pose/info (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[INFO] [1791853019.650848644] [rclcpp]: signal_handler(SIGINT/SIGTERM)

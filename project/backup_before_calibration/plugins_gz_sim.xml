@@ -1,0 +1,47 @@
+<!-- Gazebo Sim (Harmonic) plugins for ROS 2 Jazzy. Already merged into urdf/obs_avoid_gz.urdf. UNTESTED on a live simulator. -->
+<gazebo>
+  <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+    <left_joint>wheel_front_left_joint</left_joint>
+    <left_joint>wheel_rear_left_joint</left_joint>
+    <right_joint>wheel_front_right_joint</right_joint>
+    <right_joint>wheel_rear_right_joint</right_joint>
+    <wheel_separation>0.1374</wheel_separation>   <!-- skid steer: try 0.2-0.3 if turning is too weak/strong -->
+    <wheel_radius>0.0329</wheel_radius>
+    <topic>/cmd_vel</topic>
+    <odom_topic>/odom</odom_topic>
+    <tf_topic>/tf</tf_topic>
+    <frame_id>odom</frame_id>
+    <child_frame_id>base_footprint</child_frame_id>
+    <odom_publish_frequency>30</odom_publish_frequency>
+    <max_linear_acceleration>1.0</max_linear_acceleration>
+    <max_angular_acceleration>3.0</max_angular_acceleration>
+  </plugin>
+  <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+    <topic>/joint_states</topic>
+  </plugin>
+  <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+    <joint_name>servo_joint</joint_name>
+    <topic>/servo_cmd</topic>
+    <p_gain>0.05</p_gain>
+    <i_gain>0.0</i_gain>
+    <d_gain>0.0</d_gain>
+    <cmd_max>0.2</cmd_max>
+    <cmd_min>-0.2</cmd_min>
+  </plugin>
+</gazebo>
+<gazebo reference="sonar_link">
+  <sensor name="sonar" type="gpu_lidar">
+    <topic>/sonar</topic>
+    <gz_frame_id>sonar_link</gz_frame_id>
+    <update_rate>20</update_rate>
+    <always_on>true</always_on>
+    <visualize>false</visualize>
+    <lidar>
+      <scan>
+        <horizontal><samples>5</samples><resolution>1</resolution><min_angle>-0.13</min_angle><max_angle>0.13</max_angle></horizontal>
+        <vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical>
+      </scan>
+      <range><min>0.02</min><max>4.0</max><resolution>0.01</resolution></range>
+    </lidar>
+  </sensor>
+</gazebo>

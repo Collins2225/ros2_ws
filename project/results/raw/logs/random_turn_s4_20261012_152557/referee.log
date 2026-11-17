@@ -1,0 +1,23 @@
+[INFO] [1791807973.796698849] [judge]: referee started for 'random_turn_s4'
+[INFO] [1791807973.798223946] [judge]: robot is at (0.00, 0.00). Waiting for it to move...
+[INFO] [1791807976.165050943] [judge]: robot started moving - the clock is running
+[INFO] [1791807976.165772997] [judge]:   0.0 s  true position (0.03, -0.00)  closest gap 0.71 m
+[INFO] [1791807981.185362109] [judge]:   5.0 s  true position (0.46, 0.01)  closest gap 0.26 m
+[INFO] [1791807986.186726415] [judge]:  10.0 s  true position (0.47, -0.03)  closest gap 0.27 m
+[INFO] [1791807991.206500680] [judge]:  15.0 s  true position (0.84, 0.48)  closest gap 0.25 m
+[INFO] [1791807996.206505091] [judge]:  20.0 s  true position (1.52, 0.32)  closest gap 0.07 m
+[INFO] [1791808001.206817832] [judge]:  25.0 s  true position (2.51, 0.22)  closest gap 0.48 m
+[INFO] [1791808006.206878170] [judge]:  30.0 s  true position (3.02, 0.21)  closest gap 0.31 m
+[INFO] [1791808011.226494503] [judge]:  35.1 s  true position (3.05, 0.23)  closest gap 0.30 m
+[INFO] [1791808012.886594059] [judge]: ============== REFEREE REPORT ==============
+[INFO] [1791808012.887177152] [judge]:  label            : random_turn_s4
+[INFO] [1791808012.887647931] [judge]:  outcome          : SUCCESS
+[INFO] [1791808012.887966165] [judge]:  time             : 36.7 s
+[INFO] [1791808012.888257867] [judge]:  distance driven  : 3.78 m   (straight line would be 3.00 m)
+[INFO] [1791808012.888517203] [judge]:  path efficiency  : 0.75
+[INFO] [1791808012.888799790] [judge]:  collisions       : 0
+[INFO] [1791808012.889111281] [judge]:  closest approach : 0.067 m   (box_2 at 20.4 s, robot at (1.58, 0.30))
+[INFO] [1791808012.889367236] [judge]:  final goal dist  : 0.15 m
+[INFO] [1791808012.889615526] [judge]: ============================================
+[INFO] [1791808012.894702187] [judge]: saved the path to /home/collins/ros2_ws/project/results/raw/trajectories/random_turn_s4_20261012_152652.csv
+[INFO] [1791808012.895176497] [judge]: saved one row to /home/collins/ros2_ws/project/results/raw/runs.csv. You can press Ctrl+C now.
