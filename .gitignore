@@ -4,3 +4,11 @@ log/
 __pycache__/
 *.pyc
 .vscode/
+
+*.log
+build/
+install/
+log/
+__pycache__/
+*.pyc
+project/results/raw/logs/
