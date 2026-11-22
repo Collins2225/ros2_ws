@@ -1,5 +1,0 @@
-[console_scripts]
-avoidance_node = obs_avoid_control.core.avoidance_node:main
-hello_robot = obs_avoid_control.hello_robot:main
-judge = obs_avoid_control.metrics.judge:main
-sweep_scanner = obs_avoid_control.core.sweep_scanner:main
