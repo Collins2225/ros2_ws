@@ -42,3 +42,8 @@ class Controller(Algorithm):
             return Command(0.0, self.turn_dir * self.turn_speed)
         turn = max(-self.turn_speed, min(self.turn_speed, self.steer_gain * p.goal_bearing()))
         return Command(self.cruise_speed, turn)
+"""
+bash ~/ros2_ws/project/scripts/house_diagrams.sh vfh
+bash ~/ros2_ws/project/scripts/house_diagrams.sh vfh_plus
+bash ~/ros2_ws/project/scripts/house_diagrams.sh nearness_diagram
+"""
