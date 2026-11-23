@@ -1,5 +1,7 @@
 # Comparative Analysis of Obstacle Avoidance Algorithms
 
+![The robot in Gazebo](docs/images/robot_gazebo.png)
+
 Ten reactive obstacle-avoidance algorithms for a low-cost four-wheel ground robot, implemented behind one common
 interface and run in the **Gazebo Harmonic** simulator with **ROS 2 Jazzy**. The same robot, the same sonar model and the
 same test rooms are used for every algorithm, so the results can be compared fairly.
