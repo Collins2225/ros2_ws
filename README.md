@@ -26,6 +26,12 @@ algorithms"*. The simplest algorithm, Stop-and-turn, is also ported to the real 
 
 ## The ten algorithms
 
+<p align="center">
+  <img src="docs/images/robot_gazebo.png" width="800" alt="The simulated robot in the living_room scenario in Gazebo Harmonic" />
+  <br/>
+  <sub>The simulated robot in the <code>living_room</code> scenario in Gazebo Harmonic.</sub>
+</p>
+
 All of them are *reactive*: they decide from what the sonar sees now (and, for some, a short memory of it), with no global
 map and no path planning.
 
